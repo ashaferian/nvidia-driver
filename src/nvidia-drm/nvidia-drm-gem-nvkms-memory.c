@@ -90,7 +90,11 @@ int nv_drm_dumb_create(
         ret = -ENOMEM;
         NV_DRM_DEV_LOG_ERR(
             nv_dev,
+#ifdef __linux__
             "Failed to allocate NvKmsKapiMemory for dumb object of size %llu",
+#else
+	    "Failed to allocate NvKmsKapiMemory for dumb object of size %lu",
+#endif
             args->size);
         goto nvkms_alloc_memory_failed;
     }
@@ -344,7 +348,7 @@ static int __nv_drm_vma_fault(struct vm_area_struct *vma,
     pfn >>= PAGE_SHIFT;
 
     page_offset = vmf->pgoff - drm_vma_node_start(&gem->vma_node);
-
+#ifdef __linux__
 #if defined(NV_VMF_INSERT_PFN_PRESENT)
     (void)ret;
     return vmf_insert_pfn(vma, address, pfn + page_offset);
@@ -367,7 +371,24 @@ static int __nv_drm_vma_fault(struct vm_area_struct *vma,
     }
 
     return VM_FAULT_SIGBUS;
-#endif
+#endif /* NV_VMF_INSERT_PFN_PRESENT */
+#else
+    /* FreeBSD specific: find location to insert new page */
+    vm_page_t page = PHYS_TO_VM_PAGE(IDX_TO_OFF(pfn + page_offset));
+    vm_object_t obj = vma->vm_obj;
+    vm_pindex_t pidx = OFF_TO_IDX(address);
+    if (vm_page_busied(page))
+	    return VM_FAULT_OOM;
+    if (vm_page_insert(page, obj, pidx))
+	    return VM_FAULT_OOM;
+
+    ret = 0;
+    page->valid = VM_PAGE_BITS_ALL;
+    vm_page_xbusy(page);
+    vma->vm_pfn_count++;
+
+    return ret;
+#endif /* __linux__ */
 }
 
 /*

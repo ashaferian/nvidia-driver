@@ -1,0 +1,8 @@
+nvidia_i2c.o: nvidia_i2c.c nv-misc.h ../common/inc/nvtypes.h \
+  ../common/inc/cpuopsys.h ../common/inc/xapi-sdk.h \
+  ../common/inc/nvstatus.h ../common/inc/nvstatuscodes.h os-interface.h \
+  stdarg.h x86/stdarg.h /usr/src/sys/sys/_stdarg.h \
+  /usr/src/sys/sys/cdefs.h /usr/src/sys/sys/_types.h machine/_types.h \
+  x86/_types.h machine/_limits.h x86/_limits.h nv-kernel-interface-api.h \
+  ../common/inc/nvipmi.h nv.h ../common/inc/nvlimits.h \
+  ../common/inc/nvCpuUuid.h

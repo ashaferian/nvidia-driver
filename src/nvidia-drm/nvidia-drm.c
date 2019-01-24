@@ -45,15 +45,35 @@ int nv_drm_init(void)
         return -EINVAL;
     }
 
-    return nv_drm_probe_devices();
+    
+#ifdef __linux__
+
+    return nv_drm_probe_devices();    
 #else
-    return 0;
-#endif
+/* pretty print nvKmsFuncsTable */
+    NV_DRM_LOG_INFO("nvKms:--------------");
+    NV_DRM_LOG_INFO("nvKms->enumerateGpus = %lx", (unsigned long)nvKms->enumerateGpus);
+
+    /* 
+     * register our pci driver to add drm devices
+     * We use our own probe function (nv_drm_bsd_probe)
+     * instead of the linux one as the linux one assumes
+     * a pci device list has already been created.
+     */
+    nv_drm_devclass = devclass_create("nvidia-drm");
+    nv_drm_pci_driver.bsdclass = nv_drm_devclass;
+    int ret = linux_pci_register_drm_driver(&nv_drm_pci_driver);
+    NV_DRM_LOG_INFO("Registered pci driver with ret: %d", ret);
+    
+    return ret;
+#endif /* __linux__ */
+#endif /* NV_DRM_AVAILABLE */
 }
 
 void nv_drm_exit(void)
 {
 #if defined(NV_DRM_AVAILABLE)
+    NV_DRM_LOG_INFO("nv_drm_remove_devices--");
     nv_drm_remove_devices();
 #endif
 }

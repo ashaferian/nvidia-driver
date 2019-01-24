@@ -667,7 +667,7 @@ void NVKMS_API_CALL nvkms_close_gpu(NvU32 gpuId)
 
 NvU32 NVKMS_API_CALL nvkms_enumerate_gpus(nv_gpu_info_t *gpu_info)
 {
-    return 0;
+    return __rm_ops.enumerate_gpus(gpu_info);
 }
 
 NvBool NVKMS_API_CALL nvkms_allow_write_combining(void)
@@ -720,6 +720,18 @@ void NVKMS_API_CALL nvkms_sema_down(nvkms_sema_handle_t *seam)
 
 void NVKMS_API_CALL nvkms_sema_up(nvkms_sema_handle_t *sema)
 {
+}
+
+/*************************************************************************
+ * NVKMS KAPI functions
+ ************************************************************************/
+
+NvBool NVKMS_KAPI_CALL nvKmsKapiGetFunctionsTable
+(
+    struct NvKmsKapiFunctionsTable *funcsTable
+)
+{
+    return nvKmsKapiGetFunctionsTableInternal(funcsTable);
 }
 
 /*************************************************************************
@@ -1095,6 +1107,8 @@ DECLARE_MODULE(nvidia_modeset,              /* module name */
                nvidia_modeset_moduledata,   /* moduledata_t */
                SI_SUB_DRIVERS,              /* subsystem */
                SI_ORDER_ANY);               /* initialization order */
+
+MODULE_VERSION(nvidia_modeset, 1);
 
 MODULE_DEPEND(nvidia_modeset,               /* module name */
               nvidia,                       /* prerequisite module */

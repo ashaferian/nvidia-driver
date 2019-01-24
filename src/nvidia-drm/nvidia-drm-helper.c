@@ -238,8 +238,11 @@ int nv_drm_atomic_helper_disable_all(struct drm_device *dev,
 
 free:
     if (err < 0)
+#ifdef __linux__
         drm_atomic_state_free(state);
-
+#else
+        drm_atomic_state_put(state);
+#endif
     return err;
 #endif
 }

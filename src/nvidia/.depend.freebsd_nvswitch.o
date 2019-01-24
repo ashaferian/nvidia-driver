@@ -1,0 +1,4 @@
+freebsd_nvswitch.o: freebsd_nvswitch.c nvlink_common.h \
+  ../common/inc/nvtypes.h ../common/inc/cpuopsys.h \
+  ../common/inc/xapi-sdk.h ../common/inc/nvCpuUuid.h nvlink_errors.h \
+  export_nvswitch.h

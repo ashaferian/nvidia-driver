@@ -744,12 +744,31 @@ static void nv_drm_update_drm_driver_features(void)
 #endif /* NV_DRM_ATOMIC_MODESET_AVAILABLE */
 }
 
+#ifndef __linux__
+/* we need to craft a linux pci_dev structure for the "pdev" variable
+ * used below. 
+ *
+ * Name          Type    Description
+ * ------------------------------------------------------------------
+ * .domain   - 
+ * .bus      - pci_bus - 
+ * .slot     - 
+ * .function - 
+ * .dev      - device  - The linux device structure
+ *
+ * We use the following structure's as dummy device structures
+ * to get away with not rebuilding on top of linuxkpi
+ */
 
+#endif
 
 /*
  * Helper function for allocate/register DRM device for given NVIDIA GPU ID.
  */
-static void nv_drm_register_drm_device(const nv_gpu_info_t *gpu_info)
+#ifdef __linux__
+static
+#endif
+void nv_drm_register_drm_device(const nv_gpu_info_t *gpu_info)
 {
     struct nv_drm_device *nv_dev = NULL;
     struct drm_device *dev = NULL;
@@ -866,6 +885,7 @@ void nv_drm_remove_devices(void)
         struct nv_drm_device *next = dev_list->next;
 
         drm_dev_unregister(dev_list->dev);
+
         nv_drm_dev_free(dev_list->dev);
 
         nv_drm_free(dev_list);
