@@ -258,5 +258,12 @@ void NVKMS_API_CALL nvkms_sema_free     (nvkms_sema_handle_t *sema);
 void NVKMS_API_CALL nvkms_sema_down     (nvkms_sema_handle_t *sema);
 void NVKMS_API_CALL nvkms_sema_up       (nvkms_sema_handle_t *sema);
 
+struct nvkms_per_open *nvkms_open_common(enum NvKmsClientType,
+                                         struct NvKmsKapiDevice *,
+                                         int *);
+void NVKMS_API_CALL nvkms_close_common(struct nvkms_per_open *);
+int NVKMS_API_CALL nvkms_ioctl_common(struct nvkms_per_open *,
+				      NvU32, NvU64, const size_t);
+
 #endif /* _NVIDIA_MODESET_OS_INTERFACE_H_ */
 

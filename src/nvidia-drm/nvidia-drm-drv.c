@@ -22,6 +22,11 @@
 
 #include "nvidia-drm-conftest.h" /* NV_DRM_AVAILABLE and NV_DRM_DRM_GEM_H_PRESENT */
 
+#ifndef __linux__
+#include "nvidia-drm.h"
+#include <drm/drm.h>
+#endif
+
 #include "nvidia-drm-priv.h"
 #include "nvidia-drm-drv.h"
 #include "nvidia-drm-fb.h"
@@ -723,7 +728,11 @@ static struct drm_driver nv_drm_driver = {
  * kernel supports atomic modeset and the 'modeset' kernel module
  * parameter is true.
  */
+#ifdef __linux__
 static void nv_drm_update_drm_driver_features(void)
+#else
+void nv_drm_update_drm_driver_features(void)
+#endif
 {
 #if defined(NV_DRM_ATOMIC_MODESET_AVAILABLE)
 
@@ -741,26 +750,12 @@ static void nv_drm_update_drm_driver_features(void)
     nv_drm_driver.dumb_destroy     = drm_gem_dumb_destroy;
 
     nv_drm_driver.gem_vm_ops       = &nv_drm_gem_vma_ops;
+
+    /* TODO get rid of */
+    NV_DRM_LOG_INFO("nv_drm_driver.driver_features = %x", nv_drm_driver.driver_features);
+
 #endif /* NV_DRM_ATOMIC_MODESET_AVAILABLE */
 }
-
-#ifndef __linux__
-/* we need to craft a linux pci_dev structure for the "pdev" variable
- * used below. 
- *
- * Name          Type    Description
- * ------------------------------------------------------------------
- * .domain   - 
- * .bus      - pci_bus - 
- * .slot     - 
- * .function - 
- * .dev      - device  - The linux device structure
- *
- * We use the following structure's as dummy device structures
- * to get away with not rebuilding on top of linuxkpi
- */
-
-#endif
 
 /*
  * Helper function for allocate/register DRM device for given NVIDIA GPU ID.

@@ -56,6 +56,7 @@ void nv_drm_unlock_user_pages(unsigned long , struct page **);
 void *nv_drm_vmap(struct page **, unsigned long);
 void nv_drm_vunmap(void *);
 uint64_t nv_drm_get_time_usec(void);
+void nv_drm_update_drm_driver_features(void);
 
 /* devclass for linux_pci_register_drm_driver */
 extern devclass_t nv_drm_devclass;

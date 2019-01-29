@@ -55,6 +55,14 @@ int nv_drm_init(void)
     NV_DRM_LOG_INFO("nvKms->enumerateGpus = %lx", (unsigned long)nvKms->enumerateGpus);
 
     /* 
+     * set the driver features here as the bsd probe func
+     * can be called more than once. Also specify that we are
+     * doing modesetting
+     */
+    nv_drm_modeset_module_param = true;
+    nv_drm_update_drm_driver_features();
+
+    /* 
      * register our pci driver to add drm devices
      * We use our own probe function (nv_drm_bsd_probe)
      * instead of the linux one as the linux one assumes

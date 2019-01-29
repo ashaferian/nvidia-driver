@@ -618,6 +618,7 @@ int nvidia_open_dev_kernel(
     nv_state_t *nv = nvidia_find_state(gpu_id);
 
     if (nv == NULL) {
+	printf("nvidia_open_dev_kernel: Failed to find the nvidia state\n");
         return EINVAL;
     }
 
@@ -625,6 +626,7 @@ int nvidia_open_dev_kernel(
     status = nvidia_open_dev(nv, NULL /* filep */);
     nv_unlock_api(nv);
 
+    printf("nvidia_open_dev_kernel: nvidia_open_dev status = %d\n", status);
     return status;
 }
 

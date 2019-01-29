@@ -244,20 +244,21 @@ nvidia-drm-drv.o: nvidia-drm-drv.c nvidia-drm-conftest.h \
   ../common/linuxkpi/include/drm/drm_color_mgmt.h \
   ../common/linuxkpi/include/drm/drm_debugfs_crc.h \
   ../common/linuxkpi/include/drm/drm_mode_config.h \
-  ../common/linuxkpi/include/drm/drm_auth.h nv-mm.h nvidia-drm-priv.h \
-  ../common/linuxkpi/include/drm/drmP.h /usr/src/sys/sys/sglist.h \
-  /usr/src/sys/sys/fcntl.h /usr/src/sys/sys/filio.h \
-  /usr/src/sys/sys/poll.h /usr/src/sys/sys/resourcevar.h \
-  /usr/src/sys/vm/vm_map.h /usr/src/sys/vm/vm_pageout.h \
-  /usr/src/sys/vm/vm_pager.h /usr/src/sys/vm/vm_phys.h machine/sysarch.h \
-  x86/sysarch.h /usr/src/sys/sys/mman.h /usr/src/sys/sys/memrange.h \
+  ../common/linuxkpi/include/drm/drm_auth.h nv-mm.h nvidia-drm.h \
+  /usr/src/sys/compat/linuxkpi/common/include/linux/vmalloc.h \
+  nv-pci-table.h nvidia-drm-priv.h ../common/linuxkpi/include/drm/drmP.h \
+  /usr/src/sys/sys/sglist.h /usr/src/sys/sys/fcntl.h \
+  /usr/src/sys/sys/filio.h /usr/src/sys/sys/poll.h \
+  /usr/src/sys/sys/resourcevar.h /usr/src/sys/vm/vm_map.h \
+  /usr/src/sys/vm/vm_pageout.h /usr/src/sys/vm/vm_pager.h \
+  /usr/src/sys/vm/vm_phys.h machine/sysarch.h x86/sysarch.h \
+  /usr/src/sys/sys/mman.h /usr/src/sys/sys/memrange.h \
   /usr/src/sys/dev/agp/agpvar.h /usr/src/sys/sys/agpio.h \
   ../common/linuxkpi/gplv2/include/linux/platform_device.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/poll.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/file.h \
   /usr/src/sys/sys/capsicum.h \
   ../common/linuxkpi/gplv2/include/linux/ratelimit.h \
-  /usr/src/sys/compat/linuxkpi/common/include/linux/vmalloc.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/ioctl.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/math64.h \
   ../common/linuxkpi/gplv2/include/linux/dma-fence.h \

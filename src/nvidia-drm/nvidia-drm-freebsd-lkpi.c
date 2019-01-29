@@ -236,6 +236,7 @@ struct pci_driver nv_drm_pci_driver = {
  * from the probed device and register it with the drm
  * subsystem.
  */
+int nv_global_major_number;
 int nv_drm_bsd_probe(struct pci_dev *dev,
 			      const struct pci_device_id *ent)
 {
@@ -251,18 +252,12 @@ int nv_drm_bsd_probe(struct pci_dev *dev,
 	if (dev->vendor != 0x10de)
 		return 0;
 
-	/* 
-	 *get the GPU id from the devclass
-	 *nvidia_devclass = devclass_find("nvidia");
-	 *sc = devclass_get_softc(nvidia_devclass, 0);
-	 *if (!sc) {
-	 *NV_DRM_LOG_ERR("Could not get devclass for %d", 0);
-	 *return -1;
-	 *	}
+	/*
+	 * can't get the actual GPU id and can't use the pci_dev
+	 * device field as it will be 0xffffff.. (PCI_ANY_ID)
+	 * just increment a global counter as a distinguisher.
 	 */
-
-	/* just use the device ID for now */
-	gpu_info.gpu_id = ent->device;
+	gpu_info.gpu_id = nv_global_major_number++;
 	gpu_info.os_dev_ptr = dev;
 	
 	nv_drm_register_drm_device(&gpu_info);
