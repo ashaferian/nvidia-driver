@@ -84,4 +84,8 @@ BSDSRCTOP=/usr/src
 CFLAGS+= -I${BSDSRCTOP}/sys/compat/linuxkpi/common/include
 CFLAGS+= -I${BSDSRCTOP}/sys/contrib/ck/include
 
+# add src/nvidia as we need headers from there for nvidia_softc
+# we use the softc to get the device_t during probing
+CFLAGS+= -I../nvidia/
+
 .include <bsd.kmod.mk>

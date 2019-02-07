@@ -108,51 +108,63 @@ struct nvkms_per_open {
 
 void* NVKMS_API_CALL nvkms_alloc(size_t size, NvBool zero)
 {
-    return malloc(size, M_NVIDIA_MODESET, M_WAITOK | (zero ? M_ZERO : 0));
+	//printf("nvkms_alloc: %zu\n", size);
+	void *ret = malloc(size, M_NVIDIA_MODESET, M_WAITOK | (zero ? M_ZERO : 0));
+	//printf("nvkms_alloc:return: 0x%x\n", (unsigned int)ret);
+	return ret;
 }
 
 void NVKMS_API_CALL nvkms_free(void *ptr, size_t size)
 {
+	//printf("nvkms_free: 0x%x\n", (unsigned int)ptr);
     free(ptr, M_NVIDIA_MODESET);
 }
 
 void* NVKMS_API_CALL nvkms_memset(void *ptr, NvU8 c, size_t size)
 {
+	//printf("nvkms_memset: 0x%x\n", (unsigned int)ptr);
     return memset(ptr, c, size);
 }
 
 void* NVKMS_API_CALL nvkms_memcpy(void *dest, const void *src, size_t n)
 {
+	//printf("nvkms_memcpy: to 0x%x\n", (unsigned int)dest);
     return memcpy(dest, src, n);
 }
 
 void* NVKMS_API_CALL nvkms_memmove(void *dest, const void *src, size_t n)
 {
+	//printf("nvkms_memmove: to 0x%x\n", (unsigned int)dest);
     return memmove(dest, src, n);
 }
 
 int NVKMS_API_CALL nvkms_memcmp(const void *s1, const void *s2, size_t n)
 {
+	//printf("nvkms_memcmp: 0x%x vs 0x%x\n", (unsigned int)s1, (unsigned int)s2);
     return memcmp(s1, s2, n);
 }
 
 size_t NVKMS_API_CALL nvkms_strlen(const char *s)
 {
+	//printf("nvkms_strlen: %s\n", s);
     return strlen(s);
 }
 
 int NVKMS_API_CALL nvkms_strcmp(const char *s1, const char *s2)
 {
+	//printf("nvkms_strcmp: %s %s\n", s1, s2);
     return strcmp(s1, s2);
 }
 
 char* NVKMS_API_CALL nvkms_strncpy(char *dest, const char *src, size_t n)
 {
+	//printf("nvkms_strncpy: to 0x%x\n", (unsigned int)dest);
     return strncpy(dest, src, n);
 }
 
 void NVKMS_API_CALL nvkms_usleep(NvU64 usec)
 {
+	//printf("nvkms_usleep:");
     DELAY(usec);
 }
 
@@ -162,16 +174,18 @@ NvU64 NVKMS_API_CALL nvkms_get_usec(void)
 
     getmicrotime(&tv);
 
+    //printf("nvkms_get_usec:return: %llu\n", (((NvU64)tv.tv_sec) * 1000000) + tv.tv_usec);
     return (((NvU64)tv.tv_sec) * 1000000) + tv.tv_usec;
 }
 
 int NVKMS_API_CALL nvkms_copyin(void *kptr, NvU64 uaddr, size_t n)
 {
-    if (!nvKmsNvU64AddressIsSafe(uaddr)) {
-        return EINVAL;
-    }
+	if (!nvKmsNvU64AddressIsSafe(uaddr)) {
+		return EINVAL;
+	}
 
-    return copyin(nvKmsNvU64ToPointer(uaddr), kptr, n);
+	int ret = copyin(nvKmsNvU64ToPointer(uaddr), kptr, n);
+	return ret;
 }
 
 int NVKMS_API_CALL nvkms_copyout(NvU64 uaddr, const void *kptr, size_t n)
@@ -180,7 +194,8 @@ int NVKMS_API_CALL nvkms_copyout(NvU64 uaddr, const void *kptr, size_t n)
         return EINVAL;
     }
 
-    return copyout(kptr, nvKmsNvU64ToPointer(uaddr), n);
+    int ret = copyout(kptr, nvKmsNvU64ToPointer(uaddr), n);
+    return ret;
 }
 
 void NVKMS_API_CALL nvkms_yield(void)
@@ -233,6 +248,8 @@ void NVKMS_API_CALL
 nvkms_event_queue_changed(nvkms_per_open_handle_t *pOpenKernel,
                           NvBool eventsAvailable)
 {
+	//printf("nvkms_event_queue_changed: \n");
+
     struct nvkms_per_open *popen = pOpenKernel;
 
     mtx_lock(&popen->events.lock);
@@ -257,6 +274,7 @@ struct nvkms_ref_ptr {
 
 struct nvkms_ref_ptr* NVKMS_API_CALL nvkms_alloc_ref_ptr(void *ptr)
 {
+	//printf("nvkms_alloc_ref_ptr: 0x%x\n", (unsigned int)ptr);
     struct nvkms_ref_ptr *ref_ptr = nvkms_alloc(sizeof(*ref_ptr), NV_FALSE);
     if (ref_ptr) {
         mtx_init(&ref_ptr->lock, "nvkms-ref-ptr-lock", NULL, MTX_SPIN);
@@ -264,11 +282,13 @@ struct nvkms_ref_ptr* NVKMS_API_CALL nvkms_alloc_ref_ptr(void *ptr)
         ref_ptr->refcnt = 1;
         ref_ptr->ptr = ptr;
     }
+    //printf("nvkms_alloc_ref_ptr:return: 0x%x\n", (unsigned int)ref_ptr);
     return ref_ptr;
 }
 
 void NVKMS_API_CALL nvkms_free_ref_ptr(struct nvkms_ref_ptr *ref_ptr)
 {
+	//printf("nvkms_free_ref_ptr: \n");
     if (ref_ptr) {
         ref_ptr->ptr = NULL;
         // Release the owner's reference of the ref_ptr.
@@ -278,6 +298,7 @@ void NVKMS_API_CALL nvkms_free_ref_ptr(struct nvkms_ref_ptr *ref_ptr)
 
 void NVKMS_API_CALL nvkms_inc_ref(struct nvkms_ref_ptr *ref_ptr)
 {
+	//printf("nvkms_inc_ref: \n");
     mtx_lock_spin(&ref_ptr->lock);
     ref_ptr->refcnt++;
     mtx_unlock_spin(&ref_ptr->lock);
@@ -287,6 +308,7 @@ void* NVKMS_API_CALL nvkms_dec_ref(struct nvkms_ref_ptr *ref_ptr)
 {
     void *ptr = ref_ptr->ptr;
 
+    //printf("nvkms_dec_ref: \n");
     mtx_lock_spin(&ref_ptr->lock);
     if (--ref_ptr->refcnt == 0) {
         mtx_destroy(&ref_ptr->lock);
@@ -295,6 +317,7 @@ void* NVKMS_API_CALL nvkms_dec_ref(struct nvkms_ref_ptr *ref_ptr)
         mtx_unlock_spin(&ref_ptr->lock);
     }
 
+    //printf("nvkms_dec_ref:return: 0x%x\n", (unsigned int)ptr);
     return ptr;
 }
 
@@ -524,6 +547,7 @@ static int nvkms_alloc_rm(void)
     NV_STATUS nvstatus;
     int ret;
 
+    printf("nvkms_alloc_rm: \n");
     __rm_ops.version_string = NV_VERSION_STRING;
 
     nvstatus = nvidia_get_rm_ops(&__rm_ops);
@@ -541,11 +565,14 @@ static int nvkms_alloc_rm(void)
         return ret;
     }
 
-    return __rm_ops.alloc_stack(&nvkms_nvidia_stack);
+    ret = __rm_ops.alloc_stack(&nvkms_nvidia_stack);
+    printf("nvkms_alloc_rm:return: %d \n", ret);
+    return ret;
 }
 
 static void nvkms_free_rm(void)
 {
+	printf("nvkms_free_rm:return:\n");
     __rm_ops.set_callbacks(NULL);
     if (__rm_ops.free_stack != NULL) {
         __rm_ops.free_stack(nvkms_nvidia_stack);
@@ -554,6 +581,7 @@ static void nvkms_free_rm(void)
 
 void NVKMS_API_CALL nvkms_call_rm(void *ops)
 {
+	//printf("nvkms_call_rm:\n");
     __rm_ops.op(nvkms_nvidia_stack, ops);
 }
 
@@ -664,21 +692,28 @@ done:
 
 NvBool NVKMS_API_CALL nvkms_open_gpu(NvU32 gpuId)
 {
-    return __rm_ops.open_gpu(gpuId, nvkms_nvidia_stack) == 0;
+	printf("__rm_ops.open_gpu = 0x%x\n", (unsigned int)__rm_ops.open_gpu);
+    int ret = __rm_ops.open_gpu(gpuId, nvkms_nvidia_stack);
+    printf("nvkms_open_gpu:return: %d\n", ret);
+    return ret == 0;
 }
 
 void NVKMS_API_CALL nvkms_close_gpu(NvU32 gpuId)
 {
+	printf("nvkms_close_gpu:\n");
     __rm_ops.close_gpu(gpuId, nvkms_nvidia_stack);
 }
 
 NvU32 NVKMS_API_CALL nvkms_enumerate_gpus(nv_gpu_info_t *gpu_info)
 {
-    return __rm_ops.enumerate_gpus(gpu_info);
+    int ret = __rm_ops.enumerate_gpus(gpu_info);
+	printf("nvkms_enumerate_gpus:return: %d\n", ret);
+    return ret;
 }
 
 NvBool NVKMS_API_CALL nvkms_allow_write_combining(void)
 {
+	printf("nvkms_allow_write_combining:\n");
     return __rm_ops.system_info.allow_write_combining;
 }
 
@@ -689,7 +724,8 @@ NvBool NVKMS_API_CALL nvkms_allow_write_combining(void)
 static void nvkms_kapi_task_callback(void *arg, int pending __unused)
 {
 	struct NvKmsKapiDevice *device = arg;
- 
+
+	printf("nvkms_kapi_task_callback: device = 0x%lx\n", (unsigned long)device);
 	nvKmsKapiHandleEventQueueChange(device);
 }
 
@@ -705,6 +741,7 @@ struct nvkms_per_open *nvkms_open_common(enum NvKmsClientType type,
 {
     struct nvkms_per_open *popen = NULL;
 
+    printf("nvkms_open_common:\n");
     popen = nvkms_alloc(sizeof(*popen), NV_TRUE);
 
     if (popen == NULL) {
@@ -744,6 +781,7 @@ failed:
 
 void NVKMS_API_CALL nvkms_close_common(struct nvkms_per_open *popen)
 {
+	printf("nvkms_close_common:\n");
     sx_xlock(&nvkms_lock);
 
     nvKmsClose(popen->data);
@@ -781,9 +819,10 @@ int NVKMS_API_CALL nvkms_ioctl_common
 {
     NvBool ret;
 
+    printf("nvkms_ioctl_common: \n");
     sx_xlock(&nvkms_lock);
 
-    if (popen->data != NULL) {
+    if (popen && popen->data) {
         ret = nvKmsIoctl(popen->data, cmd, address, size);
     } else {
         ret = NV_FALSE;
@@ -804,12 +843,16 @@ struct nvkms_per_open* NVKMS_API_CALL nvkms_open_from_kapi
     struct NvKmsKapiDevice *device
 )
 {
+	printf("nvkms_open_from_kapi: \n");
 	int status = 0;
-	return nvkms_open_common(NVKMS_CLIENT_KERNEL_SPACE, device, &status);
+	struct nvkms_per_open *ret = nvkms_open_common(NVKMS_CLIENT_KERNEL_SPACE, device, &status);
+	printf("nvkms_open_from_kapi:return: 0x%x\n", (unsigned int)ret);
+	return ret;
 }
 
 void NVKMS_API_CALL nvkms_close_from_kapi(struct nvkms_per_open *popen)
 {
+	printf("nvkms_close_from_kapi: \n");
 	nvkms_close_common(popen);
 }
 
@@ -819,6 +862,7 @@ NvBool NVKMS_API_CALL nvkms_ioctl_from_kapi
     NvU32 cmd, void *params_address, const size_t params_size
 )
 {
+	printf("nvkms_ioctl_from_kapi: \n");
 	return nvkms_ioctl_common(popen,
                               cmd,
                               (NvU64)(NvUPtr)params_address, params_size) == 0;
@@ -835,29 +879,33 @@ struct nvkms_sema_t {
 
 nvkms_sema_handle_t* NVKMS_API_CALL nvkms_sema_alloc(void)
 {
+	printf("nvkms_sema_alloc:\n");
 	nvkms_sema_handle_t *sema = nvkms_alloc(sizeof(nvkms_sema_handle_t), NV_TRUE);
 	if (sema) {
 		printf("nvkms_sema_alloc: creating mutex\n");
 		mtx_init(&(sema->nvs_mutex), "NVIDIA Mutex", NULL, MTX_DEF);
 	}
 
-	printf("nvkms_sema_alloc: return 0x%x\n", (unsigned int)sema);
+	printf("nvkms_sema_alloc:return: 0x%x\n", (unsigned int)sema);
 	return sema;
 }
 
 void NVKMS_API_CALL nvkms_sema_free(nvkms_sema_handle_t *sema)
 {
+	printf("nvkms_sema_free:\n");
 	mtx_destroy(&sema->nvs_mutex);
 	nvkms_free(sema, sizeof(*sema));
 }
 
 void NVKMS_API_CALL nvkms_sema_down(nvkms_sema_handle_t *sema)
 {
+	printf("nvkms_sema_down:\n");
 	mtx_lock(&sema->nvs_mutex);
 }
 
 void NVKMS_API_CALL nvkms_sema_up(nvkms_sema_handle_t *sema)
 {
+	printf("nvkms_sema_up:\n");
 	mtx_unlock(&sema->nvs_mutex);
 }
 
@@ -870,6 +918,7 @@ NvBool NVKMS_KAPI_CALL nvKmsKapiGetFunctionsTable
     struct NvKmsKapiFunctionsTable *funcsTable
 )
 {
+	printf("nvKmsKapiGetFunctionsTable:\n");
     return nvKmsKapiGetFunctionsTableInternal(funcsTable);
 }
 
@@ -943,6 +992,7 @@ static int nvkms_open(
     struct thread *td
 )
 {
+	printf("nvkms_open:\n");
     struct nvkms_per_open *popen;
     int status;
 
@@ -950,6 +1000,7 @@ static int nvkms_open(
 
     if (nvkms_module.is_unloading) {
         sx_xunlock(&nvkms_module.lock);
+	printf("nvkms_open:return ENXIO\n");
         return ENXIO;
     }
 
@@ -958,6 +1009,7 @@ static int nvkms_open(
 
     popen = nvkms_alloc(sizeof(*popen), NV_TRUE);
     if (popen == NULL) {
+	    printf("nvkms_open:return ENNOMEM\n");
         return ENOMEM;
     }
 
@@ -969,6 +1021,7 @@ static int nvkms_open(
     status = devfs_set_cdevpriv(popen, nvkms_close);
     if (status != 0) {
         nvkms_free(popen, sizeof(*popen));
+	printf("nvkms_open:return status = %d\n", status);
         return status;
     }
 
@@ -982,6 +1035,7 @@ static int nvkms_open(
      * If nvkms_open() fails, the file descriptor will be closed, and
      * nvkms_close() will be called to free popen.
      */
+    printf("nvkms_open:return: %d\n", (popen->data == NULL) ? EPERM : 0);
     return (popen->data == NULL) ? EPERM : 0;
 }
 

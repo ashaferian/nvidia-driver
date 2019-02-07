@@ -20,6 +20,19 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
+/* have to be done first before the LIST_HEAD linux version */
+#ifndef __linux__
+/* 
+ * include the FreeBSD structures (nvidia_softc)
+ *  have to grab it from src/nvidia/nv-freebsd.h
+ */
+#include "../nvidia/nv-misc.h"
+#include "../nvidia/os-interface.h"
+#define NVRM
+#include "../nvidia/nv.h"
+#include "../nvidia/nv-freebsd.h"
+#endif
+
 #include <linux/module.h>
 #include <linux/slab.h>
 #include <linux/err.h>
@@ -241,23 +254,39 @@ int nv_drm_bsd_probe(struct pci_dev *dev,
 			      const struct pci_device_id *ent)
 {
 	nv_gpu_info_t gpu_info;
-	//devclass_t nvidia_devclass;
-	//struct nvidia_softc *sc;
+	struct nvidia_softc *sc;
+	nv_state_t *nv;
 
 	NV_DRM_LOG_INFO("pci_dev %lx ------------------------", (unsigned long)dev);
 	NV_DRM_LOG_INFO("->vendor = %d", dev->vendor);
 	NV_DRM_LOG_INFO("->device = %d", dev->device);
-	NV_DRM_LOG_INFO("->driver = %lx", (unsigned long)dev->pdrv);
-
-	if (dev->vendor != 0x10de)
-		return 0;
+	NV_DRM_LOG_INFO("->driver = 0x%lx", (unsigned long)dev->pdrv);
 
 	/*
-	 * can't get the actual GPU id and can't use the pci_dev
-	 * device field as it will be 0xffffff.. (PCI_ANY_ID)
-	 * just increment a global counter as a distinguisher.
+	 * We need to get the GPU id from the FreeBSD devclass
+	 * This is absolutely needed as the nvkms kapi
+	 * uses the GPU id for its operations
 	 */
-	gpu_info.gpu_id = nv_global_major_number++;
+	for (int i = 0; i < NV_MAX_DEVICES; i++) {
+		sc = devclass_get_softc(nvidia_devclass, i);
+		if (!sc)
+			continue;
+		nv = sc->nv_state;
+
+		/* find a matching GPU softc to get an ID from */
+		NV_DRM_LOG_INFO("nv->vendor = 0x%lx, ent->vendor = 0x%lx", (unsigned long)nv->pci_info.vendor_id, (unsigned long)ent->vendor);
+		NV_DRM_LOG_INFO("nv->vendor = 0x%lx, ent->vendor = 0x%lx", (unsigned long)nv->pci_info.device_id, (unsigned long)ent->device);
+		if (nv->pci_info.vendor_id == ent->vendor
+		    && nv->pci_info.device_id == ent->device) {
+			break;
+		}
+	}
+	if (!nv)
+		return 0;
+
+	NV_DRM_LOG_INFO("nv = 0x%lx", (unsigned long)nv);
+	NV_DRM_LOG_INFO("nv->gpu_id = 0x%lx", (unsigned long)nv->gpu_id);
+	gpu_info.gpu_id = nv->gpu_id;
 	gpu_info.os_dev_ptr = dev;
 	
 	nv_drm_register_drm_device(&gpu_info);

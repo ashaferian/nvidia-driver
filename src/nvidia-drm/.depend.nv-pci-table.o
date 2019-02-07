@@ -1,28 +1,32 @@
 nv-pci-table.o: nv-pci-table.c \
   ../common/linuxkpi/gplv2/include/linux/kernel.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/kernel.h \
-  /usr/src/sys/sys/cdefs.h /usr/src/sys/sys/types.h machine/endian.h \
-  x86/endian.h /usr/src/sys/sys/_types.h machine/_types.h x86/_types.h \
-  machine/_limits.h x86/_limits.h /usr/src/sys/sys/_pthreadtypes.h \
+  /usr/src/sys/sys/cdefs.h /usr/src/sys/sys/types.h \
+  ../nvidia/machine/endian.h ../nvidia/x86/endian.h \
+  /usr/src/sys/sys/_types.h ../nvidia/machine/_types.h \
+  ../nvidia/x86/_types.h ../nvidia/machine/_limits.h \
+  ../nvidia/x86/_limits.h /usr/src/sys/sys/_pthreadtypes.h \
   /usr/src/sys/sys/_stdint.h /usr/src/sys/sys/select.h \
   /usr/src/sys/sys/_sigset.h /usr/src/sys/sys/_timeval.h \
   /usr/src/sys/sys/timespec.h /usr/src/sys/sys/_timespec.h \
-  /usr/src/sys/sys/systm.h machine/atomic.h \
-  /usr/src/sys/sys/atomic_common.h machine/cpufunc.h \
+  /usr/src/sys/sys/systm.h ../nvidia/machine/atomic.h \
+  /usr/src/sys/sys/atomic_common.h ../nvidia/machine/cpufunc.h \
   /usr/src/sys/sys/callout.h /usr/src/sys/sys/_callout.h \
-  /usr/src/sys/sys/queue.h /usr/src/sys/sys/stdint.h machine/_stdint.h \
-  x86/_stdint.h /usr/src/sys/sys/param.h /usr/src/sys/sys/_null.h \
+  /usr/src/sys/sys/queue.h /usr/src/sys/sys/stdint.h \
+  ../nvidia/machine/_stdint.h ../nvidia/x86/_stdint.h \
+  /usr/src/sys/sys/param.h /usr/src/sys/sys/_null.h \
   /usr/src/sys/sys/syslimits.h /usr/src/sys/sys/errno.h \
-  /usr/src/sys/sys/time.h /usr/src/sys/sys/priority.h machine/param.h \
-  machine/_align.h x86/_align.h /usr/src/sys/sys/pcpu.h \
+  /usr/src/sys/sys/time.h /usr/src/sys/sys/priority.h \
+  ../nvidia/machine/param.h ../nvidia/machine/_align.h \
+  ../nvidia/x86/_align.h /usr/src/sys/sys/pcpu.h \
   /usr/src/sys/sys/_cpuset.h /usr/src/sys/sys/_bitset.h \
   /usr/src/sys/sys/_lock.h /usr/src/sys/sys/_mutex.h \
   /usr/src/sys/sys/_sx.h /usr/src/sys/sys/_rmlock.h \
-  /usr/src/sys/sys/resource.h machine/pcpu.h /usr/src/sys/sys/kpilite.h \
-  /usr/src/sys/sys/libkern.h /usr/src/sys/sys/stat.h \
-  /usr/src/sys/sys/smp.h /usr/src/sys/sys/cpuset.h \
-  /usr/src/sys/sys/bitset.h /usr/src/sys/sys/stddef.h \
-  /usr/src/sys/sys/syslog.h \
+  /usr/src/sys/sys/resource.h ../nvidia/machine/pcpu.h \
+  /usr/src/sys/sys/kpilite.h /usr/src/sys/sys/libkern.h \
+  /usr/src/sys/sys/stat.h /usr/src/sys/sys/smp.h \
+  /usr/src/sys/sys/cpuset.h /usr/src/sys/sys/bitset.h \
+  /usr/src/sys/sys/stddef.h /usr/src/sys/sys/syslog.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/bitops.h \
   ../common/linuxkpi/gplv2/include/linux/compiler.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/compiler.h \
@@ -32,14 +36,18 @@ nv-pci-table.o: nv-pci-table.c \
   /usr/src/sys/sys/proc.h /usr/src/sys/sys/event.h \
   /usr/src/sys/sys/condvar.h /usr/src/sys/sys/lock_profile.h \
   /usr/src/sys/sys/osd.h /usr/src/sys/sys/rtprio.h \
-  /usr/src/sys/sys/runq.h machine/runq.h /usr/src/sys/sys/sigio.h \
-  /usr/src/sys/sys/signal.h machine/signal.h x86/signal.h \
+  /usr/src/sys/sys/runq.h ../nvidia/machine/runq.h \
+  /usr/src/sys/sys/sigio.h /usr/src/sys/sys/signal.h \
+  ../nvidia/machine/signal.h ../nvidia/x86/signal.h \
   /usr/src/sys/sys/signalvar.h /usr/src/sys/sys/ucontext.h \
-  machine/ucontext.h x86/ucontext.h /usr/src/sys/sys/_ucontext.h \
-  /usr/src/sys/sys/ucred.h /usr/src/sys/bsm/audit.h \
-  /usr/src/sys/sys/_domainset.h machine/proc.h machine/segments.h \
-  x86/segments.h machine/cpu.h machine/psl.h x86/psl.h machine/frame.h \
-  x86/frame.h /usr/src/sys/sys/sched.h /usr/src/sys/sys/sleepqueue.h \
+  ../nvidia/machine/ucontext.h ../nvidia/x86/ucontext.h \
+  /usr/src/sys/sys/_ucontext.h /usr/src/sys/sys/ucred.h \
+  /usr/src/sys/bsm/audit.h /usr/src/sys/sys/_domainset.h \
+  ../nvidia/machine/proc.h ../nvidia/machine/segments.h \
+  ../nvidia/x86/segments.h ../nvidia/machine/cpu.h \
+  ../nvidia/machine/psl.h ../nvidia/x86/psl.h ../nvidia/machine/frame.h \
+  ../nvidia/x86/frame.h /usr/src/sys/sys/sched.h \
+  /usr/src/sys/sys/sleepqueue.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/bitmap.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/compat.h \
   /usr/src/sys/sys/malloc.h \
@@ -50,10 +58,11 @@ nv-pci-table.o: nv-pci-table.c \
   ../common/linuxkpi/gplv2/include/linux/page.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/page.h \
   /usr/src/sys/sys/vmmeter.h /usr/src/sys/sys/counter.h \
-  machine/counter.h /usr/src/sys/sys/domainset.h /usr/src/sys/vm/vm.h \
-  machine/vm.h machine/specialreg.h x86/specialreg.h \
-  /usr/src/sys/vm/vm_page.h /usr/src/sys/vm/pmap.h machine/pmap.h \
-  /usr/src/sys/vm/_vm_radix.h \
+  ../nvidia/machine/counter.h /usr/src/sys/sys/domainset.h \
+  /usr/src/sys/vm/vm.h ../nvidia/machine/vm.h \
+  ../nvidia/machine/specialreg.h ../nvidia/x86/specialreg.h \
+  /usr/src/sys/vm/vm_page.h /usr/src/sys/vm/pmap.h \
+  ../nvidia/machine/pmap.h /usr/src/sys/vm/_vm_radix.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/rwsem.h \
   /usr/src/sys/sys/lock.h /usr/src/sys/sys/ktr_class.h \
   /usr/src/sys/sys/sx.h /usr/src/sys/sys/lockstat.h \
@@ -64,7 +73,7 @@ nv-pci-table.o: nv-pci-table.c \
   /usr/src/sys/compat/linuxkpi/common/include/linux/slab.h \
   /usr/src/sys/sys/limits.h /usr/src/sys/vm/uma.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/gfp.h \
-  /usr/src/sys/vm/vm_param.h machine/vmparam.h \
+  /usr/src/sys/vm/vm_param.h ../nvidia/machine/vmparam.h \
   /usr/src/sys/vm/vm_object.h /usr/src/sys/sys/_pctrie.h \
   /usr/src/sys/sys/_rwlock.h /usr/src/sys/vm/vm_extern.h \
   /usr/src/sys/vm/vm_kern.h \
@@ -81,7 +90,8 @@ nv-pci-table.o: nv-pci-table.c \
   /usr/src/sys/compat/linuxkpi/common/include/asm/byteorder.h \
   /usr/src/sys/sys/endian.h \
   /usr/src/sys/compat/linuxkpi/common/include/asm/uaccess.h \
-  machine/stdarg.h x86/stdarg.h /usr/src/sys/sys/_stdarg.h \
+  ../nvidia/machine/stdarg.h ../nvidia/x86/stdarg.h \
+  /usr/src/sys/sys/_stdarg.h \
   ../common/linuxkpi/gplv2/include/linux/irqflags.h \
   ../common/linuxkpi/gplv2/include/linux/kconfig.h \
   ../common/linuxkpi/gplv2/include/asm/cpufeature.h \
@@ -100,13 +110,14 @@ nv-pci-table.o: nv-pci-table.c \
   /usr/src/sys/sys/rangelock.h /usr/src/sys/sys/selinfo.h \
   /usr/src/sys/sys/uio.h /usr/src/sys/sys/_iovec.h \
   /usr/src/sys/sys/_uio.h /usr/src/sys/sys/acl.h /usr/src/sys/sys/ktr.h \
-  vnode_if.h vnode_if_typedef.h vnode_if_newproto.h \
-  /usr/src/sys/sys/conf.h /usr/src/sys/sys/eventhandler.h \
-  /usr/src/sys/sys/socket.h /usr/src/sys/sys/_sockaddr_storage.h \
-  /usr/src/sys/sys/mbuf.h /usr/src/sys/net/bpf.h /usr/src/sys/net/dlt.h \
-  /usr/src/sys/net/if.h /usr/src/sys/net/if_var.h \
-  /usr/src/sys/sys/buf_ring.h /usr/src/sys/net/vnet.h \
-  /usr/src/sys/sys/ck.h /usr/src/sys/contrib/ck/include/ck_queue.h \
+  ../nvidia/vnode_if.h ../nvidia/vnode_if_typedef.h \
+  ../nvidia/vnode_if_newproto.h /usr/src/sys/sys/conf.h \
+  /usr/src/sys/sys/eventhandler.h /usr/src/sys/sys/socket.h \
+  /usr/src/sys/sys/_sockaddr_storage.h /usr/src/sys/sys/mbuf.h \
+  /usr/src/sys/net/bpf.h /usr/src/sys/net/dlt.h /usr/src/sys/net/if.h \
+  /usr/src/sys/net/if_var.h /usr/src/sys/sys/buf_ring.h \
+  /usr/src/sys/net/vnet.h /usr/src/sys/sys/ck.h \
+  /usr/src/sys/contrib/ck/include/ck_queue.h \
   /usr/src/sys/contrib/ck/include/ck_pr.h \
   /usr/src/sys/contrib/ck/include/ck_cc.h \
   /usr/src/sys/contrib/ck/include/gcc/ck_cc.h \
@@ -136,24 +147,28 @@ nv-pci-table.o: nv-pci-table.c \
   /usr/src/sys/compat/linuxkpi/common/include/linux/kref.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/mutex.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/spinlock.h \
-  /usr/src/sys/sys/kdb.h machine/setjmp.h x86/setjmp.h \
+  /usr/src/sys/sys/kdb.h ../nvidia/machine/setjmp.h \
+  ../nvidia/x86/setjmp.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/rwlock.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/bottom_half.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/sysfs.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/moduleparam.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/export.h \
-  /usr/src/sys/sys/linker.h machine/elf.h x86/elf.h \
+  /usr/src/sys/sys/linker.h ../nvidia/machine/elf.h ../nvidia/x86/elf.h \
   /usr/src/sys/sys/elf32.h /usr/src/sys/sys/elf_common.h \
   /usr/src/sys/sys/elf64.h /usr/src/sys/sys/elf_generic.h \
   /usr/src/sys/sys/kobj.h nv-pci-table.h \
   ../common/linuxkpi/gplv2/include/linux/pci.h /usr/src/sys/sys/bus.h \
-  machine/_bus.h /usr/src/sys/sys/_bus_dma.h /usr/src/sys/sys/ioccom.h \
-  device_if.h bus_if.h machine/bus.h x86/bus.h machine/bus_dma.h \
-  x86/bus_dma.h /usr/src/sys/sys/bus_dma.h x86/busdma_impl.h \
-  /usr/src/sys/sys/rman.h machine/resource.h \
+  ../nvidia/machine/_bus.h /usr/src/sys/sys/_bus_dma.h \
+  /usr/src/sys/sys/ioccom.h ../nvidia/device_if.h ../nvidia/bus_if.h \
+  ../nvidia/machine/bus.h ../nvidia/x86/bus.h \
+  ../nvidia/machine/bus_dma.h ../nvidia/x86/bus_dma.h \
+  /usr/src/sys/sys/bus_dma.h ../nvidia/x86/busdma_impl.h \
+  /usr/src/sys/sys/rman.h ../nvidia/machine/resource.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/pci.h \
-  /usr/src/sys/sys/pciio.h /usr/src/sys/dev/pci/pcivar.h pci_if.h \
-  /usr/src/sys/dev/pci/pcireg.h /usr/src/sys/dev/pci/pci_private.h \
+  /usr/src/sys/sys/pciio.h /usr/src/sys/dev/pci/pcivar.h \
+  ../nvidia/pci_if.h /usr/src/sys/dev/pci/pcireg.h \
+  /usr/src/sys/dev/pci/pci_private.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/dmapool.h \
   ../common/linuxkpi/gplv2/include/linux/io.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/io.h \

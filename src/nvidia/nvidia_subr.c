@@ -548,6 +548,7 @@ int nvidia_open_dev(
     struct nvidia_filep *filep
 )
 {
+	printf("nvidia_open_dev:\n");
     int status = ENOMEM;
     struct nvidia_softc *sc = nv->os_state;
     nvidia_stack_t *sp = NULL;
@@ -606,6 +607,7 @@ failed:
         nv_dev_free_stacks(sc);
     }
 
+    printf("nvidia_open_dev:return: %d\n", status);
     return status;
 }
 
@@ -617,6 +619,7 @@ int nvidia_open_dev_kernel(
     int status;
     nv_state_t *nv = nvidia_find_state(gpu_id);
 
+    printf("nvidia_open_dev_kernel:\n");
     if (nv == NULL) {
 	printf("nvidia_open_dev_kernel: Failed to find the nvidia state\n");
         return EINVAL;

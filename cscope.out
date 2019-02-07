@@ -1,4 +1,4 @@
-cscope 15 /usr/home/ashafer/NVIDIA_FREEBSD               0003065363
+cscope 15 /usr/home/ashafer/NVIDIA_FREEBSD               0003068737
 	@src/common/inc/cpuopsys.h
 
 26 #iâdeà
@@ -193237,65 +193237,91 @@ cmd
 
 	@src/nvidia-drm/nvidia-drm-freebsd-lkpi.c
 
-23 
-	~<lšux/moduË.h
->
+24 #iâdeà
+__lšux__
 
-24 
-	~<lšux/¦ab.h
->
 
-25 
-	~<lšux/”r.h
->
-
-27 
-	~"nvidŸ-drm-os-š‹rçû.h
-"
-
-28 
-	~"nvidŸ-drm.h
+29 
+	~"../nvidŸ/nv-misc.h
 "
 
 30 
+	~"../nvidŸ/os-š‹rçû.h
+"
+
+31 
+	#NVRM
+
+
+	)
+
+32 
+	~"../nvidŸ/nv.h
+"
+
+33 
+	~"../nvidŸ/nv-ä“bsd.h
+"
+
+36 
+	~<lšux/moduË.h
+>
+
+37 
+	~<lšux/¦ab.h
+>
+
+38 
+	~<lšux/”r.h
+>
+
+40 
+	~"nvidŸ-drm-os-š‹rçû.h
+"
+
+41 
+	~"nvidŸ-drm.h
+"
+
+43 
 	~"nvidŸ-drm-cÚáe¡.h
 "
 
-32 #ià
+45 #ià
 defšed
 (
 NV_DRM_AVAILABLE
 )
 
-34 
+47 
 	~"nv-mm.h
 "
 
-36 #iâdeà
+49 #iâdeà
 __lšux__
 
 
-37 
+50 
 	~"nv-gpu-šfo.h
 "
 
-38 
+51 
 	~"nvidŸ-drm-drv.h
 "
 
-39 
+52 
 	~"nvidŸ-drm-´iv.h
 "
 
-42 
+55 
 MODULE_PARM_DESC
 (
 
-43 
+56 
 mode£t
 ,
 
-45 
+58 
 boÞ
  
 	gnv_drm_mode£t_moduË_·¿m
@@ -193303,7 +193329,7 @@ boÞ
 çl£
 ;
 
-46 
+59 
 moduË_·¿m_Çmed
 (
 mode£t
@@ -193313,7 +193339,7 @@ nv_drm_mode£t_moduË_·¿m
 boÞ
 , 0400);
 
-48 *
+61 *
 	$nv_drm_ÿÎoc
 (
 size_t
@@ -193323,7 +193349,7 @@ nmemb
 size
 )
 
-50  
+63  
 	`kz®loc
 (
 nmemb
@@ -193333,49 +193359,49 @@ size
 GFP_KERNEL
 );
 
-51 
+64 
 	}
 }
 
-53 
+66 
 	$nv_drm_ä“
 (*
 ±r
 )
 
-55 ià(
+68 ià(
 	`IS_ERR
 (
 ±r
 )) {
 
-59 
+72 
 	`kä“
 (
 ±r
 );
 
-60 
+73 
 	}
 }
 
-62 *
+75 *
 	$nv_drm_a¥rštf
 (cÚ¡ *
 fmt
 , ...)
 
-64 
+77 
 va_li¡
  
 ­
 ;
 
-65 *
+78 *
 p
 ;
 
-67 
+80 
 	`va_¡¬t
 (
 ­
@@ -193383,7 +193409,7 @@ p
 fmt
 );
 
-68 
+81 
 p
  = 
 	`kva¥rštf
@@ -193395,21 +193421,21 @@ fmt
 ­
 );
 
-69 
+82 
 	`va_’d
 (
 ­
 );
 
-71  
+84  
 p
 ;
 
-72 
+85 
 	}
 }
 
-74 #ià
+87 #ià
 defšed
 (
 NVCPU_X86
@@ -193417,11 +193443,11 @@ NVCPU_X86
 NVCPU_X86_64
 )
 
-75 #ifdeà
+88 #ifdeà
 __lšux__
 
 
-76 
+89 
 	#WRITE_COMBINE_FLUSH
 (è
 asm
@@ -193429,7 +193455,7 @@ asm
 
 	)
 
-78 
+91 
 	#WRITE_COMBINE_FLUSH
 (è
 	`sãnû
@@ -193437,19 +193463,19 @@ asm
 
 	)
 
-80 #–ià
+93 #–ià
 defšed
 (
 NVCPU_FAMILY_ARM
 )
 
-81 #ià
+94 #ià
 defšed
 (
 NVCPU_ARM
 )
 
-82 
+95 
 	#WRITE_COMBINE_FLUSH
 (è{ 
 	`dsb
@@ -193459,13 +193485,13 @@ NVCPU_ARM
 
 	)
 
-83 #–ià
+96 #–ià
 defšed
 (
 NVCPU_AARCH64
 )
 
-84 
+97 
 	#WRITE_COMBINE_FLUSH
 (è
 	`mb
@@ -193473,17 +193499,17 @@ NVCPU_AARCH64
 
 	)
 
-86 #–ià
+99 #–ià
 defšed
 (
 NVCPU_PPC64LE
 )
 
-87 #ifdeà
+100 #ifdeà
 __lšux__
 
 
-88 
+101 
 	#WRITE_COMBINE_FLUSH
 (è
 asm
@@ -193491,7 +193517,7 @@ asm
 
 	)
 
-91 
+104 
 	#WRITE_COMBINE_FLUSH
 (è
 __asm
@@ -193501,25 +193527,25 @@ __asm
 
 	)
 
-95 
+108 
 	$nv_drm_wr™e_combše_æush
 ()
 
-97 
+110 
 	`WRITE_COMBINE_FLUSH
 ();
 
-98 
+111 
 	}
 }
 
-100 
+113 
 	$nv_drm_lock_u£r_·ges
 (
 add»ss
 ,
 
-101 
+114 
 ·ges_couÁ
 , 
 ·ge
@@ -193527,7 +193553,7 @@ add»ss
 ·ges
 )
 
-103 
+116 
 mm_¡ruù
  *
 mm
@@ -193535,25 +193561,25 @@ mm
 cu¼’t
 ->mm;
 
-104 
+117 
 ·ge
  **
 u£r_·ges
 ;
 
-105 cÚ¡ 
+118 cÚ¡ 
 wr™e
  = 1;
 
-106 cÚ¡ 
+119 cÚ¡ 
 fÜû
  = 0;
 
-107 
+120 
 ·ges_pšÃd
 ;
 
-109 
+122 
 u£r_·ges
  = 
 	`nv_drm_ÿÎoc
@@ -193561,17 +193587,17 @@ u£r_·ges
 ·ges_couÁ
 , (*user_pages));
 
-111 ià(
+124 ià(
 u£r_·ges
  =ð
 NULL
 ) {
 
-112  -
+125  -
 ENOMEM
 ;
 
-115 
+128 
 	`down_»ad
 (&
 mm
@@ -193579,7 +193605,7 @@ mm
 mm­_£m
 );
 
-117 
+130 
 ·ges_pšÃd
  = 
 	`NV_GET_USER_PAGES
@@ -193593,13 +193619,13 @@ wr™e
 fÜû
 ,
 
-118 
+131 
 u£r_·ges
 , 
 NULL
 );
 
-119 
+132 
 	`up_»ad
 (&
 mm
@@ -193607,41 +193633,41 @@ mm
 mm­_£m
 );
 
-121 ià(
+134 ià(
 ·ges_pšÃd
  < 0 || (íages_pšÃd < 
 ·ges_couÁ
 ) {
 
-122 
+135 
 çžed
 ;
 
-125 *
+138 *
 ·ges
  = 
 u£r_·ges
 ;
 
-129 
+142 
 çžed
 :
 
-131 ià(
+144 ià(
 ·ges_pšÃd
  > 0) {
 
-132 
+145 
 i
 ;
 
-134 
+147 
 i
  = 0; i < 
 ·ges_pšÃd
 ; i++) {
 
-135 
+148 
 	`put_·ge
 (
 u£r_·ges
@@ -193649,23 +193675,23 @@ u£r_·ges
 i
 ]);
 
-139 
+152 
 	`nv_drm_ä“
 (
 u£r_·ges
 );
 
-141  (
+154  (
 ·ges_pšÃd
  < 0è?…ages_pšÃd : -
 EINVAL
 ;
 
-142 
+155 
 	}
 }
 
-144 
+157 
 	$nv_drm_uÆock_u£r_·ges
 (
 ·ges_couÁ
@@ -193675,17 +193701,17 @@ EINVAL
 ·ges
 )
 
-146 
+159 
 i
 ;
 
-148 
+161 
 i
  = 0; i < 
 ·ges_couÁ
 ; i++) {
 
-149 
+162 
 	`£t_·ge_dœty_lock
 (
 ·ges
@@ -193693,7 +193719,7 @@ i
 i
 ]);
 
-151 
+164 
 	`put_·ge
 (
 ·ges
@@ -193701,17 +193727,17 @@ i
 i
 ]);
 
-154 
+167 
 	`nv_drm_ä“
 (
 ·ges
 );
 
-155 
+168 
 	}
 }
 
-157 *
+170 *
 	$nv_drm_vm­
 (
 ·ge
@@ -193721,7 +193747,7 @@ i
 ·ges_couÁ
 )
 
-159  
+172  
 	`vm­
 (
 ·ges
@@ -193733,55 +193759,55 @@ VM_USERMAP
 PAGE_KERNEL
 );
 
-160 
+173 
 	}
 }
 
-162 
+175 
 	$nv_drm_vunm­
 (*
 add»ss
 )
 
-164 
+177 
 	`vunm­
 (
 add»ss
 );
 
-165 
+178 
 	}
 }
 
-167 
+180 
 ušt64_t
  
 	$nv_drm_g‘_time_u£c
 ()
 
-169 
+182 
 timev®
  
 tv
 ;
 
-171 #ifdeà
+184 #ifdeà
 __lšux__
 
 
-172 
+185 
 	`do_g‘timeofday
 (&
 tv
 );
 
-174 
+187 
 	`miüÙime
 (&
 tv
 );
 
-177  (((
+190  (((
 ušt64_t
 )
 tv
@@ -193791,121 +193817,121 @@ tv_£c
 tv_u£c
 ;
 
-178 
+191 
 	}
 }
 
-182 #ifdeà
+195 #ifdeà
 __lšux__
 
 
-187 
+200 
 __š™
  
 	$nv_lšux_drm_š™
 ()
 
-189  
+202  
 	`nv_drm_š™
 ();
 
-190 
+203 
 	}
 }
 
-192 
+205 
 __ex™
  
 	$nv_lšux_drm_ex™
 ()
 
-194 
+207 
 	`nv_drm_ex™
 ();
 
-195 
+208 
 	}
 }
 
-197 
+210 
 moduË_š™
 (
 nv_lšux_drm_š™
 );
 
-198 
+211 
 moduË_ex™
 (
 nv_lšux_drm_ex™
 );
 
-200 #ià
+213 #ià
 defšed
 (
 MODULE_LICENSE
 )
 
-201 
+214 
 MODULE_LICENSE
 ("MIT");
 
-203 #ià
+216 #ià
 defšed
 (
 MODULE_INFO
 )
 
-204 
+217 
 MODULE_INFO
 (
 suµÜ‹d
 , "external");
 
-206 #ià
+219 #ià
 defšed
 (
 MODULE_VERSION
 )
 
-207 
+220 
 MODULE_VERSION
 (
 NV_VERSION_STRING
 );
 
-218 
+231 
 devþass_t
  
 	gnv_drm_devþass
 ;
 
-219 
+232 
 pci_driv”
  
 	gnv_drm_pci_driv”
  = {
 
-220 .
+233 .
 Çme
  = "nvidia-drm-pci",
 
-221 .
+234 .
 	gid_bË
  = 
 nv_pci_bË
 ,
 
-222 .
+235 .
 	g´obe
  = 
 nv_drm_bsd_´obe
 ,
 
-239 
+252 
 	gnv_glob®_majÜ_numb”
 ;
 
-240 
+253 
 	$nv_drm_bsd_´obe
 (
 pci_dev
@@ -193913,25 +193939,37 @@ pci_dev
 dev
 ,
 
-241 cÚ¡ 
+254 cÚ¡ 
 pci_deviû_id
  *
 ’t
 )
 
-243 
+256 
 nv_gpu_šfo_t
  
 gpu_šfo
 ;
 
-247 
+257 
+nvidŸ_soác
+ *
+sc
+;
+
+258 
+nv_¡©e_t
+ *
+nv
+;
+
+260 
 	`NV_DRM_LOG_INFO
 ("pci_dev %lx ------------------------", ()
 dev
 );
 
-248 
+261 
 	`NV_DRM_LOG_INFO
 ("->v’dÜ = %d", 
 dev
@@ -193939,7 +193977,7 @@ dev
 v’dÜ
 );
 
-249 
+262 
 	`NV_DRM_LOG_INFO
 ("->deviû = %d", 
 dev
@@ -193947,29 +193985,121 @@ dev
 deviû
 );
 
-250 
+263 
 	`NV_DRM_LOG_INFO
-("->driv” = %lx", ()
+("->driv” = 0x%lx", ()
 dev
 ->
 pdrv
 );
 
-252 ià(
-dev
+270 
+i
+ = 0; i < 
+NV_MAX_DEVICES
+; i++) {
+
+271 
+sc
+ = 
+	`devþass_g‘_soác
+(
+nvidŸ_devþass
+, 
+i
+);
+
+272 ià(!
+sc
+)
+
+274 
+nv
+ = 
+sc
+->
+nv_¡©e
+;
+
+277 
+	`NV_DRM_LOG_INFO
+("nv->v’dÜ = 0x%lx,ƒÁ->v’dÜ = 0x%lx", ()
+nv
+->
+pci_šfo
+.
+v’dÜ_id
+, ()
+’t
 ->
 v’dÜ
- != 0x10de)
+);
 
-260 
+278 
+	`NV_DRM_LOG_INFO
+("nv->v’dÜ = 0x%lx,ƒÁ->v’dÜ = 0x%lx", ()
+nv
+->
+pci_šfo
+.
+deviû_id
+, ()
+’t
+->
+deviû
+);
+
+279 ià(
+nv
+->
+pci_šfo
+.
+v’dÜ_id
+ =ð
+’t
+->
+v’dÜ
+
+
+280 && 
+nv
+->
+pci_šfo
+.
+deviû_id
+ =ð
+’t
+->
+deviû
+) {
+
+284 ià(!
+nv
+)
+
+287 
+	`NV_DRM_LOG_INFO
+("nv = 0x%lx", ()
+nv
+);
+
+288 
+	`NV_DRM_LOG_INFO
+("nv->gpu_id = 0x%lx", ()
+nv
+->
+gpu_id
+);
+
+289 
 gpu_šfo
 .
 gpu_id
  = 
-nv_glob®_majÜ_numb”
-++;
+nv
+->gpu_id;
 
-261 
+290 
 gpu_šfo
 .
 os_dev_±r
@@ -193977,17 +194107,17 @@ os_dev_±r
 dev
 ;
 
-263 
+292 
 	`nv_drm_»gi¡”_drm_deviû
 (&
 gpu_šfo
 );
 
-266 
+295 
 	}
 }
 
-268 
+297 
 LKPI_DRIVER_MODULE
 (
 nvidŸ_drm
@@ -193997,7 +194127,7 @@ nv_drm_š™
 nv_drm_ex™
 );
 
-269 
+298 
 MODULE_DEPEND
 (
 nvidŸ_drm
@@ -194005,7 +194135,7 @@ nvidŸ_drm
 lšuxkpi
 , 1, 1, 1);
 
-270 
+299 
 MODULE_DEPEND
 (
 nvidŸ_drm
@@ -194013,7 +194143,7 @@ nvidŸ_drm
 drmn
 , 2, 2, 2);
 
-271 
+300 
 MODULE_DEPEND
 (
 nvidŸ_drm
@@ -194021,7 +194151,7 @@ nvidŸ_drm
 nvidŸ
 , 1, 1, 1);
 
-272 
+301 
 MODULE_DEPEND
 (
 nvidŸ_drm
@@ -195471,7 +195601,27 @@ __FUNCTION__
 VM_FAULT_SIGBUS
 ;
 
-377 
+376 
+	`NV_DRM_LOG_INFO
+("__nv_drm_vma_çuÉ: (Üigš®èpâ = 0x%lx,…age_off£ˆð0x%lx", 
+pâ
+, 
+·ge_off£t
+);
+
+379 
+·ge_off£t
+ = 
+add»ss
+ + 
+	`drm_vma_node_¡¬t
+(&
+gem
+->
+vma_node
+);
+
+380 
 vm_·ge_t
  
 ·ge
@@ -195481,11 +195631,11 @@ vm_·ge_t
 	`IDX_TO_OFF
 (
 pâ
- + 
+è+ 
 ·ge_off£t
-));
+);
 
-378 
+381 
 vm_objeù_t
  
 obj
@@ -195495,7 +195645,7 @@ vma
 vm_obj
 ;
 
-379 
+382 
 vm_pšdex_t
  
 pidx
@@ -195505,17 +195655,85 @@ pidx
 add»ss
 );
 
-380 ià(
-	`vm_·ge_bus›d
-(
-·ge
-))
+384 
+	`NV_DRM_LOG_INFO
+("__nv_drm_vma_çuÉ:…â = 0x%lx,…age_off£ˆð0x%lx", 
+pâ
+, 
+·ge_off£t
+);
 
-381  
+385 
+	`NV_DRM_LOG_INFO
+("__nv_drm_vma_çuÉ:‚v_nvkms_memÜy->pPhysiÿlAdd»s ð0x%lx", ()
+nv_nvkms_memÜy
+->
+pPhysiÿlAdd»ss
+);
+
+386 
+	`NV_DRM_LOG_INFO
+("__nv_drm_vma_çuÉ: IDX_TO_OFF = 0x%lx", ()
+	`IDX_TO_OFF
+(
+pâ
+ + 
+·ge_off£t
+));
+
+387 
+	`NV_DRM_LOG_INFO
+("__nv_drm_vma_çuÉ:…agð0x%lx", ()
+·ge
+);
+
+388 
+	`NV_DRM_LOG_INFO
+("__nv_drm_vma_çuÉ: obj = 0x%lx", ()
+obj
+);
+
+389 
+	`NV_DRM_LOG_INFO
+("__nv_drm_vma_çuÉ:…idx = 0x%lx", ()
+pidx
+);
+
+390 
+	`NV_DRM_LOG_INFO
+("__nv_drm_vma_çuÉ:‡dd»s ð0x%lx", 
+add»ss
+);
+
+392 ià(!
+·ge
+ || !
+obj
+) {
+
+393 
+	`NV_DRM_LOG_INFO
+("__nv_drm_vma_fault:…age was busy,…robably gothe wrong one");
+
+394  
 VM_FAULT_OOM
 ;
 
-382 ià(
+397 ià(
+	`vm_·ge_bus›d
+(
+·ge
+)) {
+
+398 
+	`NV_DRM_LOG_INFO
+("__nv_drm_vma_fault:…age was busy,…robably gothe wrong one");
+
+399  
+VM_FAULT_OOM
+;
+
+401 ià(
 	`vm_·ge_š£¹
 (
 ·ge
@@ -195523,17 +195741,17 @@ VM_FAULT_OOM
 obj
 , 
 pidx
-))
+)) {
 
-383  
+402 
+	`NV_DRM_LOG_INFO
+("__nv_drm_vma_fault: Could‚ot inserthe…age");
+
+403  
 VM_FAULT_OOM
 ;
 
-385 
-»t
- = 0;
-
-386 
+406 
 ·ge
 ->
 v®id
@@ -195541,33 +195759,39 @@ v®id
 VM_PAGE_BITS_ALL
 ;
 
-387 
+407 
 	`vm_·ge_xbusy
 (
 ·ge
 );
 
-388 
+409 
+»t
+ = 
+VM_FAULT_NOPAGE
+;
+
+410 
 vma
 ->
 vm_pâ_couÁ
 ++;
 
-390  
+411  
 »t
 ;
 
-392 
+413 
 	}
 }
 
-399 #ià
+420 #ià
 defšed
 (
 NV_VM_OPS_FAULT_REMOVED_VMA_ARG
 )
 
-400 
+421 
 	$nv_drm_vma_çuÉ
 (
 vm_çuÉ
@@ -195575,7 +195799,7 @@ vm_çuÉ
 vmf
 )
 
-402  
+423  
 	`__nv_drm_vma_çuÉ
 (
 vmf
@@ -195583,11 +195807,11 @@ vmf
 vma
 , vmf);
 
-403 
+424 
 	}
 }
 
-405 
+426 
 	$nv_drm_vma_çuÉ
 (
 vm_¬—_¡ruù
@@ -195595,13 +195819,13 @@ vm_¬—_¡ruù
 vma
 ,
 
-406 
+427 
 vm_çuÉ
  *
 vmf
 )
 
-408  
+429  
 	`__nv_drm_vma_çuÉ
 (
 vma
@@ -195609,29 +195833,29 @@ vma
 vmf
 );
 
-409 
+430 
 	}
 }
 
-412 cÚ¡ 
+433 cÚ¡ 
 vm_Ý”©iÚs_¡ruù
  
 	gnv_drm_gem_vma_Ýs
  = {
 
-413 .
+434 .
 Ý’
  = 
 drm_gem_vm_Ý’
 ,
 
-414 .
+435 .
 	gçuÉ
  = 
 nv_drm_vma_çuÉ
 ,
 
-415 .
+436 .
 	gþo£
  = 
 drm_gem_vm_þo£
@@ -247369,7 +247593,9 @@ NvBoÞ
 z”o
 )
 
-111  
+112 *
+»t
+ = 
 	`m®loc
 (
 size
@@ -247383,11 +247609,15 @@ z”o
 M_ZERO
  : 0));
 
-112 
+114  
+»t
+;
+
+115 
 	}
 }
 
-114 
+117 
 NVKMS_API_CALL
  
 	$nvkms_ä“
@@ -247399,7 +247629,7 @@ size_t
 size
 )
 
-116 
+120 
 	`ä“
 (
 ±r
@@ -247407,11 +247637,11 @@ size
 M_NVIDIA_MODESET
 );
 
-117 
+121 
 	}
 }
 
-119 * 
+123 * 
 NVKMS_API_CALL
  
 	$nvkms_mem£t
@@ -247427,7 +247657,7 @@ size_t
 size
 )
 
-121  
+126  
 	`mem£t
 (
 ±r
@@ -247437,11 +247667,11 @@ c
 size
 );
 
-122 
+127 
 	}
 }
 
-124 * 
+129 * 
 NVKMS_API_CALL
  
 	$nvkms_memýy
@@ -247455,7 +247685,7 @@ size_t
 n
 )
 
-126  
+132  
 	`memýy
 (
 de¡
@@ -247465,11 +247695,11 @@ de¡
 n
 );
 
-127 
+133 
 	}
 }
 
-129 * 
+135 * 
 NVKMS_API_CALL
  
 	$nvkms_memmove
@@ -247483,7 +247713,7 @@ size_t
 n
 )
 
-131  
+138  
 	`memmove
 (
 de¡
@@ -247493,11 +247723,11 @@ de¡
 n
 );
 
-132 
+139 
 	}
 }
 
-134 
+141 
 NVKMS_API_CALL
  
 	$nvkms_memcmp
@@ -247511,7 +247741,7 @@ size_t
 n
 )
 
-136  
+144  
 	`memcmp
 (
 s1
@@ -247521,11 +247751,11 @@ s2
 n
 );
 
-137 
+145 
 	}
 }
 
-139 
+147 
 size_t
  
 NVKMS_API_CALL
@@ -247535,17 +247765,17 @@ NVKMS_API_CALL
 s
 )
 
-141  
+150  
 	`¡¾’
 (
 s
 );
 
-142 
+151 
 	}
 }
 
-144 
+153 
 NVKMS_API_CALL
  
 	$nvkms_¡rcmp
@@ -247555,7 +247785,7 @@ s1
 s2
 )
 
-146  
+156  
 	`¡rcmp
 (
 s1
@@ -247563,11 +247793,11 @@ s1
 s2
 );
 
-147 
+157 
 	}
 }
 
-149 * 
+159 * 
 NVKMS_API_CALL
  
 	$nvkms_¡ºýy
@@ -247581,7 +247811,7 @@ size_t
 n
 )
 
-151  
+162  
 	`¡ºýy
 (
 de¡
@@ -247591,11 +247821,11 @@ de¡
 n
 );
 
-152 
+163 
 	}
 }
 
-154 
+165 
 NVKMS_API_CALL
  
 	$nvkms_u¦“p
@@ -247605,17 +247835,17 @@ NvU64
 u£c
 )
 
-156 
+168 
 	`DELAY
 (
 u£c
 );
 
-157 
+169 
 	}
 }
 
-159 
+171 
 NvU64
  
 NVKMS_API_CALL
@@ -247623,19 +247853,19 @@ NVKMS_API_CALL
 	$nvkms_g‘_u£c
 ()
 
-161 
+173 
 timev®
  
 tv
 ;
 
-163 
+175 
 	`g‘miüÙime
 (&
 tv
 );
 
-165  (((
+178  (((
 NvU64
 )
 tv
@@ -247645,11 +247875,11 @@ tv_£c
 tv_u£c
 ;
 
-166 
+179 
 	}
 }
 
-168 
+181 
 NVKMS_API_CALL
  
 	$nvkms_cÝyš
@@ -247665,17 +247895,19 @@ size_t
 n
 )
 
-170 ià(!
+183 ià(!
 	`nvKmsNvU64Add»ssIsSaã
 (
 uaddr
 )) {
 
-171  
+184  
 EINVAL
 ;
 
-174  
+187 
+»t
+ = 
 	`cÝyš
 (
 	`nvKmsNvU64ToPoš‹r
@@ -247687,11 +247919,15 @@ k±r
 n
 );
 
-175 
+188  
+»t
+;
+
+189 
 	}
 }
 
-177 
+191 
 NVKMS_API_CALL
  
 	$nvkms_cÝyout
@@ -247707,17 +247943,19 @@ size_t
 n
 )
 
-179 ià(!
+193 ià(!
 	`nvKmsNvU64Add»ssIsSaã
 (
 uaddr
 )) {
 
-180  
+194  
 EINVAL
 ;
 
-183  
+197 
+»t
+ = 
 	`cÝyout
 (
 k±r
@@ -247729,25 +247967,29 @@ uaddr
 n
 );
 
-184 
+198  
+»t
+;
+
+199 
 	}
 }
 
-186 
+201 
 NVKMS_API_CALL
  
 	$nvkms_y›ld
 ()
 
-188 
+203 
 	`·u£
 ("yield", 1 );
 
-189 
+204 
 	}
 }
 
-191 
+206 
 NVKMS_API_CALL
  
 	$nvkms_¢´štf
@@ -247761,17 +248003,17 @@ size
 fÜm©
 , ...)
 
-193 
+208 
 »t
 ;
 
-194 
+209 
 va_li¡
  
 ­
 ;
 
-196 
+211 
 	`va_¡¬t
 (
 ­
@@ -247779,7 +248021,7 @@ va_li¡
 fÜm©
 );
 
-197 
+212 
 »t
  = 
 	`v¢´štf
@@ -247793,21 +248035,21 @@ fÜm©
 ­
 );
 
-198 
+213 
 	`va_’d
 (
 ­
 );
 
-200  
+215  
 »t
 ;
 
-201 
+216 
 	}
 }
 
-203 
+218 
 NVKMS_API_CALL
  
 	$nvkms_v¢´štf
@@ -247825,7 +248067,7 @@ va_li¡
 ­
 )
 
-205  
+220  
 	`v¢´štf
 (
 ¡r
@@ -247837,11 +248079,11 @@ fÜm©
 ­
 );
 
-206 
+221 
 	}
 }
 
-208 
+223 
 NVKMS_API_CALL
  
 	$nvkms_log
@@ -247853,61 +248095,61 @@ gpuP»fix
 msg
 )
 
-210 
+225 
 ´iÜ™y
 ;
 
-211 cÚ¡ *
+226 cÚ¡ *
 Ëv–P»fix
 ;
 
-213 
+228 
 Ëv–
 ) {
 
-215 
+230 
 NVKMS_LOG_LEVEL_INFO
 :
 
-216 
+231 
 Ëv–P»fix
  = "";
 
-217 
+232 
 ´iÜ™y
  = 
 LOG_INFO
 ;
 
-219 
+234 
 NVKMS_LOG_LEVEL_WARN
 :
 
-220 
+235 
 Ëv–P»fix
  = "WARNING: ";
 
-221 
+236 
 ´iÜ™y
  = 
 LOG_WARNING
 ;
 
-223 
+238 
 NVKMS_LOG_LEVEL_ERROR
 :
 
-224 
+239 
 Ëv–P»fix
  = "ERROR: ";
 
-225 
+240 
 ´iÜ™y
  = 
 LOG_ERR
 ;
 
-229 
+244 
 	`log
 (
 ´iÜ™y
@@ -247921,15 +248163,15 @@ gpuP»fix
 msg
 );
 
-230 
+245 
 	}
 }
 
-232 
+247 
 NVKMS_API_CALL
 
 
-233 
+248 
 	$nvkms_ev’t_queue_chªged
 (
 nvkms_³r_Ý’_hªdË_t
@@ -247937,13 +248179,13 @@ nvkms_³r_Ý’_hªdË_t
 pO³nK”Ãl
 ,
 
-234 
+249 
 NvBoÞ
  
 ev’tsAvažabË
 )
 
-236 
+253 
 nvkms_³r_Ý’
  *
 pÝ’
@@ -247951,7 +248193,7 @@ pÝ’
 pO³nK”Ãl
 ;
 
-238 
+255 
 	`mtx_lock
 (&
 pÝ’
@@ -247961,7 +248203,7 @@ ev’ts
 lock
 );
 
-240 
+257 
 pÝ’
 ->
 ev’ts
@@ -247971,7 +248213,7 @@ avažabË
 ev’tsAvažabË
 ;
 
-242 
+259 
 	`£lwakeup
 (&
 pÝ’
@@ -247981,7 +248223,7 @@ ev’ts
 £Ëù
 );
 
-244 
+261 
 	`mtx_uÆock
 (&
 pÝ’
@@ -247991,29 +248233,29 @@ ev’ts
 lock
 );
 
-245 
+262 
 	}
 }
 
-251 
+268 
 	snvkms_»f_±r
  {
 
-252 
+269 
 mtx
  
 	mlock
 ;
 
-253 
+270 
 	m»fút
 ;
 
-255 *
+272 *
 	m±r
 ;
 
-258 
+275 
 nvkms_»f_±r
 * 
 NVKMS_API_CALL
@@ -248023,7 +248265,7 @@ NVKMS_API_CALL
 ±r
 )
 
-260 
+278 
 nvkms_»f_±r
  *
 »f_±r
@@ -248033,11 +248275,11 @@ nvkms_»f_±r
 NV_FALSE
 );
 
-261 ià(
+279 ià(
 »f_±r
 ) {
 
-262 
+280 
 	`mtx_š™
 (&
 »f_±r
@@ -248049,27 +248291,27 @@ NULL
 MTX_SPIN
 );
 
-264 
+282 
 »f_±r
 ->
 »fút
  = 1;
 
-265 
+283 
 »f_±r
 ->
 ±r
  =…tr;
 
-267  
+286  
 »f_±r
 ;
 
-268 
+287 
 	}
 }
 
-270 
+289 
 NVKMS_API_CALL
  
 	$nvkms_ä“_»f_±r
@@ -248079,11 +248321,11 @@ nvkms_»f_±r
 »f_±r
 )
 
-272 ià(
+292 ià(
 »f_±r
 ) {
 
-273 
+293 
 »f_±r
 ->
 ±r
@@ -248091,17 +248333,17 @@ nvkms_»f_±r
 NULL
 ;
 
-275 
+295 
 	`nvkms_dec_»f
 (
 »f_±r
 );
 
-277 
+297 
 	}
 }
 
-279 
+299 
 NVKMS_API_CALL
  
 	$nvkms_šc_»f
@@ -248111,7 +248353,7 @@ nvkms_»f_±r
 »f_±r
 )
 
-281 
+302 
 	`mtx_lock_¥š
 (&
 »f_±r
@@ -248119,13 +248361,13 @@ nvkms_»f_±r
 lock
 );
 
-282 
+303 
 »f_±r
 ->
 »fút
 ++;
 
-283 
+304 
 	`mtx_uÆock_¥š
 (&
 »f_±r
@@ -248133,11 +248375,11 @@ lock
 lock
 );
 
-284 
+305 
 	}
 }
 
-286 * 
+307 * 
 NVKMS_API_CALL
  
 	$nvkms_dec_»f
@@ -248147,13 +248389,13 @@ nvkms_»f_±r
 »f_±r
 )
 
-288 *
+309 *
 ±r
  = 
 »f_±r
 ->ptr;
 
-290 
+312 
 	`mtx_lock_¥š
 (&
 »f_±r
@@ -248161,13 +248403,13 @@ nvkms_»f_±r
 lock
 );
 
-291 ià(--
+313 ià(--
 »f_±r
 ->
 »fút
  == 0) {
 
-292 
+314 
 	`mtx_de¡roy
 (&
 »f_±r
@@ -248175,13 +248417,13 @@ lock
 lock
 );
 
-293 
+315 
 	`nvkms_ä“
 (
 »f_±r
 , (*ref_ptr));
 
-295 
+317 
 	`mtx_uÆock_¥š
 (&
 »f_±r
@@ -248189,77 +248431,77 @@ lock
 lock
 );
 
-298  
+321  
 ±r
 ;
 
-299 
+322 
 	}
 }
 
-325 
+348 
 TASKQUEUE_DEFINE_THREAD
 (
 nvkms
 );
 
-327 
+350 
 	snvkms_tim”_t
  {
 
-328 
+351 
 ÿÎout
  
 	mÿÎout
 ;
 
-329 
+352 
 sk
  
 	msk
 ;
 
-330 
+353 
 NvBoÞ
  
 	mÿnûl
 ;
 
-331 
+354 
 NvBoÞ
  
 	mcom¶‘e
 ;
 
-332 
+355 
 NvBoÞ
  
 	misRefPŒ
 ;
 
-333 
+356 
 NvBoÞ
  
 	mÿÎout_ü—‹d
 ;
 
-334 
+357 
 nvkms_tim”_´oc_t
  *
 	m´oc
 ;
 
-335 *
+358 *
 	md©aPŒ
 ;
 
-336 
+359 
 NvU32
  
 	md©aU32
 ;
 
-337 
+360 
 LIST_ENTRY
 (
 nvkms_tim”_t
@@ -248267,13 +248509,13 @@ nvkms_tim”_t
 	mtim”s_li¡
 ;
 
-344 
+367 
 sx
  
 	mlock
 ;
 
-345 
+368 
 LIST_HEAD
 (
 nvkms_tim”s_h—d
@@ -248283,11 +248525,11 @@ nvkms_tim”_t
 	mli¡
 ;
 
-346 } 
+369 } 
 	gnvkms_tim”s
 ;
 
-348 
+371 
 	$nvkms_skqueue_ÿÎback
 (*
 ¬g
@@ -248295,7 +248537,7 @@ nvkms_tim”_t
 ³ndšg
 )
 
-350 
+373 
 nvkms_tim”_t
  *
 tim”
@@ -248303,11 +248545,11 @@ tim”
 ¬g
 ;
 
-351 *
+374 *
 d©aPŒ
 ;
 
-357 
+380 
 	`sx_xlock
 (&
 nvkms_tim”s
@@ -248315,7 +248557,7 @@ nvkms_tim”s
 lock
 );
 
-358 
+381 
 	`LIST_REMOVE
 (
 tim”
@@ -248323,7 +248565,7 @@ tim”
 tim”s_li¡
 );
 
-359 
+382 
 	`sx_xuÆock
 (&
 nvkms_tim”s
@@ -248331,13 +248573,13 @@ nvkms_tim”s
 lock
 );
 
-367 ià(
+390 ià(
 tim”
 ->
 ÿÎout_ü—‹d
 ) {
 
-368 
+391 
 	`ÿÎout_d¿š
 (&
 tim”
@@ -248345,19 +248587,19 @@ tim”
 ÿÎout
 );
 
-371 
+394 
 	`sx_xlock
 (&
 nvkms_lock
 );
 
-373 ià(
+396 ià(
 tim”
 ->
 isRefPŒ
 ) {
 
-376 
+399 
 d©aPŒ
  = 
 	`nvkms_dec_»f
@@ -248365,11 +248607,11 @@ d©aPŒ
 tim”
 ->dataPtr);
 
-377 ià(!
+400 ià(!
 d©aPŒ
 ) {
 
-378 
+401 
 tim”
 ->
 ÿnûl
@@ -248377,19 +248619,19 @@ tim”
 NV_TRUE
 ;
 
-381 
+404 
 d©aPŒ
  = 
 tim”
 ->dataPtr;
 
-384 ià(!
+407 ià(!
 tim”
 ->
 ÿnûl
 ) {
 
-385 
+408 
 tim”
 ->
 	`´oc
@@ -248399,7 +248641,7 @@ d©aPŒ
 d©aU32
 );
 
-386 
+409 
 tim”
 ->
 com¶‘e
@@ -248407,7 +248649,7 @@ com¶‘e
 NV_TRUE
 ;
 
-389 ià(
+412 ià(
 tim”
 ->
 ÿnûl
@@ -248415,29 +248657,29 @@ tim”
 isRefPŒ
 ) {
 
-390 
+413 
 	`nvkms_ä“
 (
 tim”
 , (*timer));
 
-393 
+416 
 	`sx_xuÆock
 (&
 nvkms_lock
 );
 
-394 
+417 
 	}
 }
 
-396 
+419 
 	$nvkms_ÿÎout_ÿÎback
 (*
 ¬g
 )
 
-398 
+421 
 nvkms_tim”_t
  *
 tim”
@@ -248445,7 +248687,7 @@ tim”
 ¬g
 ;
 
-401 
+424 
 	`skqueue_’queue
 (
 skqueue_nvkms
@@ -248455,11 +248697,11 @@ tim”
 sk
 );
 
-402 
+425 
 	}
 }
 
-405 
+428 
 	$nvkms_š™_tim”
 (
 nvkms_tim”_t
@@ -248471,7 +248713,7 @@ nvkms_tim”_´oc_t
 ´oc
 ,
 
-406 *
+429 *
 d©aPŒ
 , 
 NvU32
@@ -248487,7 +248729,7 @@ NvU64
 u£c
 )
 
-408 
+431 
 tim”
 ->
 ÿnûl
@@ -248495,7 +248737,7 @@ tim”
 NV_FALSE
 ;
 
-409 
+432 
 tim”
 ->
 com¶‘e
@@ -248503,31 +248745,31 @@ com¶‘e
 NV_FALSE
 ;
 
-410 
+433 
 tim”
 ->
 isRefPŒ
  = isRefPtr;
 
-412 
+435 
 tim”
 ->
 ´oc
  =…roc;
 
-413 
+436 
 tim”
 ->
 d©aPŒ
  = dataPtr;
 
-414 
+437 
 tim”
 ->
 d©aU32
  = dataU32;
 
-416 
+439 
 	`TASK_INIT
 (&
 tim”
@@ -248535,13 +248777,13 @@ tim”
 sk
 ,
 
-418 
+441 
 nvkms_skqueue_ÿÎback
 , (*)
 tim”
 );
 
-427 
+450 
 	`sx_xlock
 (&
 nvkms_tim”s
@@ -248549,7 +248791,7 @@ nvkms_tim”s
 lock
 );
 
-428 
+451 
 	`LIST_INSERT_HEAD
 (&
 nvkms_tim”s
@@ -248561,11 +248803,11 @@ tim”
 tim”s_li¡
 );
 
-430 ià(
+453 ià(
 u£c
  == 0) {
 
-431 
+454 
 tim”
 ->
 ÿÎout_ü—‹d
@@ -248573,7 +248815,7 @@ tim”
 NV_FALSE
 ;
 
-432 
+455 
 	`skqueue_’queue
 (
 skqueue_nvkms
@@ -248583,7 +248825,7 @@ tim”
 sk
 );
 
-435 
+458 
 	`ÿÎout_š™
 (&
 tim”
@@ -248593,7 +248835,7 @@ tim”
 CALLOUT_MPSAFE
 );
 
-436 
+459 
 tim”
 ->
 ÿÎout_ü—‹d
@@ -248601,7 +248843,7 @@ tim”
 NV_TRUE
 ;
 
-437 
+460 
 	`ÿÎout_»£t
 (&
 tim”
@@ -248609,19 +248851,19 @@ tim”
 ÿÎout
 ,
 
-438 
+461 
 	`NVKMS_USECS_TO_TICKS
 (
 u£c
 ),
 
-439 
+462 
 nvkms_ÿÎout_ÿÎback
 , (*è
 tim”
 );
 
-441 
+464 
 	`sx_xuÆock
 (&
 nvkms_tim”s
@@ -248629,15 +248871,15 @@ nvkms_tim”s
 lock
 );
 
-442 
+465 
 	}
 }
 
-444 
+467 
 nvkms_tim”_hªdË_t
 *
 
-445 
+468 
 NVKMS_API_CALL
  
 	$nvkms_®loc_tim”
@@ -248647,7 +248889,7 @@ nvkms_tim”_´oc_t
 ´oc
 ,
 
-446 *
+469 *
 d©aPŒ
 , 
 NvU32
@@ -248655,13 +248897,13 @@ NvU32
 d©aU32
 ,
 
-447 
+470 
 NvU64
  
 u£c
 )
 
-450 
+473 
 nvkms_tim”_t
  *
 tim”
@@ -248671,11 +248913,11 @@ tim”
 NV_TRUE
 );
 
-451 ià(
+474 ià(
 tim”
 ) {
 
-452 
+475 
 	`nvkms_š™_tim”
 (
 tim”
@@ -248691,21 +248933,21 @@ NV_FALSE
 u£c
 );
 
-454  
+477  
 tim”
 ;
 
-455 
+478 
 	}
 }
 
-457 
+480 
 NvBoÞ
  
 NVKMS_API_CALL
 
 
-458 
+481 
 	$nvkms_®loc_tim”_w™h_»f_±r
 (
 nvkms_tim”_´oc_t
@@ -248713,13 +248955,13 @@ nvkms_tim”_´oc_t
 ´oc
 ,
 
-459 
+482 
 nvkms_»f_±r
  *
 »f_±r
 ,
 
-460 
+483 
 NvU32
  
 d©aU32
@@ -248729,7 +248971,7 @@ NvU64
 u£c
 )
 
-465 
+488 
 nvkms_tim”_t
  *
 tim”
@@ -248739,23 +248981,23 @@ tim”
 M_NVIDIA_MODESET
 ,
 
-466 
+489 
 M_NOWAIT
  | 
 M_ZERO
 );
 
-467 ià(
+490 ià(
 tim”
 ) {
 
-470 
+493 
 	`nvkms_šc_»f
 (
 »f_±r
 );
 
-471 
+494 
 	`nvkms_š™_tim”
 (
 tim”
@@ -248771,17 +249013,17 @@ NV_TRUE
 u£c
 );
 
-474  
+497  
 tim”
  !ð
 NULL
 ;
 
-475 
+498 
 	}
 }
 
-477 
+500 
 NVKMS_API_CALL
  
 	$nvkms_ä“_tim”
@@ -248791,7 +249033,7 @@ nvkms_tim”_hªdË_t
 hªdË
 )
 
-479 
+502 
 nvkms_tim”_t
  *
 tim”
@@ -248799,25 +249041,25 @@ tim”
 hªdË
 ;
 
-481 ià(
+504 ià(
 tim”
  =ð
 NULL
 ) {
 
-485 ià(
+508 ià(
 tim”
 ->
 com¶‘e
 ) {
 
-486 
+509 
 	`nvkms_ä“
 (
 tim”
 , (*timer));
 
-490 
+513 
 tim”
 ->
 ÿnûl
@@ -248825,11 +249067,11 @@ tim”
 NV_TRUE
 ;
 
-491 
+514 
 	}
 }
 
-493 
+516 
 	$nvkms_su¥’d
 (
 NvU32
@@ -248837,29 +249079,29 @@ NvU32
 gpuId
 )
 
-495 
+518 
 	`sx_xlock
 (&
 nvkms_lock
 );
 
-496 
+519 
 	`nvKmsSu¥’d
 (
 gpuId
 );
 
-497 
+520 
 	`sx_xuÆock
 (&
 nvkms_lock
 );
 
-498 
+521 
 	}
 }
 
-500 
+523 
 	$nvkms_»sume
 (
 NvU32
@@ -248867,35 +249109,35 @@ NvU32
 gpuId
 )
 
-502 
+525 
 	`sx_xlock
 (&
 nvkms_lock
 );
 
-503 
+526 
 	`nvKmsResume
 (
 gpuId
 );
 
-504 
+527 
 	`sx_xuÆock
 (&
 nvkms_lock
 );
 
-505 
+528 
 	}
 }
 
-515 
+538 
 nvidŸ_mode£t_rm_Ýs_t
  
 	g__rm_Ýs
  = { 0 };
 
-516 
+539 
 nvidŸ_mode£t_¡ack_±r
  
 	gnvkms_nvidŸ_¡ack
@@ -248903,35 +249145,39 @@ nvidŸ_mode£t_¡ack_±r
 NULL
 ;
 
-517 
+540 
 nvidŸ_mode£t_ÿÎbacks_t
  
 	gnvkms_rm_ÿÎbacks
  = {
 
-518 
+541 
 nvkms_su¥’d
 ,
 
-519 
+542 
 nvkms_»sume
 
 
-522 
+545 
 	$nvkms_®loc_rm
 ()
 
-524 
+547 
 NV_STATUS
  
 nv¡©us
 ;
 
-525 
+548 
 »t
 ;
 
-527 
+550 
+	`´štf
+("nvkms_alloc_rm: \n");
+
+551 
 __rm_Ýs
 .
 v”siÚ_¡ršg
@@ -248939,7 +249185,7 @@ v”siÚ_¡ršg
 NV_VERSION_STRING
 ;
 
-529 
+553 
 nv¡©us
  = 
 	`nvidŸ_g‘_rm_Ýs
@@ -248947,19 +249193,19 @@ nv¡©us
 __rm_Ýs
 );
 
-531 ià(
+555 ià(
 nv¡©us
  !ð
 NV_OK
 ) {
 
-532 
+556 
 	`´štf
 (
 NVKMS_LOG_PREFIX
  "Version mismatch: "
 
-534 
+558 
 __rm_Ýs
 .
 v”siÚ_¡ršg
@@ -248967,11 +249213,11 @@ v”siÚ_¡ršg
 NV_VERSION_STRING
 );
 
-535  
+559  
 EINVAL
 ;
 
-538 
+562 
 »t
  = 
 __rm_Ýs
@@ -248981,21 +249227,23 @@ __rm_Ýs
 nvkms_rm_ÿÎbacks
 );
 
-539 ià(
+563 ià(
 »t
  < 0) {
 
-540 
+564 
 	`´štf
 (
 NVKMS_LOG_PREFIX
  "Failedo„egister callbacks\n");
 
-541  
+565  
 »t
 ;
 
-544  
+568 
+»t
+ = 
 __rm_Ýs
 .
 	`®loc_¡ack
@@ -249003,15 +249251,29 @@ __rm_Ýs
 nvkms_nvidŸ_¡ack
 );
 
-545 
+569 
+	`´štf
+("nvkms_®loc_rm:»tuº: %d \n", 
+»t
+);
+
+570  
+»t
+;
+
+571 
 	}
 }
 
-547 
+573 
 	$nvkms_ä“_rm
 ()
 
-549 
+575 
+	`´štf
+("nvkms_free_rm:return:\n");
+
+576 
 __rm_Ýs
 .
 	`£t_ÿÎbacks
@@ -249019,7 +249281,7 @@ __rm_Ýs
 NULL
 );
 
-550 ià(
+577 ià(
 __rm_Ýs
 .
 ä“_¡ack
@@ -249027,7 +249289,7 @@ __rm_Ýs
 NULL
 ) {
 
-551 
+578 
 __rm_Ýs
 .
 	`ä“_¡ack
@@ -249035,11 +249297,11 @@ __rm_Ýs
 nvkms_nvidŸ_¡ack
 );
 
-553 
+580 
 	}
 }
 
-555 
+582 
 NVKMS_API_CALL
  
 	$nvkms_ÿÎ_rm
@@ -249047,7 +249309,7 @@ NVKMS_API_CALL
 Ýs
 )
 
-557 
+585 
 __rm_Ýs
 .
 	`Ý
@@ -249057,11 +249319,11 @@ nvkms_nvidŸ_¡ack
 Ýs
 );
 
-558 
+586 
 	}
 }
 
-560 
+588 
 NVKMS_API_CALL
  
 	$nvkms_g‘_¿ndom
@@ -249073,7 +249335,7 @@ size_t
 size
 )
 
-562 
+590 
 	`¬c4¿nd
 (
 ±r
@@ -249081,61 +249343,61 @@ size
 size
 , 0);
 
-563 
+591 
 	}
 }
 
-568 #ià
+596 #ià
 __F»eBSD_v”siÚ
  >= 900000
 
-569 
+597 
 	#NV_FGET_HAS_CAP_RIGHTS_T_ARG
  1
 
 	)
 
-571 
+599 
 	#NV_FGET_HAS_CAP_RIGHTS_T_ARG
  0
 
 	)
 
-574 #ià
+602 #ià
 NV_FGET_HAS_CAP_RIGHTS_T_ARG
 
 
-575 
+603 
 	~<sys/ÿ´ights.h
 >
 
-576 #ià
+604 #ià
 __F»eBSD_v”siÚ
  >= 1100012
 
-577 
+605 
 	~<sys/ÿpsicum.h
 >
 
-579 
+607 
 	~<sys/ÿ·bž™y.h
 >
 
-594 
+622 
 	#NV_KERNEL_HAS_DEVFS_GET_CDEVPRIV_FROM_FILE
  0
 
 	)
 
-596 #ià!
+624 #ià!
 NV_KERNEL_HAS_DEVFS_GET_CDEVPRIV_FROM_FILE
 
 
-597 
+625 
 	~<fs/devfs/devfs_št.h
 >
 
-600 * 
+628 * 
 NVKMS_API_CALL
  
 	$nvkms_g‘_³r_Ý’_d©a
@@ -249143,7 +249405,7 @@ NVKMS_API_CALL
 fd
 )
 
-602 
+630 
 fže
  *
 å
@@ -249151,7 +249413,7 @@ fže
 NULL
 ;
 
-603 
+631 
 nvkms_³r_Ý’
  *
 pÝ’
@@ -249159,27 +249421,27 @@ pÝ’
 NULL
 ;
 
-604 
+632 
 ¡©us
 ;
 
-605 *
+633 *
 d©a
  = 
 NULL
 ;
 
-607 #ià
+635 #ià
 NV_FGET_HAS_CAP_RIGHTS_T_ARG
 
 
-608 
+636 
 ÿp_rights_t
  
 rights
 ;
 
-609 
+637 
 ¡©us
  = 
 	`fg‘
@@ -249197,7 +249459,7 @@ CAP_IOCTL
 å
 );
 
-611 
+639 
 ¡©us
  = 
 	`fg‘
@@ -249209,19 +249471,19 @@ fd
 å
 );
 
-614 ià(
+642 ià(
 ¡©us
  != 0) {
 
-615  
+643  
 NULL
 ;
 
-618 #ià
+646 #ià
 NV_KERNEL_HAS_DEVFS_GET_CDEVPRIV_FROM_FILE
 
 
-619 
+647 
 ¡©us
  = 
 	`devfs_g‘_cdev´iv_äom_fže
@@ -249231,15 +249493,15 @@ pÝ’
 å
 );
 
-621 ià(
+649 ià(
 ¡©us
  != 0) {
 
-622 
+650 
 dÚe
 ;
 
-626 
+654 
 cdev_´ivd©a
  *
 p
@@ -249249,7 +249511,7 @@ p
 f_cdev´iv
 ;
 
-633 ià((
+661 ià((
 p
  =ð
 NULL
@@ -249259,11 +249521,11 @@ cdpd_dŒ
 nvkms_þo£
 )) {
 
-634 
+662 
 dÚe
 ;
 
-637 
+665 
 pÝ’
  = 
 p
@@ -249271,27 +249533,27 @@ p
 cdpd_d©a
 ;
 
-641 ià(
+669 ià(
 pÝ’
  =ð
 NULL
 ) {
 
-642 
+670 
 dÚe
 ;
 
-645 
+673 
 d©a
  = 
 pÝ’
 ->data;
 
-647 
+675 
 dÚe
 :
 
-660 
+688 
 	`fdrÝ
 (
 å
@@ -249299,15 +249561,15 @@ dÚe
 cu¹h»ad
 );
 
-662  
+690  
 d©a
 ;
 
-663 
+691 
 	}
 }
 
-665 
+693 
 NvBoÞ
  
 NVKMS_API_CALL
@@ -249319,7 +249581,17 @@ NvU32
 gpuId
 )
 
-667  
+695 
+	`´štf
+("__rm_Ýs.Ý’_gpu = 0x%x\n", ()
+__rm_Ýs
+.
+Ý’_gpu
+);
+
+696 
+»t
+ = 
 __rm_Ýs
 .
 	`Ý’_gpu
@@ -249327,13 +249599,23 @@ __rm_Ýs
 gpuId
 , 
 nvkms_nvidŸ_¡ack
-) == 0;
+);
 
-668 
+697 
+	`´štf
+("nvkms_Ý’_gpu:»tuº: %d\n", 
+»t
+);
+
+698  
+»t
+ == 0;
+
+699 
 	}
 }
 
-670 
+701 
 NVKMS_API_CALL
  
 	$nvkms_þo£_gpu
@@ -249343,7 +249625,11 @@ NvU32
 gpuId
 )
 
-672 
+703 
+	`´štf
+("nvkms_close_gpu:\n");
+
+704 
 __rm_Ýs
 .
 	`þo£_gpu
@@ -249353,11 +249639,11 @@ gpuId
 nvkms_nvidŸ_¡ack
 );
 
-673 
+705 
 	}
 }
 
-675 
+707 
 NvU32
  
 NVKMS_API_CALL
@@ -249369,7 +249655,9 @@ nv_gpu_šfo_t
 gpu_šfo
 )
 
-677  
+709 
+»t
+ = 
 __rm_Ýs
 .
 	`’um”©e_gpus
@@ -249377,11 +249665,21 @@ __rm_Ýs
 gpu_šfo
 );
 
-678 
+710 
+	`´štf
+("nvkms_’um”©e_gpus:»tuº: %d\n", 
+»t
+);
+
+711  
+»t
+;
+
+712 
 	}
 }
 
-680 
+714 
 NvBoÞ
  
 NVKMS_API_CALL
@@ -249389,7 +249687,11 @@ NVKMS_API_CALL
 	$nvkms_®low_wr™e_combššg
 ()
 
-682  
+716 
+	`´štf
+("nvkms_allow_write_combining:\n");
+
+717  
 __rm_Ýs
 .
 sy¡em_šfo
@@ -249397,11 +249699,11 @@ sy¡em_šfo
 ®low_wr™e_combššg
 ;
 
-683 
+718 
 	}
 }
 
-689 
+724 
 	$nvkms_k­i_sk_ÿÎback
 (*
 ¬g
@@ -249411,7 +249713,7 @@ sy¡em_šfo
 __unu£d
 )
 
-691 
+726 
 NvKmsK­iDeviû
  *
 deviû
@@ -249419,17 +249721,23 @@ deviû
 ¬g
 ;
 
-693 
+728 
+	`´štf
+("nvkms_k­i_sk_ÿÎback: deviû = 0x%lx\n", ()
+deviû
+);
+
+729 
 	`nvKmsK­iHªdËEv’tQueueChªge
 (
 deviû
 );
 
-694 
+730 
 	}
 }
 
-702 
+738 
 nvkms_³r_Ý’
  *
 	$nvkms_Ý’_commÚ
@@ -249439,17 +249747,17 @@ NvKmsCl›ÁTy³
 ty³
 ,
 
-703 
+739 
 NvKmsK­iDeviû
  *
 deviû
 ,
 
-704 *
+740 *
 ¡©us
 )
 
-706 
+742 
 nvkms_³r_Ý’
  *
 pÝ’
@@ -249457,7 +249765,11 @@ pÝ’
 NULL
 ;
 
-708 
+744 
+	`´štf
+("nvkms_open_common:\n");
+
+745 
 pÝ’
  = 
 	`nvkms_®loc
@@ -249465,27 +249777,27 @@ pÝ’
 NV_TRUE
 );
 
-710 ià(
+747 ià(
 pÝ’
  =ð
 NULL
 ) {
 
-711 *
+748 *
 ¡©us
  = -
 ENOMEM
 ;
 
-712 
+749 
 	`´štf
 ("nvkms_open_common:‚vkms_alloc failed\n");
 
-713 
+750 
 çžed
 ;
 
-716 
+753 
 	`mtx_š™
 (&
 pÝ’
@@ -249499,13 +249811,13 @@ NULL
 MTX_DEF
 );
 
-718 
+755 
 	`sx_xlock
 (&
 nvkms_lock
 );
 
-719 
+756 
 pÝ’
 ->
 d©a
@@ -249519,13 +249831,13 @@ p_pid
 ty³
 ,…open);
 
-720 
+757 
 	`sx_xuÆock
 (&
 nvkms_lock
 );
 
-722 ià(
+759 ià(
 pÝ’
 ->
 d©a
@@ -249533,21 +249845,21 @@ d©a
 NULL
 ) {
 
-723 *
+760 *
 ¡©us
  = -
 EPERM
 ;
 
-724 
+761 
 	`´štf
 ("nvkms_open_common:‚vKmsOpen failed\n");
 
-725 
+762 
 çžed
 ;
 
-729 
+766 
 	`TASK_INIT
 (&
 pÝ’
@@ -249557,13 +249869,13 @@ pÝ’
 sk
 , 0,
 
-730 
+767 
 nvkms_k­i_sk_ÿÎback
 , (*)
 deviû
 );
 
-731 
+768 
 	`skqueue_’queue
 (
 skqueue_th»ad
@@ -249575,39 +249887,39 @@ pÝ’
 sk
 );
 
-733 *
+770 *
 ¡©us
  = 0;
 
-735 
+772 
 	`´štf
 ("nvkms_Ý’_commÚ:„‘uº 0x%x\n", ()
 pÝ’
 );
 
-736  
+773  
 pÝ’
 ;
 
-738 
+775 
 çžed
 :
 
-740 
+777 
 	`nvkms_ä“
 (
 pÝ’
 , (*popen));
 
-742  
+779  
 NULL
 ;
 
-743 
+780 
 	}
 }
 
-745 
+782 
 NVKMS_API_CALL
  
 	$nvkms_þo£_commÚ
@@ -249617,13 +249929,17 @@ nvkms_³r_Ý’
 pÝ’
 )
 
-747 
+784 
+	`´štf
+("nvkms_close_common:\n");
+
+785 
 	`sx_xlock
 (&
 nvkms_lock
 );
 
-749 
+787 
 	`nvKmsClo£
 (
 pÝ’
@@ -249631,7 +249947,7 @@ pÝ’
 d©a
 );
 
-751 
+789 
 pÝ’
 ->
 d©a
@@ -249639,13 +249955,13 @@ d©a
 NULL
 ;
 
-753 
+791 
 	`sx_xuÆock
 (&
 nvkms_lock
 );
 
-770 
+808 
 	`skqueue_d¿š
 (
 skqueue_th»ad
@@ -249657,7 +249973,7 @@ pÝ’
 sk
 );
 
-771 
+809 
 	`mtx_de¡roy
 (&
 pÝ’
@@ -249667,29 +249983,29 @@ pÝ’
 lock
 );
 
-773 
+811 
 	`nvkms_ä“
 (
 pÝ’
 , (*popen));
 
-774 
+812 
 	}
 }
 
-776 
+814 
 NVKMS_API_CALL
  
 	gnvkms_ioùl_commÚ
 
 
-778 
+816 
 nvkms_³r_Ý’
  *
 	gpÝ’
 ,
 
-779 
+817 
 NvU32
  
 	gcmd
@@ -249703,28 +250019,30 @@ size_t
 	gsize
 
 
-782 
+820 
 NvBoÞ
  
 	g»t
 ;
 
-784 
+822 
+´štf
+("nvkms_ioctl_common: \n");
+
+823 
 sx_xlock
 (&
 nvkms_lock
 );
 
-786 ià(
+825 ià(
 	gpÝ’
-->
+ &&…Ý’->
 	gd©a
- !ð
-NULL
 ) {
 
-787 
-»t
+826 
+	g»t
  = 
 nvKmsIoùl
 (
@@ -249739,31 +250057,31 @@ add»ss
 size
 );
 
-789 
+828 
 	g»t
  = 
 NV_FALSE
 ;
 
-792 
+831 
 sx_xuÆock
 (&
 nvkms_lock
 );
 
-794 
+833 
 ´štf
 ("nvkms_ioùl_commÚ:„‘uº 0x%x\n", 
 »t
 );
 
-795  
+834  
 	g»t
  ? 0 : -
 EPERM
 ;
 
-802 
+841 
 nvkms_³r_Ý’
 * 
 NVKMS_API_CALL
@@ -249771,17 +250089,25 @@ NVKMS_API_CALL
 	gnvkms_Ý’_äom_k­i
 
 
-804 
+843 
 NvKmsK­iDeviû
  *
 	gdeviû
 
 
-807 
+846 
+´štf
+("nvkms_open_from_kapi: \n");
+
+847 
 	g¡©us
  = 0;
 
-808  
+848 
+nvkms_³r_Ý’
+ *
+	g»t
+ = 
 nvkms_Ý’_commÚ
 (
 NVKMS_CLIENT_KERNEL_SPACE
@@ -249791,7 +250117,17 @@ deviû
 ¡©us
 );
 
-811 
+849 
+´štf
+("nvkms_Ý’_äom_k­i:»tuº: 0x%x\n", ()
+»t
+);
+
+850  
+	g»t
+;
+
+853 
 NVKMS_API_CALL
  
 	$nvkms_þo£_äom_k­i
@@ -249801,17 +250137,21 @@ nvkms_³r_Ý’
 pÝ’
 )
 
-813 
+855 
+	`´štf
+("nvkms_close_from_kapi: \n");
+
+856 
 	`nvkms_þo£_commÚ
 (
 pÝ’
 );
 
-814 
+857 
 	}
 }
 
-816 
+859 
 NvBoÞ
  
 NVKMS_API_CALL
@@ -249819,13 +250159,13 @@ NVKMS_API_CALL
 	gnvkms_ioùl_äom_k­i
 
 
-818 
+861 
 nvkms_³r_Ý’
  *
 	gpÝ’
 ,
 
-819 
+862 
 NvU32
  
 	gcmd
@@ -249837,17 +250177,21 @@ size_t
 	g·¿ms_size
 
 
-822  
+865 
+´štf
+("nvkms_ioctl_from_kapi: \n");
+
+866  
 nvkms_ioùl_commÚ
 (
 pÝ’
 ,
 
-823 
+867 
 cmd
 ,
 
-824 (
+868 (
 NvU64
 )(
 NvUPŒ
@@ -249857,17 +250201,17 @@ NvUPŒ
 ·¿ms_size
 ) == 0;
 
-832 
+876 
 	snvkms_£ma_t
  {
 
-833 
+877 
 mtx
  
 	mnvs_mu‹x
 ;
 
-836 
+880 
 nvkms_£ma_hªdË_t
 * 
 NVKMS_API_CALL
@@ -249875,7 +250219,11 @@ NVKMS_API_CALL
 	$nvkms_£ma_®loc
 ()
 
-838 
+882 
+	`´štf
+("nvkms_sema_alloc:\n");
+
+883 
 nvkms_£ma_hªdË_t
  *
 £ma
@@ -249885,15 +250233,15 @@ nvkms_£ma_hªdË_t
 NV_TRUE
 );
 
-839 ià(
+884 ià(
 £ma
 ) {
 
-840 
+885 
 	`´štf
 ("nvkms_sema_alloc: creating mutex\n");
 
-841 
+886 
 	`mtx_š™
 (&(
 £ma
@@ -249905,21 +250253,21 @@ NULL
 MTX_DEF
 );
 
-844 
+889 
 	`´štf
-("nvkms_£ma_®loc:„‘uº 0x%x\n", ()
+("nvkms_£ma_®loc:»tuº: 0x%x\n", ()
 £ma
 );
 
-845  
+890  
 £ma
 ;
 
-846 
+891 
 	}
 }
 
-848 
+893 
 NVKMS_API_CALL
  
 	$nvkms_£ma_ä“
@@ -249929,7 +250277,11 @@ nvkms_£ma_hªdË_t
 £ma
 )
 
-850 
+895 
+	`´štf
+("nvkms_sema_free:\n");
+
+896 
 	`mtx_de¡roy
 (&
 £ma
@@ -249937,17 +250289,17 @@ nvkms_£ma_hªdË_t
 nvs_mu‹x
 );
 
-851 
+897 
 	`nvkms_ä“
 (
 £ma
 , (*sema));
 
-852 
+898 
 	}
 }
 
-854 
+900 
 NVKMS_API_CALL
  
 	$nvkms_£ma_down
@@ -249957,7 +250309,11 @@ nvkms_£ma_hªdË_t
 £ma
 )
 
-856 
+902 
+	`´štf
+("nvkms_sema_down:\n");
+
+903 
 	`mtx_lock
 (&
 £ma
@@ -249965,11 +250321,11 @@ nvkms_£ma_hªdË_t
 nvs_mu‹x
 );
 
-857 
+904 
 	}
 }
 
-859 
+906 
 NVKMS_API_CALL
  
 	$nvkms_£ma_up
@@ -249979,7 +250335,11 @@ nvkms_£ma_hªdË_t
 £ma
 )
 
-861 
+908 
+	`´štf
+("nvkms_sema_up:\n");
+
+909 
 	`mtx_uÆock
 (&
 £ma
@@ -249987,11 +250347,11 @@ nvkms_£ma_hªdË_t
 nvs_mu‹x
 );
 
-862 
+910 
 	}
 }
 
-868 
+916 
 NvBoÞ
  
 NVKMS_KAPI_CALL
@@ -249999,25 +250359,29 @@ NVKMS_KAPI_CALL
 	gnvKmsK­iG‘FunùiÚsTabË
 
 
-870 
+918 
 NvKmsK­iFunùiÚsTabË
  *
 	gfuncsTabË
 
 
-873  
+921 
+´štf
+("nvKmsKapiGetFunctionsTable:\n");
+
+922  
 nvKmsK­iG‘FunùiÚsTabËIÁ”Çl
 (
 funcsTabË
 );
 
-880 
+929 
 	$nvkms_þo£
 (*
 ¬g
 )
 
-882 
+931 
 nvkms_³r_Ý’
  *
 pÝ’
@@ -250025,13 +250389,13 @@ pÝ’
 ¬g
 ;
 
-884 
+933 
 	`sx_xlock
 (&
 nvkms_lock
 );
 
-885 
+934 
 	`nvKmsClo£
 (
 pÝ’
@@ -250039,13 +250403,13 @@ pÝ’
 d©a
 );
 
-886 
+935 
 	`sx_xuÆock
 (&
 nvkms_lock
 );
 
-888 
+937 
 	`mtx_de¡roy
 (&
 pÝ’
@@ -250055,13 +250419,13 @@ ev’ts
 lock
 );
 
-890 
+939 
 	`nvkms_ä“
 (
 pÝ’
 , (*popen));
 
-892 
+941 
 	`sx_xlock
 (&
 nvkms_moduË
@@ -250069,13 +250433,13 @@ nvkms_moduË
 lock
 );
 
-893 
+942 
 nvkms_moduË
 .
 þ›Á_couÁ”
  -= 1;
 
-894 
+943 
 	`sx_xuÆock
 (&
 nvkms_moduË
@@ -250083,43 +250447,43 @@ nvkms_moduË
 lock
 );
 
-895 
+944 
 	}
 }
 
-897 
+946 
 	$nvkms_ioùl
 (
 
-898 
+947 
 cdev
  *
 dev
 ,
 
-899 
+948 
 u_lÚg
  
 cmd
 ,
 
-900 
+949 
 ÿddr_t
  
 d©a
 ,
 
-901 
+950 
 fæag
 ,
 
-902 
+951 
 th»ad
  *
 td
 
 
-905 
+954 
 u_lÚg
  
 Ä
@@ -250127,29 +250491,29 @@ u_lÚg
 size
 ;
 
-906 
+955 
 NvBoÞ
  
 »t
 ;
 
-907 
+956 
 NvKmsIoùlP¬ams
  *
 ·¿ms
 ;
 
-908 
+957 
 nvkms_³r_Ý’
  *
 pÝ’
 ;
 
-909 
+958 
 ¡©us
 ;
 
-911 
+960 
 ¡©us
  = 
 	`devfs_g‘_cdev´iv
@@ -250157,15 +250521,15 @@ pÝ’
 pÝ’
 );
 
-912 ià(
+961 ià(
 ¡©us
  != 0) {
 
-913  
+962  
 ¡©us
 ;
 
-916 
+965 
 size
  = 
 	`IOCPARM_LEN
@@ -250173,13 +250537,13 @@ size
 cmd
 );
 
-917 
+966 
 Ä
  = 
 cmd
  & 0xFF;
 
-921 ià((
+970 ià((
 Ä
  !ð
 NVKMS_IOCTL_CMD
@@ -250189,11 +250553,11 @@ size
 NvKmsIoùlP¬ams
 ))) {
 
-922  
+971  
 EINVAL
 ;
 
-927 
+976 
 ·¿ms
  = (
 NvKmsIoùlP¬ams
@@ -250201,13 +250565,13 @@ NvKmsIoùlP¬ams
 d©a
 ;
 
-929 
+978 
 	`sx_xlock
 (&
 nvkms_lock
 );
 
-930 
+979 
 »t
  = 
 	`nvKmsIoùl
@@ -250217,75 +250581,79 @@ pÝ’
 d©a
 ,
 
-931 
+980 
 ·¿ms
 ->
 cmd
 ,
 
-932 
+981 
 ·¿ms
 ->
 add»ss
 ,
 
-933 
+982 
 ·¿ms
 ->
 size
 );
 
-934 
+983 
 	`sx_xuÆock
 (&
 nvkms_lock
 );
 
-936  
+985  
 »t
  ? 0 : 
 EPERM
 ;
 
-937 
+986 
 	}
 }
 
-939 
+988 
 	$nvkms_Ý’
 (
 
-940 
+989 
 cdev
  *
 dev
 ,
 
-941 
+990 
 oæags
 ,
 
-942 
+991 
 devty³
 ,
 
-943 
+992 
 th»ad
  *
 td
 
 
-946 
+995 
+	`´štf
+("nvkms_open:\n");
+
+996 
 nvkms_³r_Ý’
  *
 pÝ’
 ;
 
-947 
+997 
 ¡©us
 ;
 
-949 
+999 
 	`sx_xlock
 (&
 nvkms_moduË
@@ -250293,13 +250661,13 @@ nvkms_moduË
 lock
 );
 
-951 ià(
+1001 ià(
 nvkms_moduË
 .
 is_uÆßdšg
 ) {
 
-952 
+1002 
 	`sx_xuÆock
 (&
 nvkms_moduË
@@ -250307,17 +250675,21 @@ nvkms_moduË
 lock
 );
 
-953  
+1003 
+	`´štf
+("nvkms_open:return ENXIO\n");
+
+1004  
 ENXIO
 ;
 
-956 
+1007 
 nvkms_moduË
 .
 þ›Á_couÁ”
  += 1;
 
-957 
+1008 
 	`sx_xuÆock
 (&
 nvkms_moduË
@@ -250325,7 +250697,7 @@ nvkms_moduË
 lock
 );
 
-959 
+1010 
 pÝ’
  = 
 	`nvkms_®loc
@@ -250333,17 +250705,21 @@ pÝ’
 NV_TRUE
 );
 
-960 ià(
+1011 ià(
 pÝ’
  =ð
 NULL
 ) {
 
-961  
+1012 
+	`´štf
+("nvkms_open:return ENNOMEM\n");
+
+1013  
 ENOMEM
 ;
 
-969 
+1021 
 ¡©us
  = 
 	`devfs_£t_cdev´iv
@@ -250353,21 +250729,27 @@ pÝ’
 nvkms_þo£
 );
 
-970 ià(
+1022 ià(
 ¡©us
  != 0) {
 
-971 
+1023 
 	`nvkms_ä“
 (
 pÝ’
 , (*popen));
 
-972  
+1024 
+	`´štf
+("nvkms_Ý’:»tuº stu ð%d\n", 
+¡©us
+);
+
+1025  
 ¡©us
 ;
 
-975 
+1028 
 	`mtx_š™
 (&
 pÝ’
@@ -250379,13 +250761,13 @@ lock
 NULL
 , 0);
 
-977 
+1030 
 	`sx_xlock
 (&
 nvkms_lock
 );
 
-978 
+1031 
 pÝ’
 ->
 d©a
@@ -250399,13 +250781,25 @@ p_pid
 NVKMS_CLIENT_USER_SPACE
 ,…open);
 
-979 
+1032 
 	`sx_xuÆock
 (&
 nvkms_lock
 );
 
-985  (
+1038 
+	`´štf
+("nvkms_Ý’:»tuº: %d\n", (
+pÝ’
+->
+d©a
+ =ð
+NULL
+è? 
+EPERM
+ : 0);
+
+1039  (
 pÝ’
 ->
 d©a
@@ -250415,45 +250809,45 @@ NULL
 EPERM
  : 0;
 
-986 
+1040 
 	}
 }
 
-988 
+1042 
 	$nvkms_pÞl
 (
 
-989 
+1043 
 cdev
  *
 dev
 ,
 
-990 
+1044 
 ev’ts
 ,
 
-991 
+1045 
 th»ad
  *
 td
 
 
-994 
+1048 
 nvkms_³r_Ý’
  *
 pÝ’
 ;
 
-995 
+1049 
 ¡©us
 ;
 
-996 
+1050 
 mask
  = 0;
 
-998 
+1052 
 ¡©us
  = 
 	`devfs_g‘_cdev´iv
@@ -250461,11 +250855,11 @@ mask
 pÝ’
 );
 
-999 ià(
+1053 ià(
 ¡©us
  != 0) {
 
-1003 
+1057 
 	`mtx_lock
 (&
 pÝ’
@@ -250475,7 +250869,7 @@ ev’ts
 lock
 );
 
-1005 ià(!
+1059 ià(!
 pÝ’
 ->
 ev’ts
@@ -250483,7 +250877,7 @@ ev’ts
 avažabË
 ) {
 
-1006 
+1060 
 	`£ÌecÜd
 (
 td
@@ -250495,7 +250889,7 @@ ev’ts
 £Ëù
 );
 
-1008 
+1062 
 mask
  = (
 ev’ts
@@ -250507,7 +250901,7 @@ POLLPRI
 POLLRDNORM
 ));
 
-1011 
+1065 
 	`mtx_uÆock
 (&
 pÝ’
@@ -250517,63 +250911,63 @@ ev’ts
 lock
 );
 
-1013  
+1067  
 mask
 ;
 
-1014 
+1068 
 	}
 }
 
-1024 #ià
+1078 #ià
 defšed
 (
 NVKMS_SUPPORT_LINUX_COMPAT
 )
 
-1026 
+1080 
 	$nvkms_lšux_ioùl_funùiÚ
 (
 
-1027 
+1081 
 th»ad
  *
 td
 ,
 
-1028 
+1082 
 lšux_ioùl_¬gs
  *
 ¬gs
 
 
-1031 
+1085 
 fže
  *
 å
 ;
 
-1032 
+1086 
 ¡©us
 ;
 
-1033 
+1087 
 u_lÚg
  
 cmd
 ;
 
-1035 #ià
+1089 #ià
 NV_FGET_HAS_CAP_RIGHTS_T_ARG
 
 
-1036 
+1090 
 ÿp_rights_t
  
 rights
 ;
 
-1037 
+1091 
 ¡©us
  = 
 	`fg‘
@@ -250593,7 +250987,7 @@ CAP_IOCTL
 å
 );
 
-1039 
+1093 
 ¡©us
  = 
 	`fg‘
@@ -250607,21 +251001,21 @@ fd
 å
 );
 
-1042 ià(
+1096 ià(
 ¡©us
  != 0) {
 
-1043  
+1097  
 ¡©us
 ;
 
-1046 
+1100 
 cmd
  = 
 ¬gs
 ->cmd;
 
-1048 
+1102 
 ¡©us
  = 
 	`fo_ioùl
@@ -250641,7 +251035,7 @@ td
 td_uüed
 ,d);
 
-1049 
+1103 
 	`fdrÝ
 (
 å
@@ -250649,15 +251043,15 @@ td_uüed
 td
 );
 
-1051  
+1105  
 ¡©us
 ;
 
-1052 
+1106 
 	}
 }
 
-1054 
+1108 
 	#NVKMS_LINUX_IOCTL_MIN
  
 	`_IOC
@@ -250669,7 +251063,7 @@ NVKMS_IOCTL_CMD
 
 	)
 
-1055 
+1109 
 	#NVKMS_LINUX_IOCTL_MAX
  
 NVKMS_LINUX_IOCTL_MIN
@@ -250677,99 +251071,99 @@ NVKMS_LINUX_IOCTL_MIN
 
 	)
 
-1057 
+1111 
 lšux_ioùl_hªdËr
  
 	gnvkms_lšux_ioùl_hªdËr
  = {
 
-1058 
+1112 
 nvkms_lšux_ioùl_funùiÚ
 ,
 
-1059 
+1113 
 NVKMS_LINUX_IOCTL_MIN
 ,
 
-1060 
+1114 
 NVKMS_LINUX_IOCTL_MAX
 ,
 
-1064 
+1118 
 	$nvkms_lšux_com·t_lßd
 ()
 
-1066 #ià
+1120 #ià
 	`defšed
 (
 NVKMS_SUPPORT_LINUX_COMPAT
 )
 
-1067 
+1121 
 	`lšux_ioùl_»gi¡”_hªdËr
 (&
 nvkms_lšux_ioùl_hªdËr
 );
 
-1069 
+1123 
 	}
 }
 
-1071 
+1125 
 	$nvkms_lšux_com·t_uÆßd
 ()
 
-1073 #ià
+1127 #ià
 	`defšed
 (
 NVKMS_SUPPORT_LINUX_COMPAT
 )
 
-1074 
+1128 
 	`lšux_ioùl_uÄegi¡”_hªdËr
 (&
 nvkms_lšux_ioùl_hªdËr
 );
 
-1076 
+1130 
 	}
 }
 
-1082 
+1136 
 cdevsw
  
 	gnvkms_cdevsw
  = {
 
-1083 .
+1137 .
 d_Ý’
  = 
 nvkms_Ý’
 ,
 
-1084 .
+1138 .
 	gd_ioùl
  = 
 nvkms_ioùl
 ,
 
-1085 .
+1139 .
 	gd_pÞl
  = 
 nvkms_pÞl
 ,
 
-1086 .
+1140 .
 	gd_Çme
  = "nvidia-modeset",
 
-1087 .
+1141 .
 	gd_v”siÚ
  = 
 D_VERSION
 ,
 
-1091 
+1145 
 	$nvidŸ_mode£t_lßd”
 (
 moduË
@@ -250781,17 +251175,17 @@ wh©
 ¬g
 )
 
-1093 
+1147 
 »t
 ;
 
-1100 
+1154 
 cdev
  *
 nvkms_dev
 ;
 
-1107 
+1161 
 NvBoÞ
  
 nvkms_moduË_lßded
@@ -250799,7 +251193,7 @@ nvkms_moduË_lßded
 NV_FALSE
 ;
 
-1108 
+1162 
 nvkms_tim”_t
  *
 tim”
@@ -250807,35 +251201,35 @@ tim”
 tmp
 ;
 
-1110 
+1164 
 wh©
 ) {
 
-1111 
+1165 
 MOD_LOAD
 :
 
-1112 
+1166 
 »t
  = 
 	`nvkms_®loc_rm
 ();
 
-1114 ià(
+1168 ià(
 »t
  != 0) {
 
-1115  
+1169  
 »t
 ;
 
-1118 
+1172 
 	`sx_š™
 (&
 nvkms_lock
 , "nvidia-modeset†ock");
 
-1119 
+1173 
 	`sx_š™
 (&
 nvkms_moduË
@@ -250843,13 +251237,13 @@ nvkms_moduË
 lock
 , "nvidia-modeset module data†ock");
 
-1120 
+1174 
 nvkms_moduË
 .
 þ›Á_couÁ”
  = 0;
 
-1121 
+1175 
 nvkms_moduË
 .
 is_uÆßdšg
@@ -250857,7 +251251,7 @@ is_uÆßdšg
 NV_FALSE
 ;
 
-1123 
+1177 
 	`LIST_INIT
 (&
 nvkms_tim”s
@@ -250865,7 +251259,7 @@ nvkms_tim”s
 li¡
 );
 
-1124 
+1178 
 	`sx_š™
 (&
 nvkms_tim”s
@@ -250873,7 +251267,7 @@ nvkms_tim”s
 lock
 , "nvidia-modesetimer†ock");
 
-1126 
+1180 
 nvkms_dev
  = 
 	`make_dev
@@ -250881,23 +251275,23 @@ nvkms_dev
 nvkms_cdevsw
 ,
 
-1127 
+1181 
 NVKMS_CDEV_MINOR
 ,
 
-1128 
+1182 
 UID_ROOT
 , 
 GID_WHEEL
 , 0666,
 
-1131 ià(
+1185 ià(
 nvkms_dev
  =ð
 NULL
 ) {
 
-1132 
+1186 
 	`sx_de¡roy
 (&
 nvkms_moduË
@@ -250905,7 +251299,7 @@ nvkms_moduË
 lock
 );
 
-1133 
+1187 
 	`sx_de¡roy
 (&
 nvkms_tim”s
@@ -250913,55 +251307,55 @@ nvkms_tim”s
 lock
 );
 
-1134 
+1188 
 	`sx_de¡roy
 (&
 nvkms_lock
 );
 
-1136 
+1190 
 	`nvkms_ä“_rm
 ();
 
-1137  
+1191  
 ENOMEM
 ;
 
-1141 
+1195 
 nvkms_moduË_lßded
  = 
 NV_TRUE
 ;
 
-1143 
+1197 
 	`sx_xlock
 (&
 nvkms_lock
 );
 
-1144 
+1198 
 	`nvKmsModuËLßd
 ();
 
-1145 
+1199 
 	`sx_xuÆock
 (&
 nvkms_lock
 );
 
-1147 
+1201 
 	`nvkms_lšux_com·t_lßd
 ();
 
-1151 
+1205 
 MOD_QUIESCE
 :
 
-1152 ià(!
+1206 ià(!
 nvkms_moduË_lßded
 ) {
 
-1156 
+1210 
 	`sx_xlock
 (&
 nvkms_moduË
@@ -250969,13 +251363,13 @@ nvkms_moduË
 lock
 );
 
-1158 ià(
+1212 ià(
 nvkms_moduË
 .
 þ›Á_couÁ”
  > 0) {
 
-1159 
+1213 
 	`sx_xuÆock
 (&
 nvkms_moduË
@@ -250983,11 +251377,11 @@ nvkms_moduË
 lock
 );
 
-1160  
+1214  
 EBUSY
 ;
 
-1163 
+1217 
 	`sx_xuÆock
 (&
 nvkms_moduË
@@ -250995,19 +251389,19 @@ nvkms_moduË
 lock
 );
 
-1167 
+1221 
 MOD_UNLOAD
 :
 
-1168 
+1222 
 MOD_SHUTDOWN
 :
 
-1169 ià(!
+1223 ià(!
 nvkms_moduË_lßded
 ) {
 
-1173 
+1227 
 	`sx_xlock
 (&
 nvkms_moduË
@@ -251015,13 +251409,13 @@ nvkms_moduË
 lock
 );
 
-1175 ià(
+1229 ià(
 nvkms_moduË
 .
 þ›Á_couÁ”
  > 0) {
 
-1176 
+1230 
 	`sx_xuÆock
 (&
 nvkms_moduË
@@ -251029,11 +251423,11 @@ nvkms_moduË
 lock
 );
 
-1177  
+1231  
 EBUSY
 ;
 
-1180 
+1234 
 nvkms_moduË
 .
 is_uÆßdšg
@@ -251041,7 +251435,7 @@ is_uÆßdšg
 NV_TRUE
 ;
 
-1182 
+1236 
 	`sx_xuÆock
 (&
 nvkms_moduË
@@ -251049,27 +251443,27 @@ nvkms_moduË
 lock
 );
 
-1184 
+1238 
 	`nvkms_lšux_com·t_uÆßd
 ();
 
-1186 
+1240 
 	`sx_xlock
 (&
 nvkms_lock
 );
 
-1187 
+1241 
 	`nvKmsModuËUÆßd
 ();
 
-1188 
+1242 
 	`sx_xuÆock
 (&
 nvkms_lock
 );
 
-1196 
+1250 
 	`sx_xlock
 (&
 nvkms_tim”s
@@ -251077,7 +251471,7 @@ nvkms_tim”s
 lock
 );
 
-1198 
+1252 
 	`LIST_FOREACH_SAFE
 (
 tim”
@@ -251091,13 +251485,13 @@ tim”s_li¡
 tmp
 ) {
 
-1199 ià(
+1253 ià(
 tim”
 ->
 ÿÎout_ü—‹d
 ) {
 
-1207 ià(
+1261 ià(
 	`ÿÎout_d¿š
 (&
 tim”
@@ -251105,7 +251499,7 @@ tim”
 ÿÎout
 ) > 0) {
 
-1209 
+1263 
 	`LIST_REMOVE
 (
 tim”
@@ -251113,13 +251507,13 @@ tim”
 tim”s_li¡
 );
 
-1210 ià(
+1264 ià(
 tim”
 ->
 isRefPŒ
 ) {
 
-1211 
+1265 
 	`nvkms_dec_»f
 (
 tim”
@@ -251127,13 +251521,13 @@ tim”
 d©aPŒ
 );
 
-1213 
+1267 
 	`nvkms_ä“
 (
 tim”
 , (*timer));
 
-1218 
+1272 
 	`sx_xuÆock
 (&
 nvkms_tim”s
@@ -251141,25 +251535,25 @@ nvkms_tim”s
 lock
 );
 
-1220 
+1274 
 	`skqueue_run
 (
 skqueue_nvkms
 );
 
-1222 
+1276 
 	`de¡roy_dev
 (
 nvkms_dev
 );
 
-1223 
+1277 
 nvkms_dev
  = 
 NULL
 ;
 
-1225 
+1279 
 	`sx_de¡roy
 (&
 nvkms_moduË
@@ -251167,7 +251561,7 @@ nvkms_moduË
 lock
 );
 
-1226 
+1280 
 	`sx_de¡roy
 (&
 nvkms_tim”s
@@ -251175,85 +251569,85 @@ nvkms_tim”s
 lock
 );
 
-1227 
+1281 
 	`sx_de¡roy
 (&
 nvkms_lock
 );
 
-1229 
+1283 
 	`nvkms_ä“_rm
 ();
 
-1236  
+1290  
 EOPNOTSUPP
 ;
 
-1237 
+1291 
 	}
 }
 
-1239 
+1293 
 moduËd©a_t
  
 	gnvidŸ_mode£t_moduËd©a
  = {
 
-1241 
+1295 
 nvidŸ_mode£t_lßd”
 ,
 
-1242 
+1296 
 NULL
 
 
-1245 
+1299 
 DECLARE_MODULE
 (
 nvidŸ_mode£t
 ,
 
-1246 
+1300 
 nvidŸ_mode£t_moduËd©a
 ,
 
-1247 
+1301 
 SI_SUB_DRIVERS
 ,
 
-1248 
+1302 
 SI_ORDER_ANY
 );
 
-1250 
+1304 
 MODULE_VERSION
 (
 nvidŸ_mode£t
 , 1);
 
-1252 
+1306 
 MODULE_DEPEND
 (
 nvidŸ_mode£t
 ,
 
-1253 
+1307 
 nvidŸ
 ,
 
-1256 #ià
+1310 #ià
 defšed
 (
 NVKMS_SUPPORT_LINUX_COMPAT
 )
 
-1257 
+1311 
 MODULE_DEPEND
 (
 nvidŸ_mode£t
 ,
 
-1258 
+1312 
 lšux
 ,
 
@@ -279229,13 +279623,17 @@ nvidŸ_fž•
 fž•
 
 
-551 
+551 
+	`´štf
+("nvidia_open_dev:\n");
+
+552 
 ¡©us
  = 
 ENOMEM
 ;
 
-552 
+553 
 nvidŸ_soác
  *
 sc
@@ -279245,7 +279643,7 @@ nv
 os_¡©e
 ;
 
-553 
+554 
 nvidŸ_¡ack_t
  *
 ¥
@@ -279253,13 +279651,13 @@ nvidŸ_¡ack_t
 NULL
 ;
 
-555 ià(
+556 ià(
 sc
 ->
 »fút
  == 0) {
 
-556 
+557 
 ¡©us
  = 
 	`nv_dev_®loc_¡acks
@@ -279267,15 +279665,15 @@ sc
 sc
 );
 
-557 ià(
+558 ià(
 ¡©us
 )
 
-558 
+559 
 çžed
 ;
 
-561 
+562 
 ¥
  = 
 sc
@@ -279283,7 +279681,7 @@ sc
 NV_DEV_STACK_API
 ];
 
-562 
+563 
 	`NV_PCI_CHECK_CONFIG_SPACE
 (
 ¥
@@ -279293,13 +279691,13 @@ nv
 TRUE
 , TRUE, TRUE);
 
-564 ià(
+565 ià(
 sc
 ->
 »fút
  == 0) {
 
-565 ià(!
+566 ià(!
 	`rm_š™_ad­‹r
 (
 ¥
@@ -279307,7 +279705,7 @@ sc
 nv
 )) {
 
-566 
+567 
 	`deviû_´štf
 (
 sc
@@ -279315,17 +279713,17 @@ sc
 dev
 , "NVRM:„m_init_adapter() failed!\n");
 
-567 
+568 
 ¡©us
  = 
 EIO
 ;
 
-568 
+569 
 çžed
 ;
 
-571 ià(
+572 ià(
 nv
 ->
 ud
@@ -279333,7 +279731,7 @@ ud
 size
  != 0) {
 
-572 
+573 
 sc
 ->
 UD_sg_li¡
@@ -279343,17 +279741,17 @@ UD_sg_li¡
 M_WAITOK
 );
 
-573 ià(!
+574 ià(!
 sc
 ->
 UD_sg_li¡
 )
 
-574 
+575 
 çžed
 ;
 
-576 
+577 
 	`sgli¡_­³nd_phys
 (
 sc
@@ -279369,7 +279767,7 @@ ud
 size
 );
 
-578 
+579 
 sc
 ->
 UD_objeù
@@ -279381,7 +279779,7 @@ OBJT_SG
 UD_sg_li¡
 ,
 
-579 
+580 
 nv
 ->
 ud
@@ -279393,21 +279791,21 @@ VM_PROT_READ
 VM_PROT_WRITE
 ),
 
-580 0, 
+581 0, 
 NULL
 );
 
-581 ià(!
+582 ià(!
 sc
 ->
 UD_objeù
 )
 
-582 
+583 
 çžed
 ;
 
-584 
+585 
 	`VM_OBJECT_WLOCK
 (
 sc
@@ -279415,7 +279813,7 @@ sc
 UD_objeù
 );
 
-585 
+586 
 	`vm_objeù_£t_mem©Œ
 (
 sc
@@ -279425,7 +279823,7 @@ UD_objeù
 VM_MEMATTR_UNCACHEABLE
 );
 
-586 
+587 
 	`VM_OBJECT_WUNLOCK
 (
 sc
@@ -279433,7 +279831,7 @@ sc
 UD_objeù
 );
 
-589 
+590 
 nv
 ->
 æags
@@ -279441,23 +279839,23 @@ nv
 NV_FLAG_OPEN
 ;
 
-592 
+593 
 sc
 ->
 »fút
 ++;
 
-596 
+597 
 çžed
 :
 
-597 ià(
+598 ià(
 sc
 ->
 »fút
  == 0) {
 
-598 ià(
+599 ià(
 sc
 ->
 UD_objeù
@@ -279465,7 +279863,7 @@ UD_objeù
 NULL
 )
 
-599 
+600 
 	`NV_VM_OBJECT_DEALLOCATE
 (
 sc
@@ -279473,7 +279871,7 @@ sc
 UD_objeù
 );
 
-600 ià(
+601 ià(
 sc
 ->
 UD_sg_li¡
@@ -279481,7 +279879,7 @@ UD_sg_li¡
 NULL
 )
 
-601 
+602 
 	`NV_SGLIST_FREE
 (
 sc
@@ -279489,13 +279887,13 @@ sc
 UD_sg_li¡
 );
 
-603 ià(
+604 ià(
 ¡©us
  !ð
 EIO
 )
 
-604 
+605 
 	`NV_SHUTDOWN_ADAPTER
 (
 ¥
@@ -279503,41 +279901,47 @@ EIO
 nv
 );
 
-606 
+607 
 	`nv_dev_ä“_¡acks
 (
 sc
 );
 
-609  
+610 
+	`´štf
+("nvidŸ_Ý’_dev:»tuº: %d\n", 
+¡©us
+);
+
+611  
 ¡©us
 ;
 
-610 
+612 
 	}
 }
 
-612 
+614 
 	$nvidŸ_Ý’_dev_k”Ãl
 (
 
-613 
+615 
 NvU32
  
 gpu_id
 ,
 
-614 
+616 
 nvidŸ_¡ack_t
  *
 ¥
 
 
-617 
+619 
 ¡©us
 ;
 
-618 
+620 
 nv_¡©e_t
  *
 nv
@@ -279547,27 +279951,31 @@ nv
 gpu_id
 );
 
-620 ià(
+622 
+	`´štf
+("nvidia_open_dev_kernel:\n");
+
+623 ià(
 nv
  =ð
 NULL
 ) {
 
-621 
+624 
 	`´štf
 ("nvidia_open_dev_kernel: Failedo findhe‚vidia state\n");
 
-622  
+625  
 EINVAL
 ;
 
-625 
+628 
 	`nv_lock_­i
 (
 nv
 );
 
-626 
+629 
 ¡©us
  = 
 	`nvidŸ_Ý’_dev
@@ -279577,55 +279985,55 @@ nv
 NULL
  );
 
-627 
+630 
 	`nv_uÆock_­i
 (
 nv
 );
 
-629 
+632 
 	`´štf
 ("nvidŸ_Ý’_dev_k”Ãl:‚vidŸ_Ý’_dev stu ð%d\n", 
 ¡©us
 );
 
-630  
+633  
 ¡©us
 ;
 
-631 
+634 
 	}
 }
 
-633 
+636 
 	$nvidŸ_þo£_dev
 (
 
-634 
+637 
 nv_¡©e_t
  *
 nv
 ,
 
-635 
+638 
 nvidŸ_fž•
  *
 fž•
 
 
-638 
+641 
 nvidŸ_soác
  *
 sc
 ;
 
-639 
+642 
 nvidŸ_¡ack_t
  *
 ¥
 ;
 
-641 
+644 
 sc
  = 
 nv
@@ -279633,7 +280041,7 @@ nv
 os_¡©e
 ;
 
-642 
+645 
 ¥
  = 
 sc
@@ -279641,7 +280049,7 @@ sc
 NV_DEV_STACK_API
 ];
 
-644 
+647 
 	`NV_PCI_CHECK_CONFIG_SPACE
 (
 ¥
@@ -279651,13 +280059,13 @@ nv
 TRUE
 , TRUE, TRUE);
 
-645 ià(
+648 ià(
 fž•
  !ð
 NULL
 ) {
 
-646 
+649 
 	`rm_ä“_unu£d_þ›Ás
 (
 ¥
@@ -279667,13 +280075,13 @@ nv
 fž•
 );
 
-649 ià(--
+652 ià(--
 sc
 ->
 »fút
  == 0) {
 
-650 ià(
+653 ià(
 sc
 ->
 UD_objeù
@@ -279681,7 +280089,7 @@ UD_objeù
 NULL
 )
 
-651 
+654 
 	`NV_VM_OBJECT_DEALLOCATE
 (
 sc
@@ -279689,7 +280097,7 @@ sc
 UD_objeù
 );
 
-652 ià(
+655 ià(
 sc
 ->
 UD_sg_li¡
@@ -279697,7 +280105,7 @@ UD_sg_li¡
 NULL
 )
 
-653 
+656 
 	`NV_SGLIST_FREE
 (
 sc
@@ -279705,7 +280113,7 @@ sc
 UD_sg_li¡
 );
 
-655 
+658 
 	`NV_SHUTDOWN_ADAPTER
 (
 ¥
@@ -279713,13 +280121,13 @@ UD_sg_li¡
 nv
 );
 
-657 
+660 
 	`nv_dev_ä“_¡acks
 (
 sc
 );
 
-659 
+662 
 nv
 ->
 æags
@@ -279727,27 +280135,27 @@ nv
 NV_FLAG_OPEN
 ;
 
-663 
+666 
 	}
 }
 
-665 
+668 
 	$nvidŸ_þo£_dev_k”Ãl
 (
 
-666 
+669 
 NvU32
  
 gpu_id
 ,
 
-667 
+670 
 nvidŸ_¡ack_t
  *
 ¥
 
 
-670 
+673 
 nv_¡©e_t
  *
 nv
@@ -279757,19 +280165,19 @@ nv
 gpu_id
 );
 
-672 ià(
+675 ià(
 nv
  =ð
 NULL
 ) {
 
-676 
+679 
 	`nv_lock_­i
 (
 nv
 );
 
-677 
+680 
 	`nvidŸ_þo£_dev
 (
 nv
@@ -279777,67 +280185,67 @@ nv
 NULL
  );
 
-678 
+681 
 	`nv_uÆock_­i
 (
 nv
 );
 
-679 
+682 
 	}
 }
 
-681 
+684 
 	$nvidŸ_modev’t
 (
 
-682 
+685 
 moduË_t
  
 mod
 ,
 
-683 
+686 
 wh©
 ,
 
-684 *
+687 *
 ¬g
 
 
-687 
+690 
 nv_¡©e_t
  *
 nv
 ;
 
-688 
+691 
 nvidŸ_soác
  *
 sc
 ;
 
-689 
+692 
 nvidŸ_¡ack_t
  *
 ¥
 ;
 
-691 
+694 
 wh©
 ) {
 
-692 
+695 
 MOD_LOAD
 :
 
-699 
+702 
 sc
  = &
 nvidŸ_ùl_sc
 ;
 
-701 
+704 
 nvidŸ_¡ack_t_zÚe
  = 
 	`uma_zü—‹
@@ -279845,45 +280253,45 @@ nvidŸ_¡ack_t_zÚe
 nvidŸ_¡ack_t
 ),
 
-702 
+705 
 NULL
 , NULL, NULL, NULL, 
 UMA_ALIGN_PTR
 , 0);
 
-703 ià(
+706 ià(
 nvidŸ_¡ack_t_zÚe
  =ð
 NULL
 )
 
-704  
+707  
 ENOMEM
 ;
 
-706 
+709 
 	`NV_UMA_ZONE_ALLOC_STACK
 (
 ¥
 );
 
-707 ià(
+710 ià(
 ¥
  =ð
 NULL
 ) {
 
-708 
+711 
 	`uma_zde¡roy
 (
 nvidŸ_¡ack_t_zÚe
 );
 
-709  
+712  
 ENOMEM
 ;
 
-712 
+715 
 	`bz”o
 (
 sc
@@ -279891,39 +280299,39 @@ sc
 nvidŸ_soác_t
 ));
 
-714 ià(!
+717 ià(!
 	`rm_š™_rm
 (
 ¥
 )) {
 
-715 
+718 
 	`´štf
 ("NVRM:„m_init_rm() failed!\n");
 
-716 
+719 
 	`NV_UMA_ZONE_FREE_STACK
 (
 ¥
 );
 
-717 
+720 
 	`uma_zde¡roy
 (
 nvidŸ_¡ack_t_zÚe
 );
 
-718  
+721  
 EIO
 ;
 
-721 
+724 
 __nvidŸ_š™_¥
  = 
 ¥
 ;
 
-723 ià(!
+726 ià(!
 	`nvidŸ_lock_š™_locks
 (
 ¥
@@ -279931,29 +280339,29 @@ __nvidŸ_š™_¥
 nvidŸ_ùl_¡©e
 )) {
 
-724 
+727 
 	`rm_shutdown_rm
 (
 ¥
 );
 
-725 
+728 
 	`NV_UMA_ZONE_FREE_STACK
 (
 ¥
 );
 
-726 
+729 
 	`uma_zde¡roy
 (
 nvidŸ_¡ack_t_zÚe
 );
 
-727  
+730  
 ENOMEM
 ;
 
-730 
+733 
 	`ÿÎout_š™
 (&
 sc
@@ -279963,7 +280371,7 @@ tim”
 CALLOUT_MPSAFE
 );
 
-731 
+734 
 	`sx_š™
 (&
 sc
@@ -279971,7 +280379,7 @@ sc
 ­i_sx
 , "ctl.api_sx");
 
-733 
+736 
 nvidŸ_ùl_¡©e
 .
 os_¡©e
@@ -279979,7 +280387,7 @@ os_¡©e
 sc
 ;
 
-734 
+737 
 sc
 ->
 nv_¡©e
@@ -279987,25 +280395,25 @@ nv_¡©e
 nvidŸ_ùl_¡©e
 ;
 
-736 
+739 
 	`nvidŸ_sysùl_š™
 ();
 
-737 
+740 
 	`nvidŸ_lšux_š™
 ();
 
-741 
+744 
 MOD_UNLOAD
 :
 
-747 
+750 
 nv
  = &
 nvidŸ_ùl_¡©e
 ;
 
-748 
+751 
 sc
  = 
 nv
@@ -280013,35 +280421,35 @@ nv
 os_¡©e
 ;
 
-750 
+753 
 	`nv_lock_­i
 (
 nv
 );
 
-752 ià(
+755 ià(
 sc
 ->
 »fút
  != 0) {
 
-753 
+756 
 	`nv_uÆock_­i
 (
 nv
 );
 
-754  
+757  
 EBUSY
 ;
 
-757 
+760 
 	`nv_uÆock_­i
 (
 nv
 );
 
-758 
+761 
 	`sx_de¡roy
 (&
 sc
@@ -280049,13 +280457,13 @@ sc
 ­i_sx
 );
 
-760 
+763 
 ¥
  = 
 __nvidŸ_š™_¥
 ;
 
-762 
+765 
 	`nvidŸ_lock_de¡roy_locks
 (
 ¥
@@ -280063,37 +280471,37 @@ __nvidŸ_š™_¥
 nv
 );
 
-764 
+767 
 	`rm_shutdown_rm
 (
 ¥
 );
 
-766 
+769 
 	`NV_UMA_ZONE_FREE_STACK
 (
 ¥
 );
 
-768 
+771 
 	`nvidŸ_sysùl_ex™
 ();
 
-769 
+772 
 	`nvidŸ_lšux_ex™
 ();
 
-771 
+774 
 	`uma_zde¡roy
 (
 nvidŸ_¡ack_t_zÚe
 );
 
-780 
+783 
 	}
 }
 
-782 
+785 
 	$nv_lock_­i
 (
 nv_¡©e_t
@@ -280101,7 +280509,7 @@ nv_¡©e_t
 nv
 )
 
-784 
+787 
 nvidŸ_soác
  *
 sc
@@ -280111,7 +280519,7 @@ nv
 os_¡©e
 ;
 
-785 
+788 
 	`sx_xlock
 (&
 sc
@@ -280119,11 +280527,11 @@ sc
 ­i_sx
 );
 
-786 
+789 
 	}
 }
 
-788 
+791 
 	$nv_uÆock_­i
 (
 nv_¡©e_t
@@ -280131,7 +280539,7 @@ nv_¡©e_t
 nv
 )
 
-790 
+793 
 nvidŸ_soác
  *
 sc
@@ -280141,7 +280549,7 @@ nv
 os_¡©e
 ;
 
-791 
+794 
 	`sx_xuÆock
 (&
 sc
@@ -280149,11 +280557,11 @@ sc
 ­i_sx
 );
 
-792 
+795 
 	}
 }
 
-794 
+797 
 NV_STATUS
  
 NV_API_CALL
@@ -280161,27 +280569,27 @@ NV_API_CALL
 	$nv_expÜt_rm_objeù_to_fd
 (
 
-795 
+798 
 NvHªdË
  
 hExpÜ‹dRmObjeù
 ,
 
-796 
+799 
 NvS32
  
 fd
 
 
-799  
+802  
 NV_ERR_NOT_SUPPORTED
 ;
 
-800 
+803 
 	}
 }
 
-802 
+805 
 NV_STATUS
  
 NV_API_CALL
@@ -280189,63 +280597,63 @@ NV_API_CALL
 	$nv_impÜt_rm_objeù_äom_fd
 (
 
-803 
+806 
 NvS32
  
 fd
 ,
 
-804 
+807 
 NvHªdË
  *
 pExpÜ‹dObjeù
 
 
-807  
+810  
 NV_ERR_NOT_SUPPORTED
 ;
 
-808 
+811 
 	}
 }
 
-810 
+813 
 NV_API_CALL
  
 	$nv_po¡_ev’t
 (
 
-811 
+814 
 nv_¡©e_t
  *
 nv
 ,
 
-812 
+815 
 nv_ev’t_t
  *
 ev’t
 ,
 
-813 
+816 
 NvHªdË
  
 hObjeù
 ,
 
-814 
+817 
 NvU32
  
 šdex
 ,
 
-815 
+818 
 NvBoÞ
  
 d©a_v®id
 
 
-818 
+821 
 nvidŸ_fž•
  *
 fž•
@@ -280255,13 +280663,13 @@ ev’t
 fže
 ;
 
-819 
+822 
 nvidŸ_ev’t
  *
 ‘
 ;
 
-821 
+824 
 	`mtx_lock
 (&
 fž•
@@ -280269,11 +280677,11 @@ fž•
 ev’t_mtx
 );
 
-823 ià(
+826 ià(
 d©a_v®id
 ) {
 
-824 
+827 
 ‘
  = 
 	`m®loc
@@ -280285,13 +280693,13 @@ M_NVIDIA
 M_NOWAIT
 );
 
-825 ià(
+828 ià(
 ‘
  =ð
 NULL
 ) {
 
-826 
+829 
 	`mtx_uÆock
 (&
 fž•
@@ -280299,13 +280707,13 @@ fž•
 ev’t_mtx
 );
 
-830 
+833 
 ‘
 ->
 ev’t
  = *event;
 
-831 
+834 
 ‘
 ->
 ev’t
@@ -280313,7 +280721,7 @@ ev’t
 hObjeù
  = hObject;
 
-832 
+835 
 ‘
 ->
 ev’t
@@ -280321,7 +280729,7 @@ ev’t
 šdex
  = index;
 
-834 
+837 
 	`STAILQ_INSERT_TAIL
 (&
 fž•
@@ -280333,7 +280741,7 @@ ev’t_queue
 queue
 );
 
-837 
+840 
 fž•
 ->
 ev’t_³ndšg
@@ -280341,7 +280749,7 @@ ev’t_³ndšg
 TRUE
 ;
 
-838 
+841 
 	`mtx_uÆock
 (&
 fž•
@@ -280349,7 +280757,7 @@ fž•
 ev’t_mtx
 );
 
-840 
+843 
 	`£lwakeup
 (&
 fž•
@@ -280357,11 +280765,11 @@ fž•
 ev’t_r£l
 );
 
-841 
+844 
 	}
 }
 
-843 
+846 
 NvS32
  
 NV_API_CALL
@@ -280369,29 +280777,29 @@ NV_API_CALL
 	$nv_g‘_ev’t
 (
 
-844 
+847 
 nv_¡©e_t
  *
 nv
 ,
 
-845 *
+848 *
 fže
 ,
 
-846 
+849 
 nv_ev’t_t
  *
 ev’t
 ,
 
-847 
+850 
 NvU32
  *
 ³ndšg
 
 
-850 
+853 
 nvidŸ_fž•
  *
 fž•
@@ -280399,13 +280807,13 @@ fž•
 fže
 ;
 
-851 
+854 
 nvidŸ_ev’t
  *
 ‘
 ;
 
-853 
+856 
 	`mtx_lock
 (&
 fž•
@@ -280413,7 +280821,7 @@ fž•
 ev’t_mtx
 );
 
-855 
+858 
 ‘
  = 
 	`STAILQ_FIRST
@@ -280423,13 +280831,13 @@ fž•
 ev’t_queue
 );
 
-856 ià(
+859 ià(
 ‘
  =ð
 NULL
 ) {
 
-857 
+860 
 	`mtx_uÆock
 (&
 fž•
@@ -280437,17 +280845,17 @@ fž•
 ev’t_mtx
 );
 
-858  
+861  
 NV_ERR_GENERIC
 ;
 
-861 *
+864 *
 ev’t
  = 
 ‘
 ->event;
 
-863 
+866 
 	`STAILQ_REMOVE
 (&
 fž•
@@ -280461,7 +280869,7 @@ nvidŸ_ev’t
 queue
 );
 
-865 *
+868 *
 ³ndšg
  = !
 	`STAILQ_EMPTY
@@ -280471,7 +280879,7 @@ fž•
 ev’t_queue
 );
 
-867 
+870 
 	`mtx_uÆock
 (&
 fž•
@@ -280479,7 +280887,7 @@ fž•
 ev’t_mtx
 );
 
-869 
+872 
 	`ä“
 (
 ‘
@@ -280487,53 +280895,53 @@ ev’t_mtx
 M_NVIDIA
 );
 
-871  
+874  
 NV_OK
 ;
 
-872 
+875 
 	}
 }
 
-874 * 
+877 * 
 NV_API_CALL
  
 	$nv_®loc_k”Ãl_m­pšg
 (
 
-875 
+878 
 nv_¡©e_t
  *
 nv
 ,
 
-876 *
+879 *
 pAÎocPriv©e
 ,
 
-877 
+880 
 NvU64
  
 ·geIndex
 ,
 
-878 
+881 
 NvU32
  
 ·geOff£t
 ,
 
-879 
+882 
 NvU64
  
 size
 ,
 
-880 **
+883 **
 µPriv©e
 
 
-883 
+886 
 nvidŸ_®loc
  *
 ©
@@ -280541,29 +280949,29 @@ nvidŸ_®loc
 pAÎocPriv©e
 ;
 
-884 
+887 
 vm_off£t_t
  
 vœtu®_add»ss
 ;
 
-885 
+888 
 ¡©us
 ;
 
-887 ià(
+890 ià(
 ©
 ->
 ®loc_ty³_cÚtiguous
 ) {
 
-888 *
+891 *
 µPriv©e
  = 
 NULL
 ;
 
-889  (*)(
+892  (*)(
 NvUPŒ
 )(
 ©
@@ -280573,7 +280981,7 @@ NvUPŒ
 vœtu®_add»ss
  +
 
-890 (
+893 (
 ·geIndex
  * 
 PAGE_SIZE
@@ -280581,13 +280989,13 @@ PAGE_SIZE
 ·geOff£t
 );
 
-893 
+896 
 size
  = (siz+ 
 PAGE_MASK
 ) & ~PAGE_MASK;
 
-895 
+898 
 	`vm_objeù_»ã»nû
 (
 ©
@@ -280595,7 +281003,7 @@ PAGE_MASK
 objeù
 );
 
-896 
+899 
 vœtu®_add»ss
  = 
 	`vm_m­_mš
@@ -280603,7 +281011,7 @@ vœtu®_add»ss
 k”Ãl_m­
 );
 
-898 
+901 
 ¡©us
  = 
 	`vm_m­_fšd
@@ -280619,7 +281027,7 @@ objeù
 PAGE_SIZE
 ),
 
-899 &
+902 &
 vœtu®_add»ss
 , 
 size
@@ -280627,25 +281035,25 @@ size
 VMFS_ANY_SPACE
 ,
 
-900 (
+903 (
 VM_PROT_READ
  | 
 VM_PROT_WRITE
 ),
 
-901 (
+904 (
 VM_PROT_READ
  | 
 VM_PROT_WRITE
 ), 0);
 
-902 ià(
+905 ià(
 ¡©us
  !ð
 KERN_SUCCESS
 ) {
 
-903 
+906 
 	`NV_VM_OBJECT_DEALLOCATE
 (
 ©
@@ -280653,11 +281061,11 @@ KERN_SUCCESS
 objeù
 );
 
-904  
+907  
 NULL
 ;
 
-907 
+910 
 ¡©us
  = 
 	`vm_m­_wœe
@@ -280667,25 +281075,25 @@ k”Ãl_m­
 vœtu®_add»ss
 ,
 
-908 (
+911 (
 vœtu®_add»ss
  + 
 size
 ),
 
-909 (
+912 (
 VM_MAP_WIRE_SYSTEM
  | 
 VM_MAP_WIRE_NOHOLES
 ));
 
-910 ià(
+913 ià(
 ¡©us
  !ð
 KERN_SUCCESS
 ) {
 
-911 
+914 
 	`vm_m­_»move
 (
 k”Ãl_m­
@@ -280693,17 +281101,17 @@ k”Ãl_m­
 vœtu®_add»ss
 ,
 
-912 (
+915 (
 vœtu®_add»ss
  + 
 size
 ));
 
-913  
+916  
 NULL
 ;
 
-916 *
+919 *
 µPriv©e
  = (*)(
 NvUPŒ
@@ -280711,17 +281119,17 @@ NvUPŒ
 size
 ;
 
-918  (*)(
+921  (*)(
 vœtu®_add»ss
  + 
 ·geOff£t
 );
 
-919 
+922 
 	}
 }
 
-921 
+924 
 NV_STATUS
  
 NV_API_CALL
@@ -280729,43 +281137,43 @@ NV_API_CALL
 	$nv_ä“_k”Ãl_m­pšg
 (
 
-922 
+925 
 nv_¡©e_t
  *
 nv
 ,
 
-923 *
+926 *
 pAÎocPriv©e
 ,
 
-924 *
+927 *
 add»ss
 ,
 
-925 *
+928 *
 pPriv©e
 
 
-928 
+931 
 vm_off£t_t
  
 vœtu®_add»ss
 ;
 
-929 
+932 
 ušt32_t
  
 size
 ;
 
-931 ià(
+934 ià(
 pPriv©e
  !ð
 NULL
 ) {
 
-932 
+935 
 vœtu®_add»ss
  = (
 vm_off£t_t
@@ -280775,7 +281183,7 @@ add»ss
 PAGE_MASK
 ;
 
-933 
+936 
 size
  = (
 NvUPŒ
@@ -280783,7 +281191,7 @@ NvUPŒ
 pPriv©e
 ;
 
-934 
+937 
 	`vm_m­_»move
 (
 k”Ãl_m­
@@ -280791,21 +281199,21 @@ k”Ãl_m­
 vœtu®_add»ss
 ,
 
-935 (
+938 (
 vœtu®_add»ss
  + 
 size
 ));
 
-938  
+941  
 NV_OK
 ;
 
-939 
+942 
 	}
 }
 
-941 
+944 
 nvidŸ_fž•_t
 * 
 	$nv_g‘_fže_´iv©e
@@ -280819,7 +281227,7 @@ nv_¡©e_t
 nv
 )
 
-943 
+946 
 fže
  *
 pFže
@@ -280827,7 +281235,7 @@ pFže
 NULL
 ;
 
-944 
+947 
 NV_STATUS
  
 ¡©us
@@ -280835,7 +281243,7 @@ NV_STATUS
 EINVAL
 ;
 
-945 
+948 
 nvidŸ_fž•_t
  *
 nvå
@@ -280843,35 +281251,35 @@ nvå
 NULL
 ;
 
-946 
+949 
 cdev_´ivd©a
  *
 p
 ;
 
-948 #ià
+951 #ià
 __F»eBSD_v”siÚ
  >= 1000053
 
-949 
+952 
 ÿp_rights_t
  
 rights
 ;
 
-951 
+954 
 th»ad
  *
 td
 ;
 
-953 
+956 
 td
  = 
 cu¹h»ad
 ;
 
-955 
+958 
 ¡©us
  = 
 	`fg‘
@@ -280889,15 +281297,15 @@ CAP_READ
 pFže
 );
 
-956 ià(
+959 ià(
 ¡©us
  != 0)
 
-957  
+960  
 NULL
 ;
 
-959 
+962 
 p
  = 
 pFže
@@ -280905,21 +281313,21 @@ pFže
 f_cdev´iv
 ;
 
-960 if(!
+963 if(!
 p
 )
 
-961 
+964 
 dÚe
 ;
 
-963 ià(
+966 ià(
 	`NV_IS_CTL_DEVICE
 (
 nv
 ))
 
-965 ià(
+968 ià(
 p
 ->
 cdpd_dŒ
@@ -280927,11 +281335,11 @@ cdpd_dŒ
 nvidŸ_ùl_dtÜ
 )
 
-966 
+969 
 dÚe
 ;
 
-970 ià(
+973 ià(
 p
 ->
 cdpd_dŒ
@@ -280939,11 +281347,11 @@ cdpd_dŒ
 nvidŸ_dev_dtÜ
 )
 
-971 
+974 
 dÚe
 ;
 
-974 
+977 
 nvå
  = (
 nvidŸ_fž•_t
@@ -280953,11 +281361,11 @@ p
 cdpd_d©a
 ;
 
-976 
+979 
 dÚe
 :
 
-986 
+989 
 	`fdrÝ
 (
 pFže
@@ -280965,15 +281373,15 @@ pFže
 td
 );
 
-988  
+991  
 nvå
 ;
 
-989 
+992 
 	}
 }
 
-991 
+994 
 NV_STATUS
  
 NV_API_CALL
@@ -280981,41 +281389,41 @@ NV_API_CALL
 	$nv_add_m­pšg_cÚ‹xt_to_fže
 (
 
-992 
+995 
 nv_¡©e_t
  *
 nv
 ,
 
-993 
+996 
 nv_u£rm­_acûss_·¿ms_t
 * 
 nvu­
 ,
 
-994 
+997 
 NvU32
  
 ´Ù
 ,
 
-995 *
+998 *
 pAÎocPriv
 ,
 
-996 
+999 
 NvU64
  
 ·geIndex
 ,
 
-997 
+1000 
 NvU32
  
 fd
 
 
-1000 
+1003 
 nv_®loc_m­pšg_cÚ‹xt_t
  *
 nvamc
@@ -281023,7 +281431,7 @@ nvamc
 NULL
 ;
 
-1001 
+1004 
 nvidŸ_fž•_t
  *
 nvå
@@ -281031,7 +281439,7 @@ nvå
 NULL
 ;
 
-1004 
+1007 
 nvå
  = 
 	`nv_g‘_fže_´iv©e
@@ -281041,17 +281449,17 @@ fd
 nv
 );
 
-1005 ià(
+1008 ià(
 nvå
  =ð
 NULL
 )
 
-1006  
+1009  
 NV_ERR_INVALID_ARGUMENT
 ;
 
-1008 
+1011 
 nvamc
  = &
 nvå
@@ -281059,23 +281467,23 @@ nvå
 mm­_cÚ‹xt
 ;
 
-1010 ià(
+1013 ià(
 nvamc
 ->
 v®id
 )
 
-1011  
+1014  
 NV_ERR_STATE_IN_USE
 ;
 
-1013 ià(
+1016 ià(
 	`NV_IS_CTL_DEVICE
 (
 nv
 ))
 
-1015 
+1018 
 nvamc
 ->
 ®loc
@@ -281083,7 +281491,7 @@ nvamc
 pAÎocPriv
 ;
 
-1016 
+1019 
 nvamc
 ->
 ·ge_šdex
@@ -281091,7 +281499,7 @@ nvamc
 ·geIndex
 ;
 
-1020 
+1023 
 nvamc
 ->
 mm­_¡¬t
@@ -281099,7 +281507,7 @@ mm­_¡¬t
 nvu­
 ->mmap_start;
 
-1021 
+1024 
 nvamc
 ->
 mm­_size
@@ -281107,7 +281515,7 @@ mm­_size
 nvu­
 ->mmap_size;
 
-1022 
+1025 
 nvamc
 ->
 acûss_¡¬t
@@ -281115,7 +281523,7 @@ acûss_¡¬t
 nvu­
 ->access_start;
 
-1023 
+1026 
 nvamc
 ->
 acûss_size
@@ -281123,7 +281531,7 @@ acûss_size
 nvu­
 ->access_size;
 
-1024 
+1027 
 nvamc
 ->
 »m­_´Ù_exŒa
@@ -281131,13 +281539,13 @@ nvamc
 nvu­
 ->remap_prot_extra;
 
-1027 
+1030 
 nvamc
 ->
 ´Ù
  =…rot;
 
-1028 
+1031 
 nvamc
 ->
 v®id
@@ -281145,15 +281553,15 @@ v®id
 NV_TRUE
 ;
 
-1030  
+1033  
 NV_OK
 ;
 
-1031 
+1034 
 	}
 }
 
-1033 
+1036 
 NV_STATUS
  
 NV_API_CALL
@@ -281161,51 +281569,51 @@ NV_API_CALL
 	$nv_®loc_u£r_m­pšg
 (
 
-1034 
+1037 
 nv_¡©e_t
  *
 nv
 ,
 
-1035 *
+1038 *
 pAÎocPriv©e
 ,
 
-1036 
+1039 
 NvU64
  
 ·geIndex
 ,
 
-1037 
+1040 
 NvU32
  
 ·geOff£t
 ,
 
-1038 
+1041 
 NvU64
  
 size
 ,
 
-1039 
+1042 
 NvU32
  
 ´Ùeù
 ,
 
-1040 
+1043 
 NvU64
  *
 pU£rAdd»ss
 ,
 
-1041 **
+1044 **
 µPriv©e
 
 
-1044 
+1047 
 nvidŸ_®loc
  *
 ©
@@ -281213,13 +281621,13 @@ nvidŸ_®loc
 pAÎocPriv©e
 ;
 
-1046 ià(
+1049 ià(
 ©
 ->
 ®loc_ty³_cÚtiguous
 )
 
-1047 *
+1050 *
 pU£rAdd»ss
  = (
 ©
@@ -281235,7 +281643,7 @@ PAGE_SIZE
 ·geOff£t
 );
 
-1049 *
+1052 *
 pU£rAdd»ss
  = (
 ©
@@ -281249,15 +281657,15 @@ physiÿl_add»ss
 ·geOff£t
 );
 
-1051  
+1054  
 NV_OK
 ;
 
-1052 
+1055 
 	}
 }
 
-1054 
+1057 
 NV_STATUS
  
 NV_API_CALL
@@ -281265,81 +281673,81 @@ NV_API_CALL
 	$nv_ä“_u£r_m­pšg
 (
 
-1055 
+1058 
 nv_¡©e_t
  *
 nv
 ,
 
-1056 *
+1059 *
 pAÎocPriv©e
 ,
 
-1057 
+1060 
 NvU64
  
 u£rAdd»ss
 ,
 
-1058 *
+1061 *
 pPriv©e
 
 
-1061  
+1064  
 NV_OK
 ;
 
-1062 
+1065 
 	}
 }
 
-1064 
+1067 
 NvS32
  
 	$nv_®loc_cÚtig_·ges
 (
 
-1065 
+1068 
 nv_¡©e_t
  *
 nv
 ,
 
-1066 
+1069 
 NvU32
  
 couÁ
 ,
 
-1067 
+1070 
 NvU32
  
 ÿche_ty³
 ,
 
-1068 
+1071 
 NvBoÞ
  
 z”o
 ,
 
-1069 
+1072 
 NvU64
  *
 ±e_¬¿y
 ,
 
-1070 **
+1073 **
 ´iv©e
 
 
-1073 
+1076 
 nvidŸ_®loc
  *
 ©
 ;
 
-1074 
+1077 
 nvidŸ_soác
  *
 sc
@@ -281349,19 +281757,19 @@ nv
 os_¡©e
 ;
 
-1075 
+1078 
 vm_mem©Œ_t
  
 ©Œ
 ;
 
-1076 
+1079 
 vm_off£t_t
  
 add»ss
 ;
 
-1077 
+1080 
 NvU32
  
 size
@@ -281371,7 +281779,7 @@ couÁ
 PAGE_SIZE
 );
 
-1078 
+1081 
 æags
  = (
 z”o
@@ -281379,69 +281787,69 @@ z”o
 M_ZERO
  : 0);
 
-1079 
+1082 
 ¡©us
 ;
 
-1081 
+1084 
 ÿche_ty³
 ) {
 
-1082 
+1085 
 NV_MEMORY_UNCACHED
 :
 
-1083 
+1086 
 ©Œ
  = 
 VM_MEMATTR_UNCACHEABLE
 ;
 
-1085 
+1088 
 NV_MEMORY_DEFAULT
 :
 
-1086 
-NV_MEMORY_CACHED
-:
-
-1087 
-©Œ
- = 
-VM_MEMATTR_WRITE_BACK
-;
-
 1089 
-NV_MEMORY_UNCACHED_WEAK
+NV_MEMORY_CACHED
 :
 
 1090 
 ©Œ
  = 
-VM_MEMATTR_WEAK_UNCACHEABLE
+VM_MEMATTR_WRITE_BACK
 ;
 
 1092 
-NV_MEMORY_WRITECOMBINED
+NV_MEMORY_UNCACHED_WEAK
 :
 
 1093 
 ©Œ
  = 
+VM_MEMATTR_WEAK_UNCACHEABLE
+;
+
+1095 
+NV_MEMORY_WRITECOMBINED
+:
+
+1096 
+©Œ
+ = 
 VM_MEMATTR_WRITE_COMBINING
 ;
 
-1096 
+1099 
 	`nv_´štf
 (
 NV_DBG_ERRORS
 ,
 
-1098  
+1101  
 EINVAL
 ;
 
-1101 
+1104 
 ©
  = 
 	`m®loc
@@ -281455,33 +281863,33 @@ M_WAITOK
 M_ZERO
 ));
 
-1102 ià(!
+1105 ià(!
 ©
 )
 
-1103  
+1106  
 ENOMEM
 ;
 
-1105 
+1108 
 ©
 ->
 size
  = size;
 
-1106 
+1109 
 ©
 ->
 ®loc_ty³_cÚtiguous
  = 1;
 
-1107 
+1110 
 ©
 ->
 ©Œ
  =‡ttr;
 
-1109 
+1112 
 ©
 ->
 ±e_¬¿y
@@ -281493,19 +281901,19 @@ nvidŸ_±e_t
 M_NVIDIA
 ,
 
-1110 (
+1113 (
 M_WAITOK
  | 
 M_ZERO
 ));
 
-1111 ià(!
+1114 ià(!
 ©
 ->
 ±e_¬¿y
 ) {
 
-1112 
+1115 
 	`ä“
 (
 ©
@@ -281513,11 +281921,11 @@ M_ZERO
 M_NVIDIA
 );
 
-1113  
+1116  
 ENOMEM
 ;
 
-1116 
+1119 
 add»ss
  = 
 	`NV_KMEM_ALLOC_CONTIG
@@ -281527,7 +281935,7 @@ size
 æags
 , 0,
 
-1117 
+1120 
 sc
 ->
 dma_mask
@@ -281537,21 +281945,21 @@ PAGE_SIZE
 ©Œ
 );
 
-1118 ià(!
+1121 ià(!
 add»ss
 ) {
 
-1119 
+1122 
 ¡©us
  = 
 ENOMEM
 ;
 
-1120 
+1123 
 çžed
 ;
 
-1122 
+1125 
 	`m®loc_ty³_®loÿ‹d
 (
 M_NVIDIA
@@ -281559,17 +281967,17 @@ M_NVIDIA
 size
 );
 
-1124 ià(
+1127 ià(
 ©Œ
  !ð
 VM_MEMATTR_WRITE_BACK
 )
 
-1125 
+1128 
 	`os_æush_ýu_ÿche
 ();
 
-1127 
+1130 
 ©
 ->
 ±e_¬¿y
@@ -281579,7 +281987,7 @@ vœtu®_add»ss
 add»ss
 ;
 
-1128 
+1131 
 ©
 ->
 ±e_¬¿y
@@ -281593,7 +282001,7 @@ NvU64
 add»ss
 );
 
-1130 
+1133 
 ©
 ->
 sg_li¡
@@ -281603,23 +282011,23 @@ sg_li¡
 M_WAITOK
 );
 
-1131 ià(!
+1134 ià(!
 ©
 ->
 sg_li¡
 ) {
 
-1132 
+1135 
 ¡©us
  = 
 ENOMEM
 ;
 
-1133 
+1136 
 çžed
 ;
 
-1136 
+1139 
 ±e_¬¿y
 [0] = 
 ©
@@ -281627,7 +282035,7 @@ ENOMEM
 physiÿl_add»ss
 ;
 
-1137 
+1140 
 	`sgli¡_­³nd_phys
 (
 ©
@@ -281639,7 +282047,7 @@ sg_li¡
 size
 );
 
-1139 
+1142 
 ©
 ->
 objeù
@@ -281653,7 +282061,7 @@ sg_li¡
 size
 ,
 
-1140 (
+1143 (
 VM_PROT_READ
  | 
 VM_PROT_WRITE
@@ -281661,23 +282069,23 @@ VM_PROT_WRITE
 NULL
 );
 
-1141 ià(!
+1144 ià(!
 ©
 ->
 objeù
 ) {
 
-1142 
+1145 
 ¡©us
  = 
 ENOMEM
 ;
 
-1143 
+1146 
 çžed
 ;
 
-1146 
+1149 
 	`VM_OBJECT_WLOCK
 (
 ©
@@ -281685,7 +282093,7 @@ ENOMEM
 objeù
 );
 
-1147 
+1150 
 	`vm_objeù_£t_mem©Œ
 (
 ©
@@ -281695,7 +282103,7 @@ objeù
 ©Œ
 );
 
-1148 
+1151 
 	`VM_OBJECT_WUNLOCK
 (
 ©
@@ -281703,13 +282111,13 @@ objeù
 objeù
 );
 
-1150 *
+1153 *
 ´iv©e
  = 
 ©
 ;
 
-1151 
+1154 
 	`SLIST_INSERT_HEAD
 (&
 sc
@@ -281721,17 +282129,17 @@ sc
 li¡
 );
 
-1155 
+1158 
 çžed
 :
 
-1156 ià(
+1159 ià(
 ©
 ->
 objeù
 )
 
-1157 
+1160 
 	`NV_VM_OBJECT_DEALLOCATE
 (
 ©
@@ -281739,13 +282147,13 @@ objeù
 objeù
 );
 
-1158 ià(
+1161 ià(
 ©
 ->
 sg_li¡
 )
 
-1159 
+1162 
 	`NV_SGLIST_FREE
 (
 ©
@@ -281753,17 +282161,17 @@ sg_li¡
 sg_li¡
 );
 
-1161 ià(
+1164 ià(
 ©Œ
  !ð
 VM_MEMATTR_WRITE_BACK
 )
 
-1162 
+1165 
 	`os_æush_ýu_ÿche
 ();
 
-1164 ià(
+1167 ià(
 ©
 ->
 ±e_¬¿y
@@ -281773,7 +282181,7 @@ vœtu®_add»ss
 NULL
 ) {
 
-1165 
+1168 
 	`NV_KMEM_FREE
 (
 ©
@@ -281785,7 +282193,7 @@ vœtu®_add»ss
 size
 );
 
-1166 
+1169 
 	`m®loc_ty³_ä“d
 (
 M_NVIDIA
@@ -281795,7 +282203,7 @@ M_NVIDIA
 size
 );
 
-1169 
+1172 
 	`ä“
 (
 ©
@@ -281805,7 +282213,7 @@ size
 M_NVIDIA
 );
 
-1170 
+1173 
 	`ä“
 (
 ©
@@ -281813,31 +282221,31 @@ M_NVIDIA
 M_NVIDIA
 );
 
-1172  
+1175  
 ¡©us
 ;
 
-1173 
+1176 
 	}
 }
 
-1175 
+1178 
 NvS32
  
 	$nv_ä“_cÚtig_·ges
 (
 
-1176 
+1179 
 nv_¡©e_t
  *
 nv
 ,
 
-1177 *
+1180 *
 ´iv©e
 
 
-1180 
+1183 
 nvidŸ_®loc
  *
 ©
@@ -281845,7 +282253,7 @@ nvidŸ_®loc
 ´iv©e
 ;
 
-1181 
+1184 
 nvidŸ_soác
  *
 sc
@@ -281855,7 +282263,7 @@ nv
 os_¡©e
 ;
 
-1183 
+1186 
 	`SLIST_REMOVE
 (&
 sc
@@ -281869,7 +282277,7 @@ nvidŸ_®loc
 li¡
 );
 
-1185 
+1188 
 	`NV_VM_OBJECT_DEALLOCATE
 (
 ©
@@ -281877,7 +282285,7 @@ li¡
 objeù
 );
 
-1186 
+1189 
 	`NV_SGLIST_FREE
 (
 ©
@@ -281885,7 +282293,7 @@ objeù
 sg_li¡
 );
 
-1188 ià(
+1191 ià(
 ©
 ->
 ©Œ
@@ -281893,11 +282301,11 @@ sg_li¡
 VM_MEMATTR_WRITE_BACK
 )
 
-1189 
+1192 
 	`os_æush_ýu_ÿche
 ();
 
-1191 
+1194 
 	`NV_KMEM_FREE
 (
 ©
@@ -281909,7 +282317,7 @@ vœtu®_add»ss
 size
 );
 
-1192 
+1195 
 	`m®loc_ty³_ä“d
 (
 M_NVIDIA
@@ -281919,7 +282327,7 @@ M_NVIDIA
 size
 );
 
-1194 
+1197 
 	`ä“
 (
 ©
@@ -281929,7 +282337,7 @@ size
 M_NVIDIA
 );
 
-1195 
+1198 
 	`ä“
 (
 ©
@@ -281937,57 +282345,57 @@ M_NVIDIA
 M_NVIDIA
 );
 
-1198 
+1201 
 	}
 }
 
-1200 
+1203 
 NvS32
  
 	$nv_®loc_sy¡em_·ges
 (
 
-1201 
+1204 
 nv_¡©e_t
  *
 nv
 ,
 
-1202 
+1205 
 NvU32
  
 couÁ
 ,
 
-1203 
+1206 
 NvU32
  
 ÿche_ty³
 ,
 
-1204 
+1207 
 NvBoÞ
  
 z”o
 ,
 
-1205 
+1208 
 NvU64
  *
 ±e_¬¿y
 ,
 
-1206 **
+1209 **
 ´iv©e
 
 
-1209 
+1212 
 nvidŸ_®loc
  *
 ©
 ;
 
-1210 
+1213 
 nvidŸ_soác
  *
 sc
@@ -281997,25 +282405,25 @@ nv
 os_¡©e
 ;
 
-1211 
+1214 
 vm_off£t_t
  
 add»ss
 ;
 
-1212 
+1215 
 ušt32_t
  
 i
 ;
 
-1213 
+1216 
 vm_mem©Œ_t
  
 ©Œ
 ;
 
-1214 
+1217 
 ušt32_t
  
 size
@@ -282025,7 +282433,7 @@ couÁ
 PAGE_SIZE
 );
 
-1215 
+1218 
 æags
  = (
 z”o
@@ -282033,69 +282441,69 @@ z”o
 M_ZERO
  : 0);
 
-1216 
+1219 
 ¡©us
 ;
 
-1218 
+1221 
 ÿche_ty³
 ) {
 
-1219 
+1222 
 NV_MEMORY_UNCACHED
 :
 
-1220 
+1223 
 ©Œ
  = 
 VM_MEMATTR_UNCACHEABLE
 ;
 
-1222 
+1225 
 NV_MEMORY_DEFAULT
 :
 
-1223 
-NV_MEMORY_CACHED
-:
-
-1224 
-©Œ
- = 
-VM_MEMATTR_WRITE_BACK
-;
-
 1226 
-NV_MEMORY_UNCACHED_WEAK
+NV_MEMORY_CACHED
 :
 
 1227 
 ©Œ
  = 
-VM_MEMATTR_WEAK_UNCACHEABLE
+VM_MEMATTR_WRITE_BACK
 ;
 
 1229 
-NV_MEMORY_WRITECOMBINED
+NV_MEMORY_UNCACHED_WEAK
 :
 
 1230 
 ©Œ
  = 
+VM_MEMATTR_WEAK_UNCACHEABLE
+;
+
+1232 
+NV_MEMORY_WRITECOMBINED
+:
+
+1233 
+©Œ
+ = 
 VM_MEMATTR_WRITE_COMBINING
 ;
 
-1233 
+1236 
 	`nv_´štf
 (
 NV_DBG_ERRORS
 ,
 
-1235  
+1238  
 EINVAL
 ;
 
-1238 
+1241 
 ©
  = 
 	`m®loc
@@ -282109,33 +282517,33 @@ M_WAITOK
 M_ZERO
 ));
 
-1239 ià(!
+1242 ià(!
 ©
 )
 
-1240  
+1243  
 ENOMEM
 ;
 
-1242 
+1245 
 ©
 ->
 size
  = size;
 
-1243 
+1246 
 ©
 ->
 ®loc_ty³_cÚtiguous
  = 0;
 
-1244 
+1247 
 ©
 ->
 ©Œ
  =‡ttr;
 
-1246 
+1249 
 ©
 ->
 ±e_¬¿y
@@ -282147,7 +282555,7 @@ nvidŸ_±e_t
 couÁ
 ),
 
-1247 
+1250 
 M_NVIDIA
 , (
 M_WAITOK
@@ -282155,13 +282563,13 @@ M_WAITOK
 M_ZERO
 ));
 
-1248 ià(!
+1251 ià(!
 ©
 ->
 ±e_¬¿y
 ) {
 
-1249 
+1252 
 	`ä“
 (
 ©
@@ -282169,17 +282577,17 @@ M_ZERO
 M_NVIDIA
 );
 
-1250  
+1253  
 ENOMEM
 ;
 
-1253 
+1256 
 i
  = 0; i < 
 couÁ
 ; i++) {
 
-1254 
+1257 
 add»ss
  = 
 	`NV_KMEM_ALLOC_CONTIG
@@ -282189,7 +282597,7 @@ PAGE_SIZE
 æags
 , 0,
 
-1255 
+1258 
 sc
 ->
 dma_mask
@@ -282199,21 +282607,21 @@ PAGE_SIZE
 ©Œ
 );
 
-1256 ià(!
+1259 ià(!
 add»ss
 ) {
 
-1257 
+1260 
 ¡©us
  = 
 ENOMEM
 ;
 
-1258 
+1261 
 çžed
 ;
 
-1260 
+1263 
 	`m®loc_ty³_®loÿ‹d
 (
 M_NVIDIA
@@ -282221,7 +282629,7 @@ M_NVIDIA
 PAGE_SIZE
 );
 
-1262 
+1265 
 ©
 ->
 ±e_¬¿y
@@ -282233,7 +282641,7 @@ vœtu®_add»ss
 add»ss
 ;
 
-1263 
+1266 
 ©
 ->
 ±e_¬¿y
@@ -282249,17 +282657,17 @@ NvU64
 add»ss
 );
 
-1266 ià(
+1269 ià(
 ©Œ
  !ð
 VM_MEMATTR_WRITE_BACK
 )
 
-1267 
+1270 
 	`os_æush_ýu_ÿche
 ();
 
-1269 
+1272 
 ©
 ->
 sg_li¡
@@ -282271,29 +282679,29 @@ couÁ
 M_WAITOK
 );
 
-1270 ià(!
+1273 ià(!
 ©
 ->
 sg_li¡
 ) {
 
-1271 
+1274 
 ¡©us
  = 
 ENOMEM
 ;
 
-1272 
+1275 
 çžed
 ;
 
-1275 
+1278 
 i
  = 0; i < 
 couÁ
 ; i++) {
 
-1276 
+1279 
 ±e_¬¿y
 [
 i
@@ -282303,7 +282711,7 @@ i
 physiÿl_add»ss
 ;
 
-1277 
+1280 
 	`sgli¡_­³nd_phys
 (
 ©
@@ -282317,7 +282725,7 @@ i
 PAGE_SIZE
 );
 
-1280 
+1283 
 ©
 ->
 objeù
@@ -282331,7 +282739,7 @@ sg_li¡
 size
 ,
 
-1281 (
+1284 (
 VM_PROT_READ
  | 
 VM_PROT_WRITE
@@ -282339,23 +282747,23 @@ VM_PROT_WRITE
 NULL
 );
 
-1282 ià(!
+1285 ià(!
 ©
 ->
 objeù
 ) {
 
-1283 
+1286 
 ¡©us
  = 
 ENOMEM
 ;
 
-1284 
+1287 
 çžed
 ;
 
-1287 
+1290 
 	`VM_OBJECT_WLOCK
 (
 ©
@@ -282363,7 +282771,7 @@ ENOMEM
 objeù
 );
 
-1288 
+1291 
 	`vm_objeù_£t_mem©Œ
 (
 ©
@@ -282373,7 +282781,7 @@ objeù
 ©Œ
 );
 
-1289 
+1292 
 	`VM_OBJECT_WUNLOCK
 (
 ©
@@ -282381,13 +282789,13 @@ objeù
 objeù
 );
 
-1291 *
+1294 *
 ´iv©e
  = 
 ©
 ;
 
-1292 
+1295 
 	`SLIST_INSERT_HEAD
 (&
 sc
@@ -282399,17 +282807,17 @@ sc
 li¡
 );
 
-1296 
+1299 
 çžed
 :
 
-1297 ià(
+1300 ià(
 ©
 ->
 objeù
 )
 
-1298 
+1301 
 	`NV_VM_OBJECT_DEALLOCATE
 (
 ©
@@ -282417,13 +282825,13 @@ objeù
 objeù
 );
 
-1299 ià(
+1302 ià(
 ©
 ->
 sg_li¡
 )
 
-1300 
+1303 
 	`NV_SGLIST_FREE
 (
 ©
@@ -282431,23 +282839,23 @@ sg_li¡
 sg_li¡
 );
 
-1302 ià(
+1305 ià(
 ©Œ
  !ð
 VM_MEMATTR_WRITE_BACK
 )
 
-1303 
+1306 
 	`os_æush_ýu_ÿche
 ();
 
-1305 
+1308 
 i
  = 0; i < 
 couÁ
 ; i++) {
 
-1306 ià(
+1309 ià(
 ©
 ->
 ±e_¬¿y
@@ -282457,7 +282865,7 @@ i
 vœtu®_add»ss
  == 0)
 
-1308 
+1311 
 	`NV_KMEM_FREE
 (
 ©
@@ -282471,7 +282879,7 @@ vœtu®_add»ss
 PAGE_SIZE
 );
 
-1309 
+1312 
 	`m®loc_ty³_ä“d
 (
 M_NVIDIA
@@ -282479,7 +282887,7 @@ M_NVIDIA
 PAGE_SIZE
 );
 
-1312 
+1315 
 	`ä“
 (
 ©
@@ -282489,7 +282897,7 @@ PAGE_SIZE
 M_NVIDIA
 );
 
-1313 
+1316 
 	`ä“
 (
 ©
@@ -282497,31 +282905,31 @@ M_NVIDIA
 M_NVIDIA
 );
 
-1315  
+1318  
 ¡©us
 ;
 
-1316 
+1319 
 	}
 }
 
-1318 
+1321 
 NvS32
  
 	$nv_ä“_sy¡em_·ges
 (
 
-1319 
+1322 
 nv_¡©e_t
  *
 nv
 ,
 
-1320 *
+1323 *
 ´iv©e
 
 
-1323 
+1326 
 nvidŸ_®loc
  *
 ©
@@ -282529,7 +282937,7 @@ nvidŸ_®loc
 ´iv©e
 ;
 
-1324 
+1327 
 nvidŸ_soác
  *
 sc
@@ -282539,7 +282947,7 @@ nv
 os_¡©e
 ;
 
-1325 
+1328 
 ušt32_t
  
 i
@@ -282547,7 +282955,7 @@ i
 couÁ
 ;
 
-1327 
+1330 
 couÁ
  = 
 ©
@@ -282557,7 +282965,7 @@ size
 PAGE_SIZE
 ;
 
-1328 
+1331 
 	`SLIST_REMOVE
 (&
 sc
@@ -282571,7 +282979,7 @@ nvidŸ_®loc
 li¡
 );
 
-1330 
+1333 
 	`NV_VM_OBJECT_DEALLOCATE
 (
 ©
@@ -282579,7 +282987,7 @@ li¡
 objeù
 );
 
-1331 
+1334 
 	`NV_SGLIST_FREE
 (
 ©
@@ -282587,7 +282995,7 @@ objeù
 sg_li¡
 );
 
-1333 ià(
+1336 ià(
 ©
 ->
 ©Œ
@@ -282595,17 +283003,17 @@ sg_li¡
 VM_MEMATTR_WRITE_BACK
 )
 
-1334 
+1337 
 	`os_æush_ýu_ÿche
 ();
 
-1336 
+1339 
 i
  = 0; i < 
 couÁ
 ; i++) {
 
-1337 
+1340 
 	`NV_KMEM_FREE
 (
 ©
@@ -282619,7 +283027,7 @@ vœtu®_add»ss
 PAGE_SIZE
 );
 
-1338 
+1341 
 	`m®loc_ty³_ä“d
 (
 M_NVIDIA
@@ -282627,7 +283035,7 @@ M_NVIDIA
 PAGE_SIZE
 );
 
-1341 
+1344 
 	`ä“
 (
 ©
@@ -282637,7 +283045,7 @@ PAGE_SIZE
 M_NVIDIA
 );
 
-1342 
+1345 
 	`ä“
 (
 ©
@@ -282645,11 +283053,11 @@ M_NVIDIA
 M_NVIDIA
 );
 
-1345 
+1348 
 	}
 }
 
-1347 
+1350 
 NV_STATUS
  
 NV_API_CALL
@@ -282657,55 +283065,55 @@ NV_API_CALL
 	$nv_®Ÿs_·ges
 (
 
-1348 
+1351 
 nv_¡©e_t
  *
 nv
 ,
 
-1349 
+1352 
 NvU32
  
 couÁ
 ,
 
-1350 
+1353 
 NvU32
  
 ®loc_ty³_cÚtiguous
 ,
 
-1351 
+1354 
 NvU32
  
 ÿche_ty³
 ,
 
-1352 
+1355 
 NvU64
  
 gue¡_id
 ,
 
-1353 
+1356 
 NvU64
  *
 ±e_¬¿y
 ,
 
-1354 **
+1357 **
 ´iv_d©a
 
 
-1357  
+1360  
 NV_ERR_NOT_SUPPORTED
 ;
 
-1358 
+1361 
 	}
 }
 
-1360 
+1363 
 NV_STATUS
  
 NV_API_CALL
@@ -282713,47 +283121,47 @@ NV_API_CALL
 	$nv_®loc_·ges
 (
 
-1361 
+1364 
 nv_¡©e_t
  *
 nv
 ,
 
-1362 
+1365 
 NvU32
  
 couÁ
 ,
 
-1363 
+1366 
 NvBoÞ
  
 ®loc_ty³_cÚtiguous
 ,
 
-1364 
+1367 
 NvU32
  
 ÿche_ty³
 ,
 
-1365 
+1368 
 NvBoÞ
  
 ®loc_ty³_z”Ûd
 ,
 
-1366 
+1369 
 NvU64
  *
 ±e_¬¿y
 ,
 
-1367 **
+1370 **
 ´iv©e
 
 
-1370 
+1373 
 NV_STATUS
  
 ¡©us
@@ -282761,7 +283169,7 @@ NV_STATUS
 NV_OK
 ;
 
-1371 
+1374 
 NvBoÞ
  
 z”o
@@ -282769,11 +283177,11 @@ z”o
 ®loc_ty³_z”Ûd
 ;
 
-1373 ià(!
+1376 ià(!
 ®loc_ty³_cÚtiguous
 ) {
 
-1374 ià(
+1377 ià(
 	`nv_®loc_sy¡em_·ges
 (
 nv
@@ -282785,19 +283193,19 @@ couÁ
 z”o
 ,
 
-1375 
+1378 
 ±e_¬¿y
 , 
 ´iv©e
 )) {
 
-1376 
+1379 
 ¡©us
  = 
 NV_ERR_NO_MEMORY
 ;
 
-1379 ià(
+1382 ià(
 	`nv_®loc_cÚtig_·ges
 (
 nv
@@ -282809,27 +283217,27 @@ couÁ
 z”o
 ,
 
-1380 
+1383 
 ±e_¬¿y
 , 
 ´iv©e
 )) {
 
-1381 
+1384 
 ¡©us
  = 
 NV_ERR_NO_MEMORY
 ;
 
-1385  
+1388  
 ¡©us
 ;
 
-1386 
+1389 
 	}
 }
 
-1388 
+1391 
 NV_STATUS
  
 NV_API_CALL
@@ -282837,35 +283245,35 @@ NV_API_CALL
 	$nv_ä“_·ges
 (
 
-1389 
+1392 
 nv_¡©e_t
  *
 nv
 ,
 
-1390 
+1393 
 NvU32
  
 couÁ
 ,
 
-1391 
+1394 
 NvBoÞ
  
 ®loc_ty³_cÚtiguous
 ,
 
-1392 
+1395 
 NvU32
  
 ÿche_ty³
 ,
 
-1393 *
+1396 *
 ´iv©e
 
 
-1396 
+1399 
 NV_STATUS
  
 ¡©us
@@ -282873,26 +283281,12 @@ NV_STATUS
 NV_OK
 ;
 
-1398 ià(!
+1401 ià(!
 ®loc_ty³_cÚtiguous
 ) {
 
-1399 ià(
-	`nv_ä“_sy¡em_·ges
-(
-nv
-, 
-´iv©e
-))
-
-1400 
-¡©us
- = 
-NV_ERR_GENERIC
-;
-
 1402 ià(
-	`nv_ä“_cÚtig_·ges
+	`nv_ä“_sy¡em_·ges
 (
 nv
 , 
@@ -282905,15 +283299,29 @@ nv
 NV_ERR_GENERIC
 ;
 
-1406  
+1405 ià(
+	`nv_ä“_cÚtig_·ges
+(
+nv
+, 
+´iv©e
+))
+
+1406 
+¡©us
+ = 
+NV_ERR_GENERIC
+;
+
+1409  
 ¡©us
 ;
 
-1407 
+1410 
 	}
 }
 
-1409 
+1412 
 NvU64
  
 NV_API_CALL
@@ -282925,7 +283333,7 @@ NvU64
 add»ss
 )
 
-1411 
+1414 
 vm_off£t_t
  
 va
@@ -282933,13 +283341,13 @@ va
 add»ss
 ;
 
-1413 #ià
+1416 #ià
 	`defšed
 (
 NVCPU_X86_64
 )
 
-1414 ià(
+1417 ià(
 va
  >ð
 DMAP_MIN_ADDRESS
@@ -282947,33 +283355,33 @@ DMAP_MIN_ADDRESS
 DMAP_MAX_ADDRESS
 )
 
-1415  
+1418  
 	`DMAP_TO_PHYS
 (
 va
 );
 
-1418 ià(
+1421 ià(
 va
  < 
 VM_MIN_KERNEL_ADDRESS
 ) {
 
-1419 
+1422 
 	`os_dbg_b»akpošt
 ();
 
-1423  
+1426  
 	`vtÝhys
 (
 va
 );
 
-1424 
+1427 
 	}
 }
 
-1426 
+1429 
 NvU64
  
 NV_API_CALL
@@ -282985,13 +283393,13 @@ NvU64
 add»ss
 )
 
-1428 
+1431 
 vm¥aû
  *
 vm
 ;
 
-1429 
+1432 
 vm_off£t_t
  
 va
@@ -282999,17 +283407,17 @@ va
 add»ss
 ;
 
-1431 ià(
+1434 ià(
 va
  >ð
 VM_MIN_KERNEL_ADDRESS
 ) {
 
-1432 
+1435 
 	`os_dbg_b»akpošt
 ();
 
-1436 
+1439 
 vm
  = 
 cu½roc
@@ -283017,7 +283425,7 @@ cu½roc
 p_vm¥aû
 ;
 
-1437  
+1440  
 	`pm­_exŒaù
 (
 	`vm¥aû_pm­
@@ -283027,63 +283435,63 @@ vm
 va
 );
 
-1438 
+1441 
 	}
 }
 
-1440 
+1443 
 	$nvidŸ_mm­_ùl_sšgË
 (
 
-1441 
+1444 
 nv_¡©e_t
  *
 nv
 ,
 
-1442 
+1445 
 nvidŸ_fž•
  *
 fž•
 ,
 
-1443 
+1446 
 vm_ooff£t_t
  *
 off£t
 ,
 
-1444 
+1447 
 vm_size_t
  
 size
 ,
 
-1445 
+1448 
 vm_objeù_t
  *
 objeù
 
 
-1448 
+1451 
 nvidŸ_®loc
  *
 ©
 ;
 
-1449 
+1452 
 nvidŸ_¡ack_t
  *
 ¥
 ;
 
-1450 
+1453 
 NV_STATUS
  
 rmStus
 ;
 
-1451 
+1454 
 nvidŸ_soác
  *
 sc
@@ -283093,25 +283501,25 @@ nv
 os_¡©e
 ;
 
-1452 
+1455 
 NvU64
  
 ·geIndex
 ;
 
-1453 
+1456 
 NvU32
  
 ´Ù
 ;
 
-1454 
+1457 
 nv_®loc_m­pšg_cÚ‹xt_t
  *
 mm­_cÚ‹xt
 ;
 
-1456 
+1459 
 ¥
  = 
 sc
@@ -283119,7 +283527,7 @@ sc
 NV_DEV_STACK_API
 ];
 
-1458 
+1461 
 rmStus
  = 
 	`rm_acquœe_­i_lock
@@ -283127,45 +283535,45 @@ rmStus
 ¥
 );
 
-1459 ià(
+1462 ià(
 rmStus
  !ð
 NV_OK
 )
 
-1460  
+1463  
 EAGAIN
 ;
 
-1462 
+1465 
 mm­_cÚ‹xt
  = &
 fž•
 ->mmap_context;
 
-1468 ià(!
+1471 ià(!
 mm­_cÚ‹xt
 ->
 v®id
 )
 
-1470 
+1473 
 	`nv_´štf
 (
 NV_DBG_ERRORS
 , "NVRM: VM: invalid mmap\n");
 
-1471 
+1474 
 	`rm_»Ëa£_­i_lock
 (
 ¥
 );
 
-1472  -
+1475  -
 EINVAL
 ;
 
-1475 
+1478 
 ©
  = (
 nvidŸ_®loc
@@ -283175,7 +283583,7 @@ mm­_cÚ‹xt
 ®loc
 ;
 
-1476 
+1479 
 ·geIndex
  = 
 mm­_cÚ‹xt
@@ -283183,13 +283591,13 @@ mm­_cÚ‹xt
 ·ge_šdex
 ;
 
-1477 
+1480 
 ´Ù
  = 
 mm­_cÚ‹xt
 ->prot;
 
-1479 
+1482 
 	`vm_objeù_»ã»nû
 (
 ©
@@ -283197,13 +283605,13 @@ mm­_cÚ‹xt
 objeù
 );
 
-1480 *
+1483 *
 objeù
  = 
 ©
 ->object;
 
-1481 *
+1484 *
 off£t
  = (
 ·geIndex
@@ -283211,51 +283619,51 @@ off£t
 PAGE_SIZE
 );
 
-1483 
+1486 
 	`rm_»Ëa£_­i_lock
 (
 ¥
 );
 
-1486 
+1489 
 	}
 }
 
-1488 
+1491 
 	$nvidŸ_mm­_dev_sšgË
 (
 
-1489 
+1492 
 nv_¡©e_t
  *
 nv
 ,
 
-1490 
+1493 
 nvidŸ_fž•
  *
 fž•
 ,
 
-1491 
+1494 
 vm_ooff£t_t
  *
 off£t
 ,
 
-1492 
+1495 
 vm_size_t
  
 size
 ,
 
-1493 
+1496 
 vm_objeù_t
  *
 objeù
 
 
-1496 
+1499 
 nvidŸ_soác
  *
 sc
@@ -283265,7 +283673,7 @@ nv
 os_¡©e
 ;
 
-1497 
+1500 
 nv_®loc_m­pšg_cÚ‹xt_t
  *
 mm­_cÚ‹xt
@@ -283273,23 +283681,23 @@ mm­_cÚ‹xt
 fž•
 ->mmap_context;
 
-1503 ià(!
+1506 ià(!
 mm­_cÚ‹xt
 ->
 v®id
 )
 
-1505 
+1508 
 	`nv_´štf
 (
 NV_DBG_ERRORS
 , "NVRM: VM: invalid mmap\n");
 
-1506  -
+1509  -
 EINVAL
 ;
 
-1509 *
+1512 *
 off£t
  = 
 mm­_cÚ‹xt
@@ -283297,7 +283705,7 @@ mm­_cÚ‹xt
 mm­_¡¬t
 ;
 
-1510 
+1513 
 size
  = 
 mm­_cÚ‹xt
@@ -283305,7 +283713,7 @@ mm­_cÚ‹xt
 mm­_size
 ;
 
-1512 ià(
+1515 ià(
 	`IS_UD_OFFSET
 (
 nv
@@ -283315,7 +283723,7 @@ off£t
 size
 )) {
 
-1513 *
+1516 *
 objeù
  = 
 sc
@@ -283323,13 +283731,13 @@ sc
 UD_objeù
 ;
 
-1514 
+1517 
 	`vm_objeù_»ã»nû
 (*
 objeù
 );
 
-1515 *
+1518 *
 off£t
  = (*off£ˆ- 
 nv
@@ -283339,7 +283747,7 @@ ud
 ýu_add»ss
 );
 
-1517 } ià(
+1520 } ià(
 	`IS_FB_OFFSET
 (
 nv
@@ -283349,7 +283757,7 @@ off£t
 size
 )) {
 
-1518 *
+1521 *
 objeù
  = 
 sc
@@ -283359,13 +283767,13 @@ BAR_objeùs
 NV_GPU_BAR_INDEX_FB
 ];
 
-1519 
+1522 
 	`vm_objeù_»ã»nû
 (*
 objeù
 );
 
-1520 *
+1523 *
 off£t
  = (*off£ˆ- 
 nv
@@ -283375,7 +283783,7 @@ fb
 ýu_add»ss
 );
 
-1522 } ià(
+1525 } ià(
 	`IS_REG_OFFSET
 (
 nv
@@ -283385,7 +283793,7 @@ off£t
 size
 )) {
 
-1523 *
+1526 *
 objeù
  = 
 sc
@@ -283395,13 +283803,13 @@ BAR_objeùs
 NV_GPU_BAR_INDEX_REGS
 ];
 
-1524 
+1527 
 	`vm_objeù_»ã»nû
 (*
 objeù
 );
 
-1525 *
+1528 *
 off£t
  = (*off£ˆ- 
 nv
@@ -283411,21 +283819,21 @@ nv
 ýu_add»ss
 );
 
-1529  
+1532  
 EINVAL
 ;
 
-1530 
+1533 
 	}
 }
 
-1532 
+1535 
 	$nvidŸ_rc_tim”
 (*
 d©a
 )
 
-1534 
+1537 
 nv_¡©e_t
  *
 nv
@@ -283433,7 +283841,7 @@ nv
 d©a
 ;
 
-1535 
+1538 
 nvidŸ_soác
  *
 sc
@@ -283443,13 +283851,13 @@ nv
 os_¡©e
 ;
 
-1536 
+1539 
 nvidŸ_¡ack_t
  *
 ¥
 ;
 
-1538 
+1541 
 ¥
  = 
 sc
@@ -283457,7 +283865,7 @@ sc
 NV_DEV_STACK_TIMER
 ];
 
-1540 
+1543 
 	`NV_PCI_CHECK_CONFIG_SPACE
 (
 ¥
@@ -283469,7 +283877,7 @@ TRUE
 FALSE
 );
 
-1542 ià(
+1545 ià(
 	`rm_run_rc_ÿÎback
 (
 ¥
@@ -283479,7 +283887,7 @@ nv
 NV_OK
 )
 
-1543 
+1546 
 	`ÿÎout_»£t
 (&
 sc
@@ -283493,23 +283901,23 @@ nvidŸ_rc_tim”
 nv
 );
 
-1544 
+1547 
 	}
 }
 
-1546 
+1549 
 NV_API_CALL
  
 	$nv_¡¬t_rc_tim”
 (
 
-1547 
+1550 
 nv_¡©e_t
  *
 nv
 
 
-1550 
+1553 
 nvidŸ_soác
  *
 sc
@@ -283519,17 +283927,17 @@ nv
 os_¡©e
 ;
 
-1552 ià(
+1555 ià(
 nv
 ->
 rc_tim”_’abËd
  != 0)
 
-1553  
+1556  
 EBUSY
 ;
 
-1555 
+1558 
 	`ÿÎout_»£t
 (&
 sc
@@ -283543,29 +283951,29 @@ nvidŸ_rc_tim”
 nv
 );
 
-1556 
+1559 
 nv
 ->
 rc_tim”_’abËd
  = 1;
 
-1559 
+1562 
 	}
 }
 
-1561 
+1564 
 NV_API_CALL
  
 	$nv_¡Ý_rc_tim”
 (
 
-1562 
+1565 
 nv_¡©e_t
  *
 nv
 
 
-1565 
+1568 
 nvidŸ_soác
  *
 sc
@@ -283575,17 +283983,17 @@ nv
 os_¡©e
 ;
 
-1567 ià(
+1570 ià(
 nv
 ->
 rc_tim”_’abËd
  == 0)
 
-1568  
+1571  
 EIO
 ;
 
-1570 
+1573 
 	`ÿÎout_d¿š
 (&
 sc
@@ -283593,35 +284001,35 @@ sc
 tim”
 );
 
-1571 
+1574 
 nv
 ->
 rc_tim”_’abËd
  = 0;
 
-1574 
+1577 
 	}
 }
 
-1576 
+1579 
 NV_API_CALL
  
 	$nv_£t_dma_add»ss_size
 (
 
-1577 
+1580 
 nv_¡©e_t
  *
 nv
 ,
 
-1578 
+1581 
 NvU32
  
 phys_addr_b™s
 
 
-1581 
+1584 
 nvidŸ_soác
  *
 sc
@@ -283631,13 +284039,13 @@ nv
 os_¡©e
 ;
 
-1582 #ià
+1585 #ià
 	`defšed
 (
 NVCPU_X86_64
 )
 
-1583 
+1586 
 sc
 ->
 dma_mask
@@ -283647,17 +284055,17 @@ ušt64_t
 phys_addr_b™s
 ) - 1;
 
-1585 
+1588 
 sc
 ->
 dma_mask
  = 0xffffffffULL;
 
-1587 
+1590 
 	}
 }
 
-1589 
+1592 
 nv_¡©e_t
 * 
 NV_API_CALL
@@ -283665,47 +284073,47 @@ NV_API_CALL
 	$nv_g‘_ad­‹r_¡©e
 (
 
-1590 
+1593 
 NvU32
  
 domaš
 ,
 
-1591 
+1594 
 NvU8
  
 bus
 ,
 
-1592 
+1595 
 NvU8
  
 ¦Ù
 
 
-1595 
+1598 
 i
 ;
 
-1596 
+1599 
 nvidŸ_soác
  *
 sc
 ;
 
-1597 
+1600 
 nv_¡©e_t
  *
 nv
 ;
 
-1599 
+1602 
 i
  = 0; i < 
 NV_MAX_DEVICES
 ; i++) {
 
-1600 
+1603 
 sc
  = 
 	`devþass_g‘_soác
@@ -283715,11 +284123,11 @@ nvidŸ_devþass
 i
 );
 
-1601 ià(!
+1604 ià(!
 sc
 )
 
-1603 
+1606 
 nv
  = 
 sc
@@ -283727,7 +284135,7 @@ sc
 nv_¡©e
 ;
 
-1605 ià((
+1608 ià((
 nv
 ->
 pci_šfo
@@ -283735,7 +284143,7 @@ pci_šfo
 domaš
  == domain) &&
 
-1606 (
+1609 (
 nv
 ->
 pci_šfo
@@ -283745,19 +284153,19 @@ bus
 ¦Ù
  == slot)) {
 
-1607  
+1610  
 nv
 ;
 
-1611  
+1614  
 NULL
 ;
 
-1612 
+1615 
 	}
 }
 
-1614 
+1617 
 nv_¡©e_t
 * 
 NV_API_CALL
@@ -283765,33 +284173,33 @@ NV_API_CALL
 	$nv_g‘_ùl_¡©e
 ()
 
-1616  &
+1619  &
 nvidŸ_ùl_¡©e
 ;
 
-1617 
+1620 
 	}
 }
 
-1619 
+1622 
 NV_API_CALL
  
 	$nv_v”ify_pci_cÚfig
 (
 
-1620 
+1623 
 nv_¡©e_t
  *
 nv
 ,
 
-1621 
+1624 
 BOOL
  
 check_the_b¬s
 
 
-1624 
+1627 
 nvidŸ_soác
  *
 sc
@@ -283801,7 +284209,7 @@ nv
 os_¡©e
 ;
 
-1625 
+1628 
 deviû_t
  
 dev
@@ -283809,7 +284217,7 @@ dev
 sc
 ->dev;
 
-1626 
+1629 
 nvidŸ_¡ack_t
  *
 ¥
@@ -283819,7 +284227,7 @@ sc
 NV_DEV_STACK_PCI_CFGCHK
 ];
 
-1628 
+1631 
 	`nvidŸ_pci_check_cÚfig_¥aû
 (
 ¥
@@ -283831,11 +284239,11 @@ check_the_b¬s
 FALSE
 , FALSE);
 
-1629 
+1632 
 	}
 }
 
-1631 
+1634 
 NV_STATUS
  
 NV_API_CALL
@@ -283843,43 +284251,43 @@ NV_API_CALL
 	$nv_dma_m­_·ges
 (
 
-1632 
+1635 
 nv_¡©e_t
  *
 nv
 ,
 
-1633 
+1636 
 NvU64
  
 ·ge_couÁ
 ,
 
-1634 
+1637 
 NvU64
  *
 ±e_¬¿y
 ,
 
-1635 
+1638 
 NvBoÞ
  
 cÚtig
 ,
 
-1636 **
+1639 **
 ´iv
 
 
-1639  
+1642  
 NV_ERR_NOT_SUPPORTED
 ;
 
-1640 
+1643 
 	}
 }
 
-1642 
+1645 
 NV_STATUS
  
 NV_API_CALL
@@ -283887,37 +284295,37 @@ NV_API_CALL
 	$nv_dma_unm­_·ges
 (
 
-1643 
+1646 
 nv_¡©e_t
  *
 nv
 ,
 
-1644 
+1647 
 NvU64
  
 ·ge_couÁ
 ,
 
-1645 
+1648 
 NvU64
  *
 ±e_¬¿y
 ,
 
-1646 **
+1649 **
 ´iv
 
 
-1649  
+1652  
 NV_ERR_NOT_SUPPORTED
 ;
 
-1650 
+1653 
 	}
 }
 
-1652 
+1655 
 NV_STATUS
  
 NV_API_CALL
@@ -283925,43 +284333,43 @@ NV_API_CALL
 	$nv_dma_m­_®loc
 (
 
-1653 
+1656 
 nv_¡©e_t
  *
 nv
 ,
 
-1654 
+1657 
 NvU64
  
 ·ge_couÁ
 ,
 
-1655 
+1658 
 NvU64
  *
 va_¬¿y
 ,
 
-1656 
+1659 
 NvBoÞ
  
 cÚtig
 ,
 
-1657 **
+1660 **
 ´iv
 
 
-1660  
+1663  
 NV_ERR_NOT_SUPPORTED
 ;
 
-1661 
+1664 
 	}
 }
 
-1663 
+1666 
 NV_STATUS
  
 NV_API_CALL
@@ -283969,37 +284377,37 @@ NV_API_CALL
 	$nv_dma_unm­_®loc
 (
 
-1664 
+1667 
 nv_¡©e_t
  *
 nv
 ,
 
-1665 
+1668 
 NvU64
  
 ·ge_couÁ
 ,
 
-1666 
+1669 
 NvU64
  *
 va_¬¿y
 ,
 
-1667 **
+1670 **
 ´iv
 
 
-1670  
+1673  
 NV_ERR_NOT_SUPPORTED
 ;
 
-1671 
+1674 
 	}
 }
 
-1673 
+1676 
 NV_STATUS
  
 NV_API_CALL
@@ -284007,73 +284415,73 @@ NV_API_CALL
 	$nv_dma_m­_³”
 (
 
-1674 
+1677 
 nv_¡©e_t
  *
 nv
 ,
 
-1675 
+1678 
 nv_¡©e_t
  *
 ³”
 ,
 
-1676 
+1679 
 NvU8
  
 b¬_šdex
 ,
 
-1677 
+1680 
 NvU64
  
 ·ge_couÁ
 ,
 
-1678 
+1681 
 NvU64
  *
 va
 
 
-1681  
+1684  
 NV_ERR_NOT_SUPPORTED
 ;
 
-1682 
+1685 
 	}
 }
 
-1684 
+1687 
 NV_API_CALL
  
 	$nv_dma_unm­_³”
 (
 
-1685 
+1688 
 nv_¡©e_t
  *
 nv
 ,
 
-1686 
+1689 
 NvU64
  
 ·ge_couÁ
 ,
 
-1687 
+1690 
 NvU64
  
 va
 
 
-1690 
+1693 
 	}
 }
 
-1692 
+1695 
 NV_STATUS
  
 NV_API_CALL
@@ -284081,61 +284489,61 @@ NV_API_CALL
 	$nv_dma_m­_mmio
 (
 
-1693 
+1696 
 nv_¡©e_t
  *
 nv
 ,
 
-1694 
+1697 
 NvU64
  
 ·ge_couÁ
 ,
 
-1695 
+1698 
 NvU64
  *
 va
 
 
-1698  
+1701  
 NV_ERR_NOT_SUPPORTED
 ;
 
-1699 
+1702 
 	}
 }
 
-1701 
+1704 
 NV_API_CALL
  
 	$nv_dma_unm­_mmio
 (
 
-1702 
+1705 
 nv_¡©e_t
  *
 nv
 ,
 
-1703 
+1706 
 NvU64
  
 ·ge_couÁ
 ,
 
-1704 
+1707 
 NvU64
  
 va
 
 
-1707 
+1710 
 	}
 }
 
-1709 
+1712 
 NV_STATUS
  
 NV_API_CALL
@@ -284143,37 +284551,37 @@ NV_API_CALL
 	$nv_log_”rÜ
 (
 
-1710 
+1713 
 nv_¡©e_t
  *
 nv
 ,
 
-1711 
+1714 
 NvU32
  
 ”rÜ_numb”
 ,
 
-1712 cÚ¡ *
+1715 cÚ¡ *
 fÜm©
 ,
 
-1713 
+1716 
 va_li¡
  
 ­
 
 
-1716  
+1719  
 NV_OK
 ;
 
-1717 
+1720 
 	}
 }
 
-1719 
+1722 
 NvU64
  
 NV_API_CALL
@@ -284181,17 +284589,17 @@ NV_API_CALL
 	$nv_g‘_dma_¡¬t_add»ss
 (
 
-1720 
+1723 
 nv_¡©e_t
  *
 nv
 
 
-1724 
+1727 
 	}
 }
 
-1726 
+1729 
 NV_STATUS
  
 NV_API_CALL
@@ -284199,21 +284607,21 @@ NV_API_CALL
 	$nv_£t_´im¬y_vga_¡©us
 (
 
-1727 
+1730 
 nv_¡©e_t
  *
 nv
 
 
-1730  
+1733  
 NV_ERR_NOT_SUPPORTED
 ;
 
-1731 
+1734 
 	}
 }
 
-1733 
+1736 
 NV_STATUS
  
 NV_API_CALL
@@ -284221,21 +284629,21 @@ NV_API_CALL
 	$nv_pci_Œigg”_»cov”y
 (
 
-1734 
+1737 
 nv_¡©e_t
  *
 nv
 
 
-1737  
+1740  
 NV_ERR_NOT_SUPPORTED
 ;
 
-1738 
+1741 
 	}
 }
 
-1740 
+1743 
 NvBoÞ
  
 NV_API_CALL
@@ -284243,21 +284651,21 @@ NV_API_CALL
 	$nv_»quœes_dma_»m­
 (
 
-1741 
+1744 
 nv_¡©e_t
  *
 nv
 
 
-1744  
+1747  
 NV_FALSE
 ;
 
-1745 
+1748 
 	}
 }
 
-1747 
+1750 
 NV_STATUS
  
 NV_API_CALL
@@ -284265,37 +284673,37 @@ NV_API_CALL
 	$nv_»gi¡”_u£r_·ges
 (
 
-1748 
+1751 
 nv_¡©e_t
  *
 nv
 ,
 
-1749 
+1752 
 NvU64
  
 ·ge_couÁ
 ,
 
-1750 
+1753 
 NvU64
  *
 phys_addr
 ,
 
-1751 **
+1754 **
 ´iv
 
 
-1754  
+1757  
 NV_OK
 ;
 
-1755 
+1758 
 	}
 }
 
-1757 
+1760 
 NV_STATUS
  
 NV_API_CALL
@@ -284303,31 +284711,31 @@ NV_API_CALL
 	$nv_uÄegi¡”_u£r_·ges
 (
 
-1758 
+1761 
 nv_¡©e_t
  *
 nv
 ,
 
-1759 
+1762 
 NvU64
  
 ·ge_couÁ
 ,
 
-1760 **
+1763 **
 ´iv
 
 
-1763  
+1766  
 NV_OK
 ;
 
-1764 
+1767 
 	}
 }
 
-1766 
+1769 
 NV_STATUS
  
 NV_API_CALL
@@ -284335,51 +284743,51 @@ NV_API_CALL
 	$nv_g‘_deviû_memÜy_cÚfig
 (
 
-1767 
+1770 
 nv_¡©e_t
  *
 nv
 ,
 
-1768 
+1771 
 NvU32
  *
 pAddrSysPhys
 ,
 
-1769 
+1772 
 NvU32
  *
 pAddrGue¡Phys
 ,
 
-1770 
+1773 
 NvU32
  *
 pAddrWidth
 ,
 
-1771 
+1774 
 NvU32
  *
 pG¿nuÏr™y
 ,
 
-1772 
+1775 
 NvS32
  *
 pNodeId
 
 
-1775  
+1778  
 NV_ERR_NOT_SUPPORTED
 ;
 
-1776 
+1779 
 	}
 }
 
-1778 
+1781 
 NV_STATUS
  
 NV_API_CALL
@@ -284387,27 +284795,27 @@ NV_API_CALL
 	$nv_g‘_u£rm­_acûss_·¿ms
 (
 
-1779 
+1782 
 nv_¡©e_t
  *
 nv
 ,
 
-1780 
+1783 
 nv_u£rm­_acûss_·¿ms_t
  *
 nvu­
 
 
-1783  
+1786  
 NV_OK
 ;
 
-1784 
+1787 
 	}
 }
 
-1786 
+1789 
 NV_STATUS
  
 NV_API_CALL
@@ -284415,57 +284823,57 @@ NV_API_CALL
 	$nv_»gi¡”_³”_io_mem
 (
 
-1787 
+1790 
 nv_¡©e_t
  *
 nv
 ,
 
-1788 
+1791 
 NvU64
  *
 phys_addr
 ,
 
-1789 
+1792 
 NvU64
  
 ·ge_couÁ
 ,
 
-1790 **
+1793 **
 ´iv_d©a
 
 
-1793  
+1796  
 NV_OK
 ;
 
-1794 
+1797 
 	}
 }
 
-1796 
+1799 
 NV_API_CALL
  
 	$nv_uÄegi¡”_³”_io_mem
 (
 
-1797 
+1800 
 nv_¡©e_t
  *
 nv
 ,
 
-1798 *
+1801 *
 ´iv_d©a
 
 
-1801 
+1804 
 	}
 }
 
-1803 
+1806 
 NV_STATUS
  
 NV_API_CALL
@@ -284473,57 +284881,57 @@ NV_API_CALL
 	$nv_»gi¡”_phys_·ges
 (
 
-1804 
+1807 
 nv_¡©e_t
  *
 nv
 ,
 
-1805 
+1808 
 NvU64
  *
 phys_addr
 ,
 
-1806 
+1809 
 NvU64
  
 ·ge_couÁ
 ,
 
-1807 **
+1810 **
 ´iv_d©a
 
 
-1810  
+1813  
 NV_OK
 ;
 
-1811 
+1814 
 	}
 }
 
-1813 
+1816 
 NV_API_CALL
  
 	$nv_uÄegi¡”_phys_·ges
 (
 
-1814 
+1817 
 nv_¡©e_t
  *
 nv
 ,
 
-1815 *
+1818 *
 ´iv_d©a
 
 
-1818 
+1821 
 	}
 }
 
-1820 
+1823 
 NV_STATUS
  
 NV_API_CALL
@@ -284531,37 +284939,37 @@ NV_API_CALL
 	$nv_g‘_ibmÅu_g’»g_šfo
 (
 
-1821 
+1824 
 nv_¡©e_t
  *
 nv
 ,
 
-1822 
+1825 
 NvU64
  *
 addr
 ,
 
-1823 
+1826 
 NvU64
  *
 size
 ,
 
-1824 **
+1827 **
 deviû
 
 
-1827  
+1830  
 NV_ERR_NOT_SUPPORTED
 ;
 
-1828 
+1831 
 	}
 }
 
-1830 
+1833 
 NV_STATUS
  
 NV_API_CALL
@@ -284569,71 +284977,71 @@ NV_API_CALL
 	$nv_g‘_ibmÅu_»Ïxed_Üd”šg_mode
 (
 
-1831 
+1834 
 nv_¡©e_t
  *
 nv
 ,
 
-1832 
+1835 
 NvBoÞ
  *
 mode
 
 
-1835  
+1838  
 NV_ERR_NOT_SUPPORTED
 ;
 
-1836 
+1839 
 	}
 }
 
-1838 
+1841 
 NV_API_CALL
  
 	$nv_»gi¡”_backlight
 (
 
-1839 
+1842 
 nv_¡©e_t
  *
 nv
 ,
 
-1840 
+1843 
 NvU32
  
 di¥ÏyId
 ,
 
-1841 
+1844 
 NvU32
  
 cu¼’tBrighŠess
 
 
-1845 
+1848 
 	}
 }
 
-1847 
+1850 
 NV_API_CALL
  
 	$nv_uÄegi¡”_backlight
 (
 
-1848 
+1851 
 nv_¡©e_t
  *
 nv
 
 
-1852 
+1855 
 	}
 }
 
-1854 
+1857 
 NV_API_CALL
  
 	$nv_wa™_fÜ_ibmÅu_rsync
@@ -284643,7 +285051,7 @@ nv_¡©e_t
 nv
 )
 
-1856 
+1859 
 	}
 }
 

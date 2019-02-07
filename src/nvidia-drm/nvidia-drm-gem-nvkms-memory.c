@@ -373,20 +373,41 @@ static int __nv_drm_vma_fault(struct vm_area_struct *vma,
     return VM_FAULT_SIGBUS;
 #endif /* NV_VMF_INSERT_PFN_PRESENT */
 #else
+    NV_DRM_LOG_INFO("__nv_drm_vma_fault: (original) pfn = 0x%lx, page_offset = 0x%lx", pfn, page_offset);
+    
     /* FreeBSD specific: find location to insert new page */
+    page_offset = address + drm_vma_node_start(&gem->vma_node);
     vm_page_t page = PHYS_TO_VM_PAGE(IDX_TO_OFF(pfn + page_offset));
     vm_object_t obj = vma->vm_obj;
     vm_pindex_t pidx = OFF_TO_IDX(address);
-    if (vm_page_busied(page))
-	    return VM_FAULT_OOM;
-    if (vm_page_insert(page, obj, pidx))
-	    return VM_FAULT_OOM;
 
-    ret = 0;
+    NV_DRM_LOG_INFO("__nv_drm_vma_fault: pfn = 0x%lx, page_offset = 0x%lx", pfn, page_offset);
+    NV_DRM_LOG_INFO("__nv_drm_vma_fault:  nv_nvkms_memory->pPhysicalAddress = 0x%lx", (unsigned long)nv_nvkms_memory->pPhysicalAddress);
+    NV_DRM_LOG_INFO("__nv_drm_vma_fault: IDX_TO_OFF = 0x%lx", (unsigned long)IDX_TO_OFF(pfn + page_offset));
+    NV_DRM_LOG_INFO("__nv_drm_vma_fault: page = 0x%lx", (unsigned long)page);
+    NV_DRM_LOG_INFO("__nv_drm_vma_fault: obj = 0x%lx", (unsigned long)obj);
+    NV_DRM_LOG_INFO("__nv_drm_vma_fault: pidx = 0x%lx", (unsigned long)pidx);
+    NV_DRM_LOG_INFO("__nv_drm_vma_fault: address = 0x%lx", address);
+
+    if (!page || !obj) {
+	    NV_DRM_LOG_INFO("__nv_drm_vma_fault: page was busy, probably got the wrong one");
+	    return VM_FAULT_OOM;
+    }
+    
+    if (vm_page_busied(page)) {
+	    NV_DRM_LOG_INFO("__nv_drm_vma_fault: page was busy, probably got the wrong one");
+	    return VM_FAULT_OOM;
+    }
+    if (vm_page_insert(page, obj, pidx)) {
+	    NV_DRM_LOG_INFO("__nv_drm_vma_fault: Could not insert the page");
+	    return VM_FAULT_OOM;
+    }
+
     page->valid = VM_PAGE_BITS_ALL;
     vm_page_xbusy(page);
-    vma->vm_pfn_count++;
 
+    ret = VM_FAULT_NOPAGE;
+    vma->vm_pfn_count++;
     return ret;
 #endif /* __linux__ */
 }
