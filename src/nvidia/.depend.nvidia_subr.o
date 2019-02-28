@@ -73,4 +73,5 @@ nvidia_subr.o: nvidia_subr.c nv-misc.h ../common/inc/nvtypes.h \
   /usr/src/sys/sys/seq.h /usr/src/sys/sys/priv.h \
   /usr/src/sys/sys/sglist.h /usr/src/sys/sys/taskqueue.h \
   /usr/src/sys/sys/_task.h /usr/src/sys/fs/devfs/devfs_int.h \
-  /usr/src/sys/sys/capsicum.h /usr/src/sys/sys/fcntl.h
+  /usr/src/sys/sys/capsicum.h /usr/src/sys/sys/fcntl.h \
+  /usr/src/sys/vm/vm_phys.h

@@ -112,6 +112,9 @@ int nv_drm_dumb_create(
         goto nvkms_map_memory_failed;
     }
 
+    NV_DRM_DEV_LOG_INFO(nv_dev, "nv_drm_dumb_create: Mapped 0x%lx of memory to physical address 0x%lx",
+			args->size, (unsigned long)nv_nvkms_memory->pPhysicalAddress);
+
     nv_nvkms_memory->pWriteCombinedIORemapAddress = ioremap_wc(
         (uintptr_t)nv_nvkms_memory->pPhysicalAddress,
         args->size);
@@ -122,6 +125,27 @@ int nv_drm_dumb_create(
                            &nv_nvkms_memory->base,
                            &nv_gem_nvkms_memory_ops,
                            args->size);
+
+#ifndef __linux__
+    /*
+     * register the pages with the vm system
+     *   These pages will be used to back
+     *   fault requests. Pages are registered
+     *   as PG_FICTITIOUS to signify device
+     *   mapped memory
+     */
+    vm_paddr_t start = (vm_paddr_t)nv_nvkms_memory->pPhysicalAddress;
+    vm_paddr_t end = start + args->size;
+    NV_DRM_LOG_INFO("nv_drm_dumb_create: at 0x%jx with size 0x%lx.\n", start, end);
+    
+    ret = vm_phys_fictitious_reg_range(start, end, VM_MEMATTR_WRITE_COMBINING);
+    if (ret) {
+	    NV_DRM_LOG_INFO("Failed to register fictitious range 0x%jx-0x%lx (error = %d).\n",
+			    start, end, ret);
+	    goto nvkms_map_memory_failed;
+    }
+
+#endif
 
     return nv_drm_gem_handle_create_drop_reference(file_priv,
                                                    &nv_nvkms_memory->base,
@@ -373,31 +397,24 @@ static int __nv_drm_vma_fault(struct vm_area_struct *vma,
     return VM_FAULT_SIGBUS;
 #endif /* NV_VMF_INSERT_PFN_PRESENT */
 #else
-    NV_DRM_LOG_INFO("__nv_drm_vma_fault: (original) pfn = 0x%lx, page_offset = 0x%lx", pfn, page_offset);
-    
     /* FreeBSD specific: find location to insert new page */
-    page_offset = address + drm_vma_node_start(&gem->vma_node);
-    vm_page_t page = PHYS_TO_VM_PAGE(IDX_TO_OFF(pfn + page_offset));
-    vm_object_t obj = vma->vm_obj;
     vm_pindex_t pidx = OFF_TO_IDX(address);
+    vm_page_t page = PHYS_TO_VM_PAGE(IDX_TO_OFF(pfn + pidx));
+    vm_object_t obj = vma->vm_obj;
 
-    NV_DRM_LOG_INFO("__nv_drm_vma_fault: pfn = 0x%lx, page_offset = 0x%lx", pfn, page_offset);
-    NV_DRM_LOG_INFO("__nv_drm_vma_fault:  nv_nvkms_memory->pPhysicalAddress = 0x%lx", (unsigned long)nv_nvkms_memory->pPhysicalAddress);
-    NV_DRM_LOG_INFO("__nv_drm_vma_fault: IDX_TO_OFF = 0x%lx", (unsigned long)IDX_TO_OFF(pfn + page_offset));
-    NV_DRM_LOG_INFO("__nv_drm_vma_fault: page = 0x%lx", (unsigned long)page);
-    NV_DRM_LOG_INFO("__nv_drm_vma_fault: obj = 0x%lx", (unsigned long)obj);
-    NV_DRM_LOG_INFO("__nv_drm_vma_fault: pidx = 0x%lx", (unsigned long)pidx);
-    NV_DRM_LOG_INFO("__nv_drm_vma_fault: address = 0x%lx", address);
+    //NV_DRM_LOG_INFO("__nv_drm_vma_fault: obj = 0x%lx | page = 0x%lx | pidx = 0x%lx",
+    //(unsigned long)obj, (unsigned long)page, pidx);
 
     if (!page || !obj) {
 	    NV_DRM_LOG_INFO("__nv_drm_vma_fault: page was busy, probably got the wrong one");
 	    return VM_FAULT_OOM;
     }
-    
+
     if (vm_page_busied(page)) {
 	    NV_DRM_LOG_INFO("__nv_drm_vma_fault: page was busy, probably got the wrong one");
 	    return VM_FAULT_OOM;
     }
+
     if (vm_page_insert(page, obj, pidx)) {
 	    NV_DRM_LOG_INFO("__nv_drm_vma_fault: Could not insert the page");
 	    return VM_FAULT_OOM;
@@ -407,7 +424,15 @@ static int __nv_drm_vma_fault(struct vm_area_struct *vma,
     vm_page_xbusy(page);
 
     ret = VM_FAULT_NOPAGE;
-    vma->vm_pfn_count++;
+
+    /* 
+     * linuxkpi will communicate to vm_fault_populate which pages to
+     * map into the address space based on vm_pfn_first and vm_pfn_count
+     *  (sys/compat/linuxkpi/common/src/linux_compat.c line 577)
+     * we only mapped one page at a time, the page we added was page pidx
+     */
+    vma->vm_pfn_first = pidx;
+    vma->vm_pfn_count = 1;
     return ret;
 #endif /* __linux__ */
 }

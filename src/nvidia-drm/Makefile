@@ -65,7 +65,7 @@ CFLAGS += -Imachine
 # So that the build can include sys/stddef.h
 CFLAGS += -I${SYSDIR}/sys
 
-CFLAGS += -g -I../common/inc
+CFLAGS += -g -I../common/inc -O0
 # FreeBSD linuxkpi specific headers
 CFLAGS += \
 	-I../common/linuxkpi/include \

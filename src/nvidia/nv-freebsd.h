@@ -22,7 +22,7 @@
 #include <sys/param.h>
 
 #if __FreeBSD_version >= 1300000
-#error This driver does not support FreeBSD 13.x/-CURRENT!
+//#error This driver does not support FreeBSD 13.x/-CURRENT!
 #endif
 #if __FreeBSD_version >= 1200000 && __FreeBSD_version < 1200086
 #error This driver requires FreeBSD 12.0-RC3 or later!

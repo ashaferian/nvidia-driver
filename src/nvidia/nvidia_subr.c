@@ -12,6 +12,7 @@
 #include "os-interface.h"
 #include "nv.h"
 #include "nv-freebsd.h"
+#include <vm/vm_phys.h>
 
 #if defined(NVCPU_X86) && defined(NV_USE_OS_VM86_INT10CALL)
 #include <machine/vm86.h>
@@ -252,6 +253,7 @@ int nvidia_alloc_hardware(device_t dev)
             status = ENXIO;
             goto failed;
         }
+
         sc->BAR_recs[i] = res;
     }
 
