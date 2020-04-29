@@ -9,9 +9,7 @@
  * struct drm_gem_cma_object - GEM object backed by CMA memory allocations
  * @base: base GEM object
  * @paddr: physical address of the backing memory
- * @sgt: scatter/gather table for imported PRIME buffers. The table can have
- *       more than one entry but they are guaranteed to have contiguous
- *       DMA addresses.
+ * @sgt: scatter/gather table for imported PRIME buffers
  * @vaddr: kernel virtual address of the backing memory
  */
 struct drm_gem_cma_object {
@@ -23,8 +21,11 @@ struct drm_gem_cma_object {
 	void *vaddr;
 };
 
-#define to_drm_gem_cma_obj(gem_obj) \
-	container_of(gem_obj, struct drm_gem_cma_object, base)
+static inline struct drm_gem_cma_object *
+to_drm_gem_cma_obj(struct drm_gem_object *gem_obj)
+{
+	return container_of(gem_obj, struct drm_gem_cma_object, base);
+}
 
 #ifndef CONFIG_MMU
 #define DRM_GEM_CMA_UNMAPPED_AREA_FOPS \
@@ -90,8 +91,9 @@ unsigned long drm_gem_cma_get_unmapped_area(struct file *filp,
 					    unsigned long flags);
 #endif
 
-void drm_gem_cma_print_info(struct drm_printer *p, unsigned int indent,
-			    const struct drm_gem_object *obj);
+#ifdef CONFIG_DEBUG_FS
+void drm_gem_cma_describe(struct drm_gem_cma_object *obj, struct seq_file *m);
+#endif
 
 struct sg_table *drm_gem_cma_prime_get_sg_table(struct drm_gem_object *obj);
 struct drm_gem_object *

@@ -1,12 +1,15 @@
 #ifndef _LINUX_GPLV2_COMPILER_H_
 #define _LINUX_GPLV2_COMPILER_H_
 
+/* Define before including compiler.h from base */
+#define	__LinuxKPI_version 40015
+
 #include_next <linux/compiler.h>
 
 #include <sys/syslog.h>
 
 #ifndef PRINT_UNIMPLEMENTED
-#define PRINT_UNIMPLEMENTED 1
+#define PRINT_UNIMPLEMENTED 0
 #endif
 
 #define	UNIMPLEMENTED_ONCE() do {		\
@@ -37,6 +40,5 @@
 #define	DODGY()		DODGY_ONCE()
 
 #define	unreachable()	__unreachable()
-
 
 #endif /* _LINUX_GPLV2_COMPILER_H_ */

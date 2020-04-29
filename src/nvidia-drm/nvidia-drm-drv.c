@@ -791,6 +791,8 @@ void nv_drm_register_drm_device(const nv_gpu_info_t *gpu_info)
 
     /* Allocate DRM device */
 
+    NV_DRM_DEV_LOG_INFO(nv_dev, "nv_drm_driver = %p\n", &nv_drm_driver);
+    NV_DRM_DEV_LOG_INFO(nv_dev, "nv_drm_driver.load = %p\n", nv_drm_driver.load);
     dev = drm_dev_alloc(&nv_drm_driver, &pdev->dev);
 
     if (dev == NULL) {

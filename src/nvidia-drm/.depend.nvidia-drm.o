@@ -9,21 +9,21 @@ nvidia-drm.o: nvidia-drm.c nvidia-drm.h nvidia-drm-conftest.h \
   /usr/src/sys/sys/_stdint.h /usr/src/sys/sys/select.h \
   /usr/src/sys/sys/_sigset.h /usr/src/sys/sys/_timeval.h \
   /usr/src/sys/sys/timespec.h /usr/src/sys/sys/_timespec.h \
-  /usr/src/sys/sys/refcount.h /usr/src/sys/sys/limits.h \
-  ../nvidia/machine/atomic.h /usr/src/sys/sys/atomic_common.h \
-  /usr/src/sys/sys/systm.h ../nvidia/machine/cpufunc.h \
-  /usr/src/sys/sys/callout.h /usr/src/sys/sys/_callout.h \
-  /usr/src/sys/sys/queue.h /usr/src/sys/sys/stdint.h \
-  ../nvidia/machine/_stdint.h ../nvidia/x86/_stdint.h \
-  /usr/src/sys/sys/param.h /usr/src/sys/sys/_null.h \
-  /usr/src/sys/sys/syslimits.h /usr/src/sys/sys/errno.h \
-  /usr/src/sys/sys/time.h /usr/src/sys/sys/priority.h \
-  ../nvidia/machine/param.h ../nvidia/machine/_align.h \
-  ../nvidia/x86/_align.h /usr/src/sys/sys/pcpu.h \
-  /usr/src/sys/sys/_cpuset.h /usr/src/sys/sys/_bitset.h \
-  /usr/src/sys/sys/_lock.h /usr/src/sys/sys/_mutex.h \
-  /usr/src/sys/sys/_sx.h /usr/src/sys/sys/_rmlock.h \
-  /usr/src/sys/sys/resource.h ../nvidia/machine/pcpu.h \
+  /usr/src/sys/sys/refcount.h ../nvidia/machine/atomic.h \
+  /usr/src/sys/sys/atomic_common.h /usr/src/sys/sys/systm.h \
+  ../nvidia/machine/cpufunc.h /usr/src/sys/sys/callout.h \
+  /usr/src/sys/sys/_callout.h /usr/src/sys/sys/queue.h \
+  /usr/src/sys/sys/stdint.h ../nvidia/machine/_stdint.h \
+  ../nvidia/x86/_stdint.h /usr/src/sys/sys/param.h \
+  /usr/src/sys/sys/_null.h /usr/src/sys/sys/syslimits.h \
+  /usr/src/sys/sys/errno.h /usr/src/sys/sys/time.h \
+  /usr/src/sys/sys/priority.h ../nvidia/machine/param.h \
+  ../nvidia/machine/_align.h ../nvidia/x86/_align.h \
+  /usr/src/sys/sys/pcpu.h /usr/src/sys/sys/_cpuset.h \
+  /usr/src/sys/sys/_bitset.h /usr/src/sys/sys/_lock.h \
+  /usr/src/sys/sys/_mutex.h /usr/src/sys/sys/_sx.h \
+  /usr/src/sys/sys/_rmlock.h /usr/src/sys/sys/resource.h \
+  ../nvidia/machine/pcpu.h ../nvidia/machine/pcpu_aux.h \
   /usr/src/sys/sys/kpilite.h /usr/src/sys/sys/libkern.h \
   ../common/linuxkpi/gplv2/include/linux/compiler.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/compiler.h \
@@ -38,20 +38,21 @@ nvidia-drm.o: nvidia-drm.c nvidia-drm.h nvidia-drm-conftest.h \
   ../common/linuxkpi/gplv2/include/linux/sched.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/sched.h \
   /usr/src/sys/sys/proc.h /usr/src/sys/sys/event.h \
-  /usr/src/sys/sys/condvar.h /usr/src/sys/sys/lock_profile.h \
-  /usr/src/sys/sys/osd.h /usr/src/sys/sys/rtprio.h \
-  /usr/src/sys/sys/runq.h ../nvidia/machine/runq.h \
-  /usr/src/sys/sys/sigio.h /usr/src/sys/sys/signal.h \
-  ../nvidia/machine/signal.h ../nvidia/x86/signal.h \
-  /usr/src/sys/sys/signalvar.h /usr/src/sys/sys/ucontext.h \
-  ../nvidia/machine/ucontext.h ../nvidia/x86/ucontext.h \
-  /usr/src/sys/sys/_ucontext.h /usr/src/sys/sys/ucred.h \
-  /usr/src/sys/bsm/audit.h /usr/src/sys/sys/_domainset.h \
-  ../nvidia/machine/proc.h ../nvidia/machine/segments.h \
-  ../nvidia/x86/segments.h ../nvidia/machine/cpu.h \
-  ../nvidia/machine/psl.h ../nvidia/x86/psl.h ../nvidia/machine/frame.h \
-  ../nvidia/x86/frame.h /usr/src/sys/sys/sched.h \
-  /usr/src/sys/sys/sleepqueue.h \
+  /usr/src/sys/sys/_eventhandler.h /usr/src/sys/sys/condvar.h \
+  /usr/src/sys/sys/lock_profile.h /usr/src/sys/sys/osd.h \
+  /usr/src/sys/sys/rtprio.h /usr/src/sys/sys/runq.h \
+  ../nvidia/machine/runq.h /usr/src/sys/sys/sigio.h \
+  /usr/src/sys/sys/signal.h ../nvidia/machine/signal.h \
+  ../nvidia/x86/signal.h /usr/src/sys/sys/signalvar.h \
+  /usr/src/sys/sys/ucontext.h ../nvidia/machine/ucontext.h \
+  ../nvidia/x86/ucontext.h /usr/src/sys/sys/_ucontext.h \
+  /usr/src/sys/sys/ucred.h /usr/src/sys/bsm/audit.h \
+  /usr/src/sys/sys/_domainset.h ../nvidia/machine/proc.h \
+  ../nvidia/machine/pcb.h ../nvidia/machine/fpu.h ../nvidia/x86/fpu.h \
+  ../nvidia/machine/segments.h ../nvidia/x86/segments.h \
+  ../nvidia/machine/cpu.h ../nvidia/machine/psl.h ../nvidia/x86/psl.h \
+  ../nvidia/machine/frame.h ../nvidia/x86/frame.h \
+  /usr/src/sys/sys/sched.h /usr/src/sys/sys/sleepqueue.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/bitmap.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/compat.h \
   /usr/src/sys/sys/malloc.h \
@@ -66,7 +67,8 @@ nvidia-drm.o: nvidia-drm.c nvidia-drm.h nvidia-drm-conftest.h \
   /usr/src/sys/vm/vm.h ../nvidia/machine/vm.h \
   ../nvidia/machine/specialreg.h ../nvidia/x86/specialreg.h \
   /usr/src/sys/vm/vm_page.h /usr/src/sys/vm/pmap.h \
-  ../nvidia/machine/pmap.h /usr/src/sys/vm/_vm_radix.h \
+  ../nvidia/machine/pmap.h /usr/src/sys/sys/_pctrie.h \
+  /usr/src/sys/sys/_rangeset.h /usr/src/sys/vm/_vm_radix.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/rwsem.h \
   /usr/src/sys/sys/lock.h /usr/src/sys/sys/ktr_class.h \
   /usr/src/sys/sys/sx.h /usr/src/sys/sys/lockstat.h \
@@ -75,12 +77,11 @@ nvidia-drm.o: nvidia-drm.c nvidia-drm.h nvidia-drm-conftest.h \
   /usr/src/sys/compat/linuxkpi/common/include/asm/atomic.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/pid.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/slab.h \
-  /usr/src/sys/vm/uma.h \
+  /usr/src/sys/sys/limits.h /usr/src/sys/vm/uma.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/gfp.h \
   /usr/src/sys/vm/vm_param.h ../nvidia/machine/vmparam.h \
-  /usr/src/sys/vm/vm_object.h /usr/src/sys/sys/_pctrie.h \
-  /usr/src/sys/sys/_rwlock.h /usr/src/sys/vm/vm_extern.h \
-  /usr/src/sys/vm/vm_kern.h \
+  /usr/src/sys/vm/vm_object.h /usr/src/sys/sys/_rwlock.h \
+  /usr/src/sys/vm/vm_extern.h /usr/src/sys/vm/vm_kern.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/string.h \
   /usr/src/sys/sys/ctype.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/uaccess.h \
@@ -147,8 +148,7 @@ nvidia-drm.o: nvidia-drm.c nvidia-drm.h nvidia-drm-conftest.h \
   /usr/src/sys/sys/uio.h /usr/src/sys/sys/_uio.h /usr/src/sys/sys/acl.h \
   /usr/src/sys/sys/ktr.h ../nvidia/vnode_if.h \
   ../nvidia/vnode_if_typedef.h ../nvidia/vnode_if_newproto.h \
-  /usr/src/sys/sys/conf.h /usr/src/sys/sys/eventhandler.h \
-  /usr/src/sys/net/bpf.h /usr/src/sys/net/dlt.h \
+  /usr/src/sys/sys/conf.h /usr/src/sys/net/bpf.h /usr/src/sys/net/dlt.h \
   /usr/src/sys/net/if_types.h /usr/src/sys/net/if_media.h \
   /usr/src/sys/netinet/in_pcb.h /usr/src/sys/net/route.h \
   /usr/src/sys/net/radix.h /usr/src/sys/netinet/tcp_lro.h \
@@ -167,7 +167,7 @@ nvidia-drm.o: nvidia-drm.c nvidia-drm.h nvidia-drm-conftest.h \
   ../common/linuxkpi/gplv2/include/uapi/linux/uuid.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/fs.h \
   /usr/src/sys/sys/file.h /usr/src/sys/sys/filedesc.h \
-  /usr/src/sys/sys/caprights.h /usr/src/sys/sys/seq.h \
+  /usr/src/sys/sys/caprights.h /usr/src/sys/sys/seqc.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/wait.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/semaphore.h \
   /usr/src/sys/sys/sema.h \
@@ -210,6 +210,7 @@ nvidia-drm.o: nvidia-drm.c nvidia-drm.h nvidia-drm-conftest.h \
   ../common/linuxkpi/gplv2/include/linux/of.h \
   ../common/linuxkpi/gplv2/include/linux/notifier.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/notifier.h \
+  /usr/src/sys/sys/eventhandler.h \
   ../common/linuxkpi/gplv2/include/linux/property.h \
   ../common/linuxkpi/gplv2/include/linux/fwnode.h \
   ../common/linuxkpi/gplv2/include/linux/fb.h /usr/src/sys/sys/fbio.h \
@@ -226,13 +227,10 @@ nvidia-drm.o: nvidia-drm.c nvidia-drm.h nvidia-drm-conftest.h \
   ../common/linuxkpi/drivers/gpu/drm/drm_os_freebsd.h \
   ../common/linuxkpi/drivers/gpu/drm/drm_os_config.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/delay.h \
-  ../common/linuxkpi/gplv2/include/linux/pci.h ../nvidia/machine/bus.h \
-  ../nvidia/x86/bus.h ../nvidia/machine/bus_dma.h \
-  ../nvidia/x86/bus_dma.h /usr/src/sys/sys/bus_dma.h \
-  ../nvidia/x86/busdma_impl.h /usr/src/sys/sys/rman.h \
-  ../nvidia/machine/resource.h \
+  ../common/linuxkpi/gplv2/include/linux/pci.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/pci.h \
-  /usr/src/sys/sys/pciio.h /usr/src/sys/dev/pci/pcivar.h \
+  /usr/src/sys/sys/pciio.h /usr/src/sys/sys/rman.h \
+  ../nvidia/machine/resource.h /usr/src/sys/dev/pci/pcivar.h \
   ../nvidia/pci_if.h /usr/src/sys/dev/pci/pcireg.h \
   /usr/src/sys/dev/pci/pci_private.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/dmapool.h \
@@ -241,6 +239,9 @@ nvidia-drm.o: nvidia-drm.c nvidia-drm.h nvidia-drm-conftest.h \
   ../common/linuxkpi/gplv2/include/linux/dma-mapping.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/dma-mapping.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/dma-attrs.h \
+  ../nvidia/machine/bus.h ../nvidia/x86/bus.h \
+  ../nvidia/machine/bus_dma.h ../nvidia/x86/bus_dma.h \
+  /usr/src/sys/sys/bus_dma.h ../nvidia/x86/busdma_impl.h \
   ../common/linuxkpi/include/uapi/drm/drm_fourcc.h \
   ../common/linuxkpi/include/drm/drm_modeset_lock.h \
   /usr/src/sys/compat/linuxkpi/common/include/linux/ww_mutex.h \

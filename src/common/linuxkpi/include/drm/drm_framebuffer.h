@@ -121,12 +121,6 @@ struct drm_framebuffer {
 	 * @base: base modeset object structure, contains the reference count.
 	 */
 	struct drm_mode_object base;
-
-	/**
-	 * @comm: Name of the process allocating the fb, used for fb dumping.
-	 */
-	char comm[TASK_COMM_LEN];
-
 	/**
 	 * @format: framebuffer format information
 	 */
@@ -270,7 +264,7 @@ static inline void drm_framebuffer_unreference(struct drm_framebuffer *fb)
  *
  * This functions returns the framebuffer's reference count.
  */
-static inline uint32_t drm_framebuffer_read_refcount(const struct drm_framebuffer *fb)
+static inline uint32_t drm_framebuffer_read_refcount(struct drm_framebuffer *fb)
 {
 	return kref_read(&fb->base.refcount);
 }

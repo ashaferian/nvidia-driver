@@ -17,7 +17,7 @@ include nvidia-sources.mk
 
 SRCS=		${NVIDIA_SOURCES}
 SRCS+=		acpi_if.h bus_if.h device_if.h opt_acpi.h pci_if.h vnode_if.h
-CFLAGS+=	-I. -I../common/inc -DNV_VERSION_STRING=\"415.25\"
+CFLAGS+=	-I. -I../common/inc -DNV_VERSION_STRING=\"415.25\" -Wno-visibility
 CFLAGS+=	-D__KERNEL__ -DNVRM  -Wno-unused-function -Wuninitialized -O2 -fno-strict-aliasing  -mno-red-zone -mcmodel=kernel     -UDEBUG -U_DEBUG -DNDEBUG
 
 include ../common/optional-cflags.mk

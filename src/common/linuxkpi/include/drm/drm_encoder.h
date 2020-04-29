@@ -88,6 +88,7 @@ struct drm_encoder_funcs {
  * @head: list management
  * @base: base KMS object
  * @name: human readable name, can be overwritten by the driver
+ * @crtc: currently bound CRTC
  * @bridge: bridge associated to the encoder
  * @funcs: control functions
  * @helper_private: mid-layer private data
@@ -165,11 +166,6 @@ struct drm_encoder {
 	 */
 	uint32_t possible_clones;
 
-	/**
-	 * @crtc: Currently bound CRTC, only really meaningful for non-atomic
-	 * drivers.  Atomic drivers should instead check
-	 * &drm_connector_state.crtc.
-	 */
 	struct drm_crtc *crtc;
 	struct drm_bridge *bridge;
 	const struct drm_encoder_funcs *funcs;

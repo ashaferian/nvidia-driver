@@ -19,17 +19,16 @@ nvidia-modeset-freebsd.o: nvidia-modeset-freebsd.c \
   /usr/src/sys/sys/_bitset.h /usr/src/sys/sys/_lock.h \
   /usr/src/sys/sys/_mutex.h /usr/src/sys/sys/_sx.h \
   /usr/src/sys/sys/_rmlock.h /usr/src/sys/sys/resource.h machine/pcpu.h \
-  /usr/src/sys/sys/kpilite.h /usr/src/sys/sys/libkern.h \
-  /usr/src/sys/sys/ioccom.h /usr/src/sys/sys/lock.h \
-  /usr/src/sys/sys/ktr_class.h /usr/src/sys/sys/sx.h \
-  /usr/src/sys/sys/lock_profile.h /usr/src/sys/sys/lockstat.h \
-  /usr/src/sys/sys/sdt.h /usr/src/sys/sys/conf.h \
-  /usr/src/sys/sys/eventhandler.h /usr/src/sys/sys/ktr.h \
-  /usr/src/sys/sys/mutex.h /usr/src/sys/sys/syslog.h \
-  /usr/src/sys/sys/taskqueue.h /usr/src/sys/sys/_task.h \
-  /usr/src/sys/sys/selinfo.h /usr/src/sys/sys/event.h \
-  /usr/src/sys/sys/poll.h /usr/src/sys/sys/file.h \
-  /usr/src/sys/sys/refcount.h /usr/src/sys/sys/limits.h \
+  machine/pcpu_aux.h /usr/src/sys/sys/kpilite.h \
+  /usr/src/sys/sys/libkern.h /usr/src/sys/sys/ioccom.h \
+  /usr/src/sys/sys/lock.h /usr/src/sys/sys/ktr_class.h \
+  /usr/src/sys/sys/sx.h /usr/src/sys/sys/lock_profile.h \
+  /usr/src/sys/sys/lockstat.h /usr/src/sys/sys/sdt.h \
+  /usr/src/sys/sys/conf.h /usr/src/sys/sys/_eventhandler.h \
+  /usr/src/sys/sys/syslog.h /usr/src/sys/sys/taskqueue.h \
+  /usr/src/sys/sys/_task.h /usr/src/sys/sys/selinfo.h \
+  /usr/src/sys/sys/event.h /usr/src/sys/sys/poll.h \
+  /usr/src/sys/sys/file.h /usr/src/sys/sys/refcount.h \
   /usr/src/sys/vm/vm.h machine/vm.h machine/specialreg.h \
   x86/specialreg.h /usr/src/sys/sys/proc.h /usr/src/sys/sys/condvar.h \
   /usr/src/sys/sys/osd.h /usr/src/sys/sys/rtprio.h \
@@ -38,9 +37,10 @@ nvidia-modeset-freebsd.o: nvidia-modeset-freebsd.c \
   /usr/src/sys/sys/signalvar.h /usr/src/sys/sys/ucontext.h \
   machine/ucontext.h x86/ucontext.h /usr/src/sys/sys/_ucontext.h \
   /usr/src/sys/sys/ucred.h /usr/src/sys/bsm/audit.h \
-  /usr/src/sys/sys/_domainset.h machine/proc.h machine/segments.h \
-  x86/segments.h machine/cpu.h machine/psl.h x86/psl.h machine/frame.h \
-  x86/frame.h nvkms-ioctl.h ../common/inc/nvtypes.h \
+  /usr/src/sys/sys/_domainset.h machine/proc.h machine/pcb.h \
+  machine/fpu.h x86/fpu.h machine/segments.h x86/segments.h \
+  machine/cpu.h machine/psl.h x86/psl.h machine/frame.h x86/frame.h \
+  /usr/src/sys/sys/mutex.h nvkms-ioctl.h ../common/inc/nvtypes.h \
   ../common/inc/cpuopsys.h ../common/inc/xapi-sdk.h \
   nvidia-modeset-os-interface.h /usr/src/sys/sys/stddef.h \
   machine/stdarg.h x86/stdarg.h /usr/src/sys/sys/_stdarg.h nvkms.h \

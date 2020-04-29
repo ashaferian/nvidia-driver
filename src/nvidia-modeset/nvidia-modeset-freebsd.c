@@ -26,6 +26,7 @@
 #include <sys/poll.h>
 #include <sys/file.h>
 #include <sys/proc.h>
+#include <sys/mutex.h>
 
 #include "nvkms-ioctl.h"
 #include "nvidia-modeset-os-interface.h"
