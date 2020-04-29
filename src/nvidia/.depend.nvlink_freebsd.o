@@ -1,3 +1,0 @@
-nvlink_freebsd.o: nvlink_freebsd.c nvlink_common.h \
-  ../common/inc/nvtypes.h ../common/inc/cpuopsys.h \
-  ../common/inc/xapi-sdk.h ../common/inc/nvCpuUuid.h nvlink_errors.h
