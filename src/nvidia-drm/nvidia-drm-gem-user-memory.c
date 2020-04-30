@@ -90,7 +90,11 @@ int nv_drm_gem_import_userspace_memory_ioctl(struct drm_device *dev,
     if ((params->size % PAGE_SIZE) != 0) {
         NV_DRM_DEV_LOG_ERR(
             nv_dev,
+#ifdef __linux__
             "Userspace memory 0x%llx size should be in a multiple of page "
+#else
+	    "Userspace memory 0x%lx size should be in a multiple of page "
+#endif
             "size to create a gem object",
             params->address);
         return -EINVAL;
@@ -103,7 +107,11 @@ int nv_drm_gem_import_userspace_memory_ioctl(struct drm_device *dev,
     if (ret != 0) {
         NV_DRM_DEV_LOG_ERR(
             nv_dev,
+#ifdef __linux__
             "Failed to lock user pages for address 0x%llx: %d",
+#else
+	    "Failed to lock user pages for address 0x%lx: %d",
+#endif
             params->address, ret);
         return ret;
     }
